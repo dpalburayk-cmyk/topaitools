@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback } from "react";
+import { useState, useMemo, useEffect, useCallback, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Search, SlidersHorizontal, X } from "lucide-react";
 import { ToolCard } from "@/components/tools/ToolCard";
@@ -31,6 +31,26 @@ const sortOptions = [
 ];
 
 export default function ToolsPage() {
+  return (
+    <Suspense fallback={<ToolsPageSkeleton />}>
+      <ToolsPageContent />
+    </Suspense>
+  );
+}
+
+function ToolsPageSkeleton() {
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
+      <div className="text-center py-20">
+        <div className="w-16 h-16 rounded-2xl bg-muted animate-pulse mx-auto mb-4" />
+        <div className="h-6 w-48 bg-muted rounded animate-pulse mx-auto mb-2" />
+        <div className="h-4 w-64 bg-muted rounded animate-pulse mx-auto" />
+      </div>
+    </div>
+  );
+}
+
+function ToolsPageContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
