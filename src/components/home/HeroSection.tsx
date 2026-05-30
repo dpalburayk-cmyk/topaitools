@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowRight, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -15,8 +17,7 @@ export function HeroSection() {
             Discover the{" "}
             <span className="bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-500 bg-clip-text text-transparent">
               best AI tools
-            </span>{" "}
-            for every task
+            </span>
           </h1>
 
           <p className="animate-fade-in-up stagger-2 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">

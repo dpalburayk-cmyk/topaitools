@@ -15,12 +15,12 @@ export default function SubmitPage() {
 
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
-      <Breadcrumbs items={[{ label: "Submit a Tool" }]} />
+      <Breadcrumbs items={[{ label: "Submit" }]} />
 
       <div className="mb-10">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Submit an AI Tool</h1>
         <p className="text-muted-foreground">
-          Know a great AI tool that should be listed? Submit it here and we&apos;ll review it within 48 hours.
+          Know a great AI tool that should be listed? Submit it here and we'll review it within 48 hours.
         </p>
       </div>
 
@@ -31,7 +31,7 @@ export default function SubmitPage() {
           </div>
           <h2 className="text-xl font-semibold mb-2">Submission Received!</h2>
           <p className="text-sm text-muted-foreground">
-            Thank you for your submission. We&apos;ll review your tool and get back to you within 48 hours.
+            Thank you for your submission. We'll review your tool and get back to you within 48 hours.
           </p>
         </div>
       ) : (

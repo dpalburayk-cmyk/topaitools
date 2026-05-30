@@ -1,11 +1,13 @@
-const stats = [
-  { value: "1,247+", label: "AI Tools Listed" },
-  { value: "50+", label: "Categories" },
-  { value: "28K+", label: "Monthly Visitors" },
-  { value: "4.6", label: "Avg. Rating" },
-];
+"use client";
 
 export function StatsSection() {
+  const stats = [
+    { value: "1,247+", label: "Tools Listed" },
+    { value: "50+", label: "Categories" },
+    { value: "28K+", label: "Monthly Visitors" },
+    { value: "4.6", label: "Avg. Rating" },
+  ];
+
   return (
     <section className="border-y border-border bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

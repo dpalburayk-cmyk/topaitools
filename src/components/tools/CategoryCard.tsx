@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -47,7 +49,7 @@ export function CategoryCard({ category, index = 0 }: CategoryCardProps) {
         <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{category.description}</p>
         <div className="flex items-center justify-between">
           <span className="text-xs font-medium text-indigo-500 bg-indigo-500/10 px-2 py-0.5 rounded-full">
-            {category.toolCount} tools
+            {`${category.toolCount} tools`}
           </span>
           <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-indigo-500 group-hover:translate-x-0.5 transition-all" />
         </div>

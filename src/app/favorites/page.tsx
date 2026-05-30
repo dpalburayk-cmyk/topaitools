@@ -6,7 +6,6 @@ import { ToolCard } from "@/components/tools/ToolCard";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Heart, Search } from "lucide-react";
 import Link from "next/link";
-import type { Metadata } from "next";
 
 export default function FavoritesPage() {
   const { favorites, mounted } = useFavorites();
@@ -40,8 +39,8 @@ export default function FavoritesPage() {
           </div>
           <p className="text-muted-foreground">
             {favorites.length > 0
-              ? `${favorites.length} saved AI tool${favorites.length !== 1 ? "s" : ""}`
-              : "Your saved AI tools will appear here"}
+              ? `${favorites.length} favorites`
+              : "Your saved AI tools"}
           </p>
         </div>
 

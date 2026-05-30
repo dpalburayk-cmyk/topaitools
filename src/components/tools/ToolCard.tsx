@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { Star, ExternalLink, Tag } from "lucide-react";
+import { Star, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Tool } from "@/types";
 import { FavoriteButton } from "@/components/ui/FavoriteButton";
@@ -14,6 +16,12 @@ const pricingColors = {
   free: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
   freemium: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
   paid: "bg-violet-500/10 text-violet-600 dark:text-violet-400",
+};
+
+const pricingLabels = {
+  free: "Free",
+  freemium: "Freemium",
+  paid: "Paid",
 };
 
 export function ToolCard({ tool, index = 0 }: ToolCardProps) {
@@ -32,13 +40,17 @@ export function ToolCard({ tool, index = 0 }: ToolCardProps) {
       <div className="relative z-10 flex-1 flex flex-col">
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-indigo-500/20">
-              {tool.name.charAt(0)}
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-indigo-500/20 overflow-hidden">
+              {tool.imageUrl ? (
+                <img src={tool.imageUrl} alt={tool.name} className="w-full h-full object-cover" loading="lazy" />
+              ) : (
+                tool.name.charAt(0)
+              )}
             </div>
             <div>
               <h3 className="font-semibold text-sm group-hover:text-indigo-500 transition-colors">{tool.name}</h3>
               <span className={cn("text-[10px] font-medium px-2 py-0.5 rounded-full capitalize", pricingColors[tool.pricingModel])}>
-                {tool.pricingModel}
+                {pricingLabels[tool.pricingModel]}
               </span>
             </div>
           </div>

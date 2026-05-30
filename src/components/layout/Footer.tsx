@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Rss, ExternalLink, X } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
@@ -14,11 +16,11 @@ export function Footer() {
                 <span className="text-white font-bold text-sm">AI</span>
               </div>
               <span className="text-lg font-bold tracking-tight">
-                AI<span className="text-indigo-500">Vault</span>
+                Top<span className="text-indigo-500">AI</span> Tools
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4 max-w-xs">
-              Discover, compare, and choose the best AI tools for every task. Curated reviews and honest ratings.
+              Your curated guide to the best AI tools and resources.
             </p>
             <div className="flex items-center gap-3">
               <a href={siteConfig.links.twitter} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">

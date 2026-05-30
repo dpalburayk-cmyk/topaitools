@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
-import { I18nProvider } from "@/components/layout/I18nProvider";
 import { CompareProvider } from "@/components/layout/CompareProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -74,14 +73,12 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col">
         <ThemeProvider>
-          <I18nProvider>
-            <CompareProvider>
-              <Header />
-              <div className="flex-1 pb-16">{children}</div>
-              <Footer />
-              <CompareBar />
-            </CompareProvider>
-          </I18nProvider>
+          <CompareProvider>
+            <Header />
+            <div className="flex-1 pb-16">{children}</div>
+            <Footer />
+            <CompareBar />
+          </CompareProvider>
         </ThemeProvider>
         <Analytics />
       </body>

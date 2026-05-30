@@ -61,7 +61,7 @@ export default function ComparePage() {
               pricingColors[tool.pricingModel]
             )}
           >
-            {tool.pricingModel}
+            {tool.pricingModel.charAt(0).toUpperCase() + tool.pricingModel.slice(1)}
           </span>
         );
 
@@ -71,7 +71,7 @@ export default function ComparePage() {
             <Star className="w-4 h-4 text-amber-500 fill-current" />
             <span className="font-semibold">{tool.rating}</span>
             <span className="text-xs text-muted-foreground">
-              ({tool.reviewCount.toLocaleString()} reviews)
+              ({tool.reviewCount.toLocaleString()})
             </span>
           </div>
         );
@@ -93,10 +93,7 @@ export default function ComparePage() {
         return (
           <ul className="space-y-1.5">
             {tool.features.map((f) => (
-              <li
-                key={f}
-                className="flex items-center gap-1.5 text-sm"
-              >
+              <li key={f} className="flex items-center gap-1.5 text-sm">
                 <Check className="w-3 h-3 text-emerald-500 shrink-0" />
                 <span>{f}</span>
               </li>
@@ -108,10 +105,7 @@ export default function ComparePage() {
         return (
           <ul className="space-y-1.5">
             {tool.pros.map((p) => (
-              <li
-                key={p}
-                className="flex items-start gap-1.5 text-sm text-emerald-600 dark:text-emerald-400"
-              >
+              <li key={p} className="flex items-start gap-1.5 text-sm text-emerald-600 dark:text-emerald-400">
                 <Check className="w-3 h-3 mt-0.5 shrink-0" />
                 <span>{p}</span>
               </li>
@@ -123,10 +117,7 @@ export default function ComparePage() {
         return (
           <ul className="space-y-1.5">
             {tool.cons.map((c) => (
-              <li
-                key={c}
-                className="flex items-start gap-1.5 text-sm text-red-600 dark:text-red-400"
-              >
+              <li key={c} className="flex items-start gap-1.5 text-sm text-red-600 dark:text-red-400">
                 <X className="w-3 h-3 mt-0.5 shrink-0" />
                 <span>{c}</span>
               </li>
@@ -154,7 +145,6 @@ export default function ComparePage() {
 
   const validTools = compareTools.filter(Boolean) as (typeof tools)[0][];
 
-  // Check if values differ for highlighting
   const hasDifference = (key: string) => {
     if (validTools.length <= 1) return false;
     const values = validTools.map((t) => {
@@ -182,7 +172,7 @@ export default function ComparePage() {
       <Breadcrumbs
         items={[
           { label: "Tools", href: "/tools" },
-          { label: "Compare" },
+          { label: "Compare Tools" },
         ]}
       />
 
@@ -198,7 +188,7 @@ export default function ComparePage() {
             </div>
             <p className="text-muted-foreground">
               {compareTools.length > 0
-                ? `Comparing ${compareTools.length} AI tool${compareTools.length !== 1 ? "s" : ""} side by side`
+                ? `Comparing ${compareTools.length} AI tools side by side`
                 : "Compare up to 4 AI tools side by side"}
             </p>
           </div>
@@ -209,7 +199,7 @@ export default function ComparePage() {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-border text-sm font-medium hover:bg-accent transition-colors"
               >
                 <X className="w-4 h-4" />
-                Clear All
+                Clear Comparison
               </button>
               <Link
                 href="/tools"
@@ -231,7 +221,6 @@ export default function ComparePage() {
             <p className="text-xl font-semibold mb-2">No tools to compare</p>
             <p className="text-sm text-muted-foreground mb-8 max-w-md mx-auto">
               Browse tools and click the compare button to add them here.
-              You can compare up to 4 tools side by side.
             </p>
             <Link
               href="/tools"
@@ -246,7 +235,6 @@ export default function ComparePage() {
         {compareTools.length > 0 && (
           <div className="hidden md:block overflow-x-auto">
             <table className="w-full">
-              {/* Tool Headers */}
               <thead>
                 <tr>
                   <th className="sticky start-0 z-10 w-40 bg-background p-0">
@@ -260,8 +248,12 @@ export default function ComparePage() {
                         <th key={tool.id} className="p-0 min-w-[200px]">
                           <div className="p-4 border-b border-border text-center">
                             <div className="flex flex-col items-center gap-2">
-                              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold text-lg shadow-md shadow-indigo-500/20">
-                                {tool.name.charAt(0)}
+                              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold text-lg shadow-md shadow-indigo-500/20 overflow-hidden">
+                                {tool.imageUrl ? (
+                                  <img src={tool.imageUrl} alt={tool.name} className="w-full h-full object-cover" />
+                                ) : (
+                                  tool.name.charAt(0)
+                                )}
                               </div>
                               <div>
                                 <Link
@@ -281,7 +273,7 @@ export default function ComparePage() {
                                 onClick={() => removeFromCompare(tool.slug)}
                                 className="text-xs text-muted-foreground hover:text-red-500 transition-colors"
                               >
-                                Remove
+                                {"Remove"}
                               </button>
                             </div>
                           </div>
@@ -330,11 +322,14 @@ export default function ComparePage() {
                     key={tool.id}
                     className="rounded-xl border border-border bg-card overflow-hidden"
                   >
-                    {/* Tool Header */}
                     <div className="p-4 border-b border-border flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold text-sm">
-                          {tool.name.charAt(0)}
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold text-sm overflow-hidden">
+                          {tool.imageUrl ? (
+                            <img src={tool.imageUrl} alt={tool.name} className="w-full h-full object-cover" />
+                          ) : (
+                            tool.name.charAt(0)
+                          )}
                         </div>
                         <div>
                           <Link
@@ -355,17 +350,13 @@ export default function ComparePage() {
                         onClick={() => removeFromCompare(tool.slug)}
                         className="text-xs text-muted-foreground hover:text-red-500 transition-colors"
                       >
-                        Remove
+                        {"Remove"}
                       </button>
                     </div>
 
-                    {/* Tool Details */}
                     <div className="divide-y divide-border">
                       {compareRows.map((row) => (
-                        <div
-                          key={row.key}
-                          className="px-4 py-3"
-                        >
+                        <div key={row.key} className="px-4 py-3">
                           <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider block mb-1">
                             {row.label}
                           </span>
@@ -392,7 +383,7 @@ export default function ComparePage() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-500 text-white font-medium text-sm hover:bg-indigo-600 transition-colors shadow-lg shadow-indigo-500/25"
                   >
-                    Visit {tool.name}
+                    {`Visit ${tool.name}`}
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 )

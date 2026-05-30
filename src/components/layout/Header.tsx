@@ -6,16 +6,7 @@ import { useTheme } from "next-themes";
 import { Search, Menu, X, Sun, Moon, ChevronDown, Command, Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { searchTools, tools } from "@/data/tools";
-import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { useFavorites } from "@/hooks/useFavorites";
-
-const navLinks = [
-  { href: "/tools", label: "Tools" },
-  { href: "/categories", label: "Categories" },
-  { href: "/blog", label: "Blog" },
-  { href: "/submit", label: "Submit" },
-  { href: "/about", label: "About" },
-];
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -67,6 +58,14 @@ export function Header() {
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, []);
+
+  const navLinks = [
+    { href: "/tools", label: "Tools" },
+    { href: "/categories", label: "Categories" },
+    { href: "/blog", label: "Blog" },
+    { href: "/submit", label: "Submit" },
+    { href: "/about", label: "About" },
+  ];
 
   return (
     <>
@@ -150,8 +149,12 @@ export function Header() {
                               onClick={() => { setSearchOpen(false); setSearchQuery(""); }}
                               className="flex items-center gap-3 px-4 py-3 hover:bg-accent transition-colors"
                             >
-                              <div className="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-500 text-xs font-bold">
-                                {tool.name.charAt(0)}
+                              <div className="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-500 text-xs font-bold overflow-hidden">
+                                {tool.imageUrl ? (
+                                  <img src={tool.imageUrl} alt={tool.name} className="w-full h-full object-cover" />
+                                ) : (
+                                  tool.name.charAt(0)
+                                )}
                               </div>
                               <div className="flex-1 min-w-0">
                                 <p className="text-sm font-medium truncate">{tool.name}</p>
@@ -197,7 +200,6 @@ export function Header() {
                   >
                     {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
                   </button>
-                  <LanguageSwitcher />
                 </>
               )}
 

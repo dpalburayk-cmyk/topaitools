@@ -29,8 +29,12 @@ export function CompareBar() {
                       key={tool.id}
                       className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-muted text-sm shrink-0"
                     >
-                      <span className="w-5 h-5 rounded-md bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white text-[10px] font-bold">
-                        {tool.name.charAt(0)}
+                      <span className="w-5 h-5 rounded-md bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white text-[10px] font-bold overflow-hidden">
+                        {tool.imageUrl ? (
+                          <img src={tool.imageUrl} alt={tool.name} className="w-full h-full object-cover" />
+                        ) : (
+                          tool.name.charAt(0)
+                        )}
                       </span>
                       <span className="font-medium text-xs whitespace-nowrap">
                         {tool.name}
@@ -50,7 +54,7 @@ export function CompareBar() {
             <button
               onClick={clearCompare}
               className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-              title="Clear comparison"
+              title="Clear Comparison"
             >
               <Trash2 className="w-4 h-4" />
             </button>

@@ -29,11 +29,11 @@ export function Newsletter() {
         setEmail("");
       } else {
         setStatus("error");
-        setMessage(data.error || "Something went wrong. Try again.");
+        setMessage(data.error || "Something went wrong");
       }
     } catch {
       setStatus("error");
-      setMessage("Network error. Please try again.");
+      setMessage("Something went wrong");
     }
   };
 

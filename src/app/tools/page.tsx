@@ -6,29 +6,12 @@ import { Search, SlidersHorizontal, X } from "lucide-react";
 import { ToolCard } from "@/components/tools/ToolCard";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Pagination } from "@/components/ui/Pagination";
+import { AdBanner } from "@/components/ui/AdBanner";
 import { tools, categories } from "@/data/tools";
+import { cn } from "@/lib/utils";
 import type { PricingModel } from "@/types";
 
 const TOOLS_PER_PAGE = 12;
-
-const pricingOptions: { value: PricingModel | "all"; label: string }[] = [
-  { value: "all", label: "All Pricing" },
-  { value: "free", label: "Free" },
-  { value: "freemium", label: "Freemium" },
-  { value: "paid", label: "Paid" },
-];
-
-const ratingOptions = [
-  { value: 0, label: "All Ratings" },
-  { value: 4, label: "4+ Stars" },
-  { value: 3, label: "3+ Stars" },
-];
-
-const sortOptions = [
-  { value: "rating", label: "Highest Rated" },
-  { value: "name", label: "Name A-Z" },
-  { value: "newest", label: "Newest" },
-];
 
 export default function ToolsPage() {
   return (
@@ -66,7 +49,6 @@ function ToolsPageContent() {
   const [page, setPage] = useState(Number(searchParams.get("page")) || 1);
   const [showFilters, setShowFilters] = useState(false);
 
-  // Reset page when filters change
   useEffect(() => {
     setPage(1);
   }, [search, pricing, category, sort, minRating, trendingOnly, featuredOnly]);
@@ -172,6 +154,25 @@ function ToolsPageContent() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const pricingOptions: { value: PricingModel | "all"; label: string; count: number }[] = [
+    { value: "all", label: "All Pricing", count: tools.length },
+    { value: "free", label: "Free", count: tools.filter((t) => t.pricingModel === "free").length },
+    { value: "freemium", label: "Freemium", count: tools.filter((t) => t.pricingModel === "freemium").length },
+    { value: "paid", label: "Paid", count: tools.filter((t) => t.pricingModel === "paid").length },
+  ];
+
+  const ratingOptions = [
+    { value: 0, label: "All Ratings" },
+    { value: 4, label: "4+ Stars" },
+    { value: 3, label: "3+ Stars" },
+  ];
+
+  const sortOptions = [
+    { value: "rating", label: "Highest Rated" },
+    { value: "name", label: "Name A-Z" },
+    { value: "newest", label: "Newest" },
+  ];
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
       <Breadcrumbs items={[{ label: "Tools" }]} />
@@ -272,16 +273,12 @@ function ToolsPageContent() {
                 )}
               >
                 {option.label}
-                <span className="ms-1 text-[10px] opacity-60">
-                  {option.value === "all"
-                    ? tools.length
-                    : tools.filter((t) => t.pricingModel === option.value).length}
-                </span>
+                <span className="ms-1 text-[10px] opacity-60">{option.count}</span>
               </button>
             ))}
           </div>
 
-          {/* Category Filter - all 9 categories */}
+          {/* Category Filter */}
           <div className="flex items-center gap-2 flex-wrap">
             <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider shrink-0">
               Category:
@@ -395,7 +392,7 @@ function ToolsPageContent() {
 
         {/* Results */}
         <div className="text-sm text-muted-foreground">
-          {filteredTools.length} tool{filteredTools.length !== 1 ? "s" : ""} found
+          {filteredTools.length} tools found
           {page > 1 && (
             <span className="ms-2">
               · Page {page} of {totalPages}
@@ -411,6 +408,9 @@ function ToolsPageContent() {
                 <ToolCard key={tool.id} tool={tool} index={i} />
               ))}
             </div>
+            <div className="my-8">
+              <AdBanner slot="inline" />
+            </div>
             <Pagination
               currentPage={page}
               totalPages={totalPages}
@@ -422,10 +422,9 @@ function ToolsPageContent() {
             <div className="w-16 h-16 rounded-2xl bg-muted flex items-center justify-center mx-auto mb-4">
               <Search className="w-7 h-7 text-muted-foreground" />
             </div>
-            <p className="text-lg font-medium mb-2">No tools found</p>
+            <p className="text-lg font-medium mb-2">No tools found. Try adjusting your search or filters.</p>
             <p className="text-sm text-muted-foreground mb-6 max-w-md mx-auto">
-              Try adjusting your search or filters to find what you&apos;re looking
-              for.
+              Try adjusting your search or filters to find what you're looking for.
             </p>
             <button
               onClick={clearFilters}
@@ -439,8 +438,4 @@ function ToolsPageContent() {
       </div>
     </div>
   );
-}
-
-function cn(...classes: (string | boolean | undefined)[]) {
-  return classes.filter(Boolean).join(" ");
 }
