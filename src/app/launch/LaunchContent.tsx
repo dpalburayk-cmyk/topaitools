@@ -2,13 +2,13 @@
 
 import { Rocket, Star, Search, Globe, Users, Sparkles, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
-import { tools, categories } from "@/data/tools";
+import { tools, categories, blogPosts } from "@/data/tools";
 import { ToolCard } from "@/components/tools/ToolCard";
 
 const features = [
   { icon: Search, title: "Smart Search", desc: "Find the perfect AI tool instantly" },
   { icon: Star, title: "Honest Reviews", desc: "Real ratings from real users" },
-  { icon: Globe, title: "40+ Tools", desc: "Curated across 9 categories" },
+  { icon: Globe, title: `${tools.length}+ Tools`, desc: `Curated across ${categories.length} categories` },
   { icon: Users, title: "Community", desc: "Join thousands of AI enthusiasts" },
 ];
 
@@ -45,7 +45,7 @@ export function LaunchContent() {
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a
-              href="https://www.producthunt.com/posts/aivault"
+              href="https://www.producthunt.com/posts/topaitools"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-border bg-card font-semibold text-base hover:bg-muted transition-colors"
@@ -68,7 +68,7 @@ export function LaunchContent() {
             </div>
             <div className="w-px h-10 bg-border" />
             <div className="text-center">
-              <div className="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-violet-500 bg-clip-text text-transparent">5</div>
+              <div className="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-violet-500 bg-clip-text text-transparent">{blogPosts.length}</div>
               <div className="text-sm text-muted-foreground">Blog</div>
             </div>
           </div>

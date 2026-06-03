@@ -20,7 +20,7 @@ export function AdBanner({ slot, format = "horizontal", className = "" }: AdBann
   useEffect(() => {
     if (!ref.current) return;
 
-    const placement = slot === "sidebar" ? "aivault-sidebar" : slot === "banner" ? "aivault-banner" : "aivault-inline";
+    const placement = slot === "sidebar" ? "topaitools-sidebar" : slot === "banner" ? "topaitools-banner" : "topaitools-inline";
 
     // Carbon Ads / EthicalAds integration
     // Replace SERVICE_ID and PLACEMENT with your actual ad network values

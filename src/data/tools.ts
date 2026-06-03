@@ -730,7 +730,7 @@ export const tools: Tool[] = [
     submittedAt: "2025-03-01", updatedAt: "2026-05-25",
   },
   {
-    id: "62", slug: "quia", name: "QuillBot",
+    id: "62", slug: "quillbot", name: "QuillBot",
     description: "AI writing tool for paraphrasing, summarizing, grammar checking, and content enhancement",
     longDescription: "QuillBot is an AI-powered writing assistant that helps improve your writing with paraphrasing, summarizing, grammar checking, and content expansion. It supports multiple modes including fluency, formal, and creative to match your desired tone.",
     category: "text", pricingModel: "freemium", rating: 4.3, reviewCount: 8700,

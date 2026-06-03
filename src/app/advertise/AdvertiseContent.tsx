@@ -19,7 +19,7 @@ import { siteConfig } from "@/data/site-config";
 
 const stats = [
   { label: "1,000+ monthly visitors", icon: Users },
-  { label: "40+ AI tools listed", icon: Tag },
+  { label: "100+ AI tools listed", icon: Tag },
   { label: "9 categories", icon: Sparkles },
   { label: "90% organic traffic", icon: BarChart3 },
 ];
