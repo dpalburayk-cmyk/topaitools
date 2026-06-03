@@ -33,7 +33,7 @@ export function LaunchContent() {
           </h1>
 
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            Curated directory of 1,000+ AI tools with honest reviews, comparisons, and insights to help you find the perfect tool.
+            Curated directory of {tools.length}+ AI tools with honest reviews, comparisons, and insights to help you find the perfect tool.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -109,7 +109,7 @@ export function LaunchContent() {
         <section className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <h2 className="text-2xl font-bold tracking-tight mb-4">Ready to find your next AI tool?</h2>
           <p className="text-muted-foreground mb-8">
-            Browse our complete directory of 40+ AI tools, read honest reviews, and discover the perfect tool for your needs.
+            Browse our complete directory of {tools.length}+ AI tools, read honest reviews, and discover the perfect tool for your needs.
           </p>
           <Link
             href="/tools"

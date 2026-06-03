@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { tools, categories } from "@/data/tools";
 
 export function HeroSection() {
   return (
@@ -21,7 +22,7 @@ export function HeroSection() {
           </h1>
 
           <p className="animate-fade-in-up stagger-2 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-            Curated directory of 1,000+ AI tools with honest reviews, comparisons, and insights to help you find the perfect tool.
+            Curated directory of {tools.length}+ AI tools with honest reviews, comparisons, and insights to help you find the perfect tool.
           </p>
 
           <div className="animate-fade-in-up stagger-3 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -43,11 +44,11 @@ export function HeroSection() {
           <div className="animate-fade-in-up stagger-4 flex items-center justify-center gap-6 mt-10 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-emerald-500" />
-              <span>1,000+ Tools</span>
+              <span>{tools.length}+ Tools</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-indigo-500" />
-              <span>50+ Categories</span>
+              <span>{categories.length} Categories</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-violet-500" />

@@ -1,4 +1,4 @@
-export function withUTM(url: string, source: string = "aivault"): string {
+export function withUTM(url: string, source: string = "topaitools"): string {
   try {
     const u = new URL(url);
     u.searchParams.set("utm_source", source);

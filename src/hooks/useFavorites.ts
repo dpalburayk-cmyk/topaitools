@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 
-const STORAGE_KEY = "aivault-favorites";
+const STORAGE_KEY = "topaitools-favorites";
 
 export function useFavorites() {
   const [favorites, setFavorites] = useState<string[]>([]);

@@ -12,6 +12,7 @@ import {
   Sparkles,
   Megaphone,
   Tag,
+  Loader2,
 } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { siteConfig } from "@/data/site-config";
@@ -127,6 +128,8 @@ export function AdvertiseContent() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [formError, setFormError] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   function handleChange(
@@ -137,9 +140,31 @@ export function AdvertiseContent() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setFormError("");
+
+    try {
+      const res = await fetch("/api/advertise", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const result = await res.json();
+
+      if (!res.ok) {
+        setFormError(result.error || "Something went wrong. Please try again.");
+        setLoading(false);
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setFormError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -290,6 +315,11 @@ export function AdvertiseContent() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
+              {formError && (
+                <div className="rounded-xl border border-red-500/20 bg-red-500/5 p-4 text-center text-sm text-red-600 dark:text-red-400">
+                  {formError}
+                </div>
+              )}
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label
@@ -411,10 +441,20 @@ export function AdvertiseContent() {
               </div>
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-500 text-white font-medium text-sm hover:bg-indigo-600 transition-colors cursor-pointer"
+                disabled={loading}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-500 text-white font-medium text-sm hover:bg-indigo-600 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <Mail className="w-4 h-4" />
-                Send Message
+                {loading ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Mail className="w-4 h-4" />
+                    Send Message
+                  </>
+                )}
               </button>
             </form>
           )}

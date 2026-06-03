@@ -1,11 +1,14 @@
 "use client";
 
+import { tools, categories } from "@/data/tools";
+
 export function StatsSection() {
+  const avgRating = (tools.reduce((sum, t) => sum + t.rating, 0) / tools.length).toFixed(1);
   const stats = [
-    { value: "1,247+", label: "Tools Listed" },
-    { value: "50+", label: "Categories" },
-    { value: "28K+", label: "Monthly Visitors" },
-    { value: "4.6", label: "Avg. Rating" },
+    { value: `${tools.length}+`, label: "Tools Listed" },
+    { value: `${categories.length}`, label: "Categories" },
+    { value: "Weekly", label: "Updates" },
+    { value: avgRating, label: "Avg. Rating" },
   ];
 
   return (

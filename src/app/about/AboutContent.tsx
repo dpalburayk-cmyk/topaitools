@@ -9,22 +9,22 @@ export function AboutContent() {
     {
       icon: Search,
       title: "Discover",
-      description: "Discover",
+      description: "We carefully curate and review every AI tool listed on our platform, making it easy to find the perfect solution for your needs.",
     },
     {
       icon: Shield,
       title: "Honest Reviews",
-      description: "Honest Reviews",
+      description: "Every review is based on real testing and honest assessments. We highlight both strengths and weaknesses so you can make informed decisions.",
     },
     {
       icon: Zap,
       title: "Stay Current",
-      description: "Stay Current",
+      description: "The AI landscape evolves rapidly. We update our directory weekly with new tools, updated reviews, and the latest industry insights.",
     },
     {
       icon: Heart,
       title: "Community",
-      description: "Community",
+      description: "Built by AI enthusiasts, for AI enthusiasts. We value community feedback and continuously improve based on your suggestions.",
     },
   ];
 

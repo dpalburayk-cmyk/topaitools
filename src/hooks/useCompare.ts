@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 
-const STORAGE_KEY = "aivault-compare";
+const STORAGE_KEY = "topaitools-compare";
 const MAX_COMPARE = 4;
 
 export function useCompare() {
