@@ -8,7 +8,47 @@ import { Newsletter } from "@/components/home/Newsletter";
 import { ToolCard } from "@/components/tools/ToolCard";
 import { CategoryCard } from "@/components/tools/CategoryCard";
 import { AdBanner } from "@/components/ui/AdBanner";
-import { getFeaturedTools, getTrendingTools, categories } from "@/data/tools";
+import { getFeaturedTools, getTrendingTools, categories, tools } from "@/data/tools";
+import { siteConfig } from "@/data/site-config";
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is Top AI Tools?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Top AI Tools is a curated directory of 110+ AI tools across 9 categories including chatbots, image generation, video, audio, coding, writing, productivity, design, and research. Each tool includes honest reviews, pros and cons, ratings, and pricing information.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does Top AI Tools rank AI tools?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Tools are ranked by genuine editorial ratings based on quality, usability, features, and value for money. We do not accept payment for higher rankings — all reviews are independent and honest.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is Top AI Tools free to use?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, Top AI Tools is completely free to browse. You can search, compare, and read reviews of all AI tools without any cost. You can also save your favorite tools for easy access later.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can I compare AI tools on Top AI Tools?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Simply click the compare button on any tool card, or visit the compare page to select up to 3 tools and see their features, pricing, ratings, and pros/cons side by side.",
+      },
+    },
+  ],
+};
 
 export default function HomePage() {
   const featuredTools = getFeaturedTools();
@@ -16,6 +56,10 @@ export default function HomePage() {
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <HeroSection />
       <StatsSection />
 

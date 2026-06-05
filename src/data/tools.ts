@@ -2,14 +2,14 @@ import type { Tool, Category, BlogPost } from "@/types";
 
 export const categories: Category[] = [
   { id: "1", slug: "chatbot", name: "AI Chatbots", description: "Intelligent conversational AI assistants for tasks, research, and creativity", icon: "🤖", toolCount: 9 },
-  { id: "2", slug: "image", name: "Image Generation", description: "Create stunning images, art, and visuals from text descriptions", icon: "🎨", toolCount: 13 },
+  { id: "2", slug: "image", name: "Image Generation", description: "Create stunning images, art, and visuals from text descriptions", icon: "🎨", toolCount: 17 },
   { id: "3", slug: "video", name: "Video & Animation", description: "Generate, edit, and enhance videos using artificial intelligence", icon: "🎬", toolCount: 13 },
-  { id: "4", slug: "audio", name: "Audio & Music", description: "Generate realistic speech, music, and audio content with AI", icon: "🎵", toolCount: 10 },
-  { id: "5", slug: "code", name: "Code & Development", description: "AI-powered coding assistants and development tools", icon: "💻", toolCount: 17 },
-  { id: "6", slug: "text", name: "Writing & Content", description: "AI writing tools for content creation, editing, and copywriting", icon: "✍️", toolCount: 7 },
-  { id: "7", slug: "productivity", name: "Productivity", description: "Boost your workflow with AI-powered productivity tools", icon: "⚡", toolCount: 11 },
+  { id: "4", slug: "audio", name: "Audio & Music", description: "Generate realistic speech, music, and audio content with AI", icon: "🎵", toolCount: 13 },
+  { id: "5", slug: "code", name: "Code & Development", description: "AI-powered coding assistants and development tools", icon: "💻", toolCount: 19 },
+  { id: "6", slug: "text", name: "Writing & Content", description: "AI writing tools for content creation, editing, and copywriting", icon: "✍️", toolCount: 6 },
+  { id: "7", slug: "productivity", name: "Productivity", description: "Boost your workflow with AI-powered productivity tools", icon: "⚡", toolCount: 15 },
   { id: "8", slug: "design", name: "Design & UI", description: "AI-assisted design tools for interfaces, graphics, and branding", icon: "🖌️", toolCount: 7 },
-  { id: "9", slug: "research", name: "Research & Search", description: "AI-powered search engines and research tools for deep analysis", icon: "🔍", toolCount: 13 },
+  { id: "9", slug: "research", name: "Research & Search", description: "AI-powered search engines and research tools for deep analysis", icon: "🔍", toolCount: 15 },
 ];
 
 export const tools: Tool[] = [
@@ -24,6 +24,7 @@ export const tools: Tool[] = [
     isFeatured: true, isTrending: true, alternatives: ["claude", "gemini"],
     submittedAt: "2025-01-15", updatedAt: "2026-05-20",
   },
+
   {
     id: "2", slug: "claude", name: "Claude",
     description: "Anthropic's AI assistant known for accuracy, deep analysis, and safety",
@@ -35,6 +36,7 @@ export const tools: Tool[] = [
     isFeatured: true, isTrending: true, alternatives: ["chatgpt", "gemini"],
     submittedAt: "2025-02-01", updatedAt: "2026-05-25",
   },
+
   {
     id: "3", slug: "gemini", name: "Gemini",
     description: "Google's multimodal AI model supporting text, images, and video",
@@ -46,17 +48,20 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["chatgpt", "claude"],
     submittedAt: "2025-01-20", updatedAt: "2026-05-15",
   },
+
   {
     id: "4", slug: "midjourney", name: "Midjourney",
-    description: "Premium AI image generator producing stunning, artistic visuals from text",
-    longDescription: "Midjourney is a leading AI art generator that creates breathtaking images from text descriptions. Known for its artistic quality and aesthetic output, it's widely used by designers, artists, and creative professionals.",
-    category: "image", pricingModel: "paid", rating: 4.7, reviewCount: 11200,
-    features: ["Art Generation", "Style Control", "High Resolution", "Variations", "Upscaling"],
-    pros: ["Exceptional artistic quality", "Active community", "Consistent style"], cons: ["Discord-based interface", "Paid only"],
-    websiteUrl: "https://midjourney.com", affiliateUrl: "https://midjourney.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/midjourney.com", tags: ["art", "images", "creative", "design"],
-    isFeatured: true, isTrending: false, alternatives: ["dalle-3", "stable-diffusion"],
-    submittedAt: "2025-01-10", updatedAt: "2026-05-10",
+    description: "Create stunning, artistic AI images with the most popular AI art generator",
+    longDescription: "Midjourney is a leading AI art generator known for producing highly aesthetic, artistic images. Accessible through Discord and now a web interface, it excels at creating illustrations, concept art, photorealistic images, and artistic compositions with exceptional visual quality.",
+    category: "image", pricingModel: "paid", rating: 4.7, reviewCount: 22100,
+    features: ["Artistic Quality", "Discord Integration", "Web Interface", "Variations", "Style Tuning"],
+    pros: ["Best artistic quality", "Active community", "Constantly improving"], cons: ["No free tier", "Discord dependency (partially)"],
+    websiteUrl: "https://www.midjourney.com", imageUrl: "https://icon.horse/icon/midjourney.com",
+    tags: ["art", "image-generation", "creative", "illustration", "design"],
+    isFeatured: true, isTrending: true, alternatives: ["dalle-3", "stable-diffusion", "flux-pro", "ideogram"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-05",
   },
+
   {
     id: "5", slug: "dalle-3", name: "DALL-E 3",
     description: "OpenAI's image generator creating realistic and creative images from text",
@@ -68,17 +73,20 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["midjourney", "stable-diffusion"],
     submittedAt: "2025-01-12", updatedAt: "2026-04-28",
   },
+
   {
     id: "6", slug: "stable-diffusion", name: "Stable Diffusion",
-    description: "Open-source image generation model with full customization capabilities",
-    longDescription: "Stable Diffusion is the leading open-source AI image generation model. It offers unparalleled customization through LoRA models, ControlNet, and a vast ecosystem of community-built tools and extensions.",
-    category: "image", pricingModel: "free", rating: 4.4, reviewCount: 13400,
-    features: ["Open Source", "LoRA Models", "ControlNet", "Local Running", "Full Customization"],
-    pros: ["Completely free", "Full control and customization", "Runs locally"], cons: ["Requires technical knowledge", "Hardware intensive"],
-    websiteUrl: "https://stability.ai", affiliateUrl: "https://stability.ai/?ref=topaitools", imageUrl: "https://icon.horse/icon/stability.ai", tags: ["images", "open-source", "customization", "local"],
-    isFeatured: false, isTrending: false, alternatives: ["midjourney", "dalle-3"],
-    submittedAt: "2025-01-08", updatedAt: "2026-05-01",
+    description: "Open-source AI image generation — run locally or in the cloud with full control",
+    longDescription: "Stable Diffusion is the leading open-source AI image generation model. It can be run locally on consumer hardware, giving users full control over image generation without subscriptions. Features extensive community models, LoRAs, and ControlNet for precise control.",
+    category: "image", pricingModel: "free", rating: 4.6, reviewCount: 18500,
+    features: ["Open Source", "Local Running", "ControlNet", "LoRA Support", "Community Models"],
+    pros: ["Completely free", "Full control", "Privacy — runs locally", "Huge community"], cons: ["Requires technical setup", "Hardware dependent"],
+    websiteUrl: "https://stability.ai", imageUrl: "https://icon.horse/icon/stability.ai",
+    tags: ["open-source", "image-generation", "art", "local-ai", "creative"],
+    isFeatured: false, isTrending: false, alternatives: ["midjourney", "dalle-3", "flux-pro"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-05",
   },
+
   {
     id: "7", slug: "ideogram", name: "Ideogram",
     description: "AI image generator specializing in accurate text rendering within images",
@@ -90,6 +98,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["midjourney", "dalle-3"],
     submittedAt: "2025-03-01", updatedAt: "2026-05-18",
   },
+
   {
     id: "8", slug: "github-copilot", name: "GitHub Copilot",
     description: "AI pair programmer that writes code directly inside your IDE",
@@ -103,19 +112,20 @@ export const tools: Tool[] = [
     isFeatured: true, isTrending: false, alternatives: ["cursor", "bolt"],
     submittedAt: "2025-01-05", updatedAt: "2026-05-12",
   },
+
   {
     id: "9", slug: "cursor", name: "Cursor",
-    description: "AI-native code editor that dramatically accelerates development workflow",
-    longDescription: "Cursor is a VS Code fork built from the ground up with AI at its core. It features intelligent code generation, multi-file editing, codebase-aware suggestions, and a powerful AI chat for complex development tasks.",
-    category: "code", pricingModel: "freemium", rating: 4.8, reviewCount: 7800,
-    features: ["AI Code Generation", "Multi-file Editing", "Codebase Awareness", "Built-in Chat", "VS Code Compatible"],
-    pros: ["Extremely fast workflow", "Codebase-aware", "VS Code extensions work"], cons: ["Requires good prompts", "Can be slow on large codebases"],
-    websiteUrl: "https://cursor.com", imageUrl: "https://icon.horse/icon/cursor.com",
-    affiliateUrl: "https://cursor.com",
-    tags: ["coding", "editor", "ai", "ide"],
-    isFeatured: true, isTrending: true, alternatives: ["github-copilot", "bolt"],
-    submittedAt: "2025-02-15", updatedAt: "2026-05-22",
+    description: "The AI-first code editor built for pair-programming with AI",
+    longDescription: "Cursor is a code editor forked from VS Code, deeply integrated with AI for an intelligent coding experience. It features AI chat, code generation, codebase understanding, multi-file editing, and supports multiple AI models including Claude and GPT-4.",
+    category: "code", pricingModel: "freemium", rating: 4.7, reviewCount: 12800,
+    features: ["AI Chat in Editor", "Codebase Understanding", "Multi-file Editing", "Terminal AI", "Custom Rules"],
+    pros: ["Best AI code editor", "VS Code compatible", "Excellent code understanding"], cons: ["Requires internet", "Can be resource-heavy"],
+    websiteUrl: "https://www.cursor.com", imageUrl: "https://icon.horse/icon/cursor.com",
+    tags: ["code-editor", "ai-coding", "developer", "ide", "productivity"],
+    isFeatured: true, isTrending: true, alternatives: ["github-copilot", "windsurf", "codeium"],
+    submittedAt: "2025-11-01", updatedAt: "2026-06-05",
   },
+
   {
     id: "10", slug: "v0", name: "v0 by Vercel",
     description: "Generate UI components from text descriptions using React and Tailwind",
@@ -127,6 +137,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["bolt", "cursor"],
     submittedAt: "2025-03-10", updatedAt: "2026-05-20",
   },
+
   {
     id: "11", slug: "bolt", name: "Bolt.new",
     description: "Full-stack browser-based IDE that builds complete apps from text prompts",
@@ -138,6 +149,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["v0", "cursor"],
     submittedAt: "2025-04-01", updatedAt: "2026-05-15",
   },
+
   {
     id: "12", slug: "runway", name: "Runway",
     description: "Professional AI platform for generating and editing video content",
@@ -149,6 +161,7 @@ export const tools: Tool[] = [
     isFeatured: true, isTrending: false, alternatives: ["pika", "kling-ai"],
     submittedAt: "2025-01-18", updatedAt: "2026-05-08",
   },
+
   {
     id: "13", slug: "pika", name: "Pika",
     description: "Create short AI-generated videos from text or images with ease",
@@ -160,6 +173,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["runway", "heygen"],
     submittedAt: "2025-02-20", updatedAt: "2026-04-25",
   },
+
   {
     id: "14", slug: "heygen", name: "HeyGen",
     description: "Create realistic AI avatar videos for marketing and presentations",
@@ -171,6 +185,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["pika", "runway"],
     submittedAt: "2025-01-25", updatedAt: "2026-05-10",
   },
+
   {
     id: "15", slug: "kling-ai", name: "Kling AI",
     description: "Advanced Chinese AI model for high-quality video generation from text",
@@ -182,17 +197,20 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["runway", "pika"],
     submittedAt: "2025-04-15", updatedAt: "2026-05-20",
   },
+
   {
     id: "16", slug: "elevenlabs", name: "ElevenLabs",
-    description: "Industry-leading AI voice generation with ultra-realistic speech synthesis",
-    longDescription: "ElevenLabs offers the most realistic AI voice generation and text-to-speech capabilities. It supports voice cloning, multi-language synthesis, and provides APIs for integrating lifelike speech into applications.",
-    category: "audio", pricingModel: "freemium", rating: 4.7, reviewCount: 7100,
-    features: ["Voice Cloning", "Text-to-Speech", "Multi-language", "API Access", "Voice Library"],
-    pros: ["Most realistic voices", "Easy voice cloning", "Great API"], cons: ["Free tier very limited", "Credits system"],
-    websiteUrl: "https://elevenlabs.io", affiliateUrl: "https://elevenlabs.io/?via=topaitools", imageUrl: "https://icon.horse/icon/elevenlabs.io", tags: ["audio", "voice", "tts", "cloning"],
-    isFeatured: true, isTrending: true, alternatives: ["suno"],
-    submittedAt: "2025-01-14", updatedAt: "2026-05-18",
+    description: "Most realistic AI voice generator and text-to-speech with voice cloning",
+    longDescription: "ElevenLabs is the industry-leading AI voice platform offering ultra-realistic text-to-speech, voice cloning, and AI audio generation. Used by content creators, publishers, and businesses for audiobooks, podcasts, video narration, and voice assistants.",
+    category: "audio", pricingModel: "freemium", rating: 4.7, reviewCount: 14300,
+    features: ["Voice Cloning", "Text-to-Speech", "Voice Library", "API Access", "Dubbing"],
+    pros: ["Best voice quality", "Fast cloning", "Wide language support"], cons: ["Free tier limited", "Clone quality varies"],
+    websiteUrl: "https://elevenlabs.io", imageUrl: "https://icon.horse/icon/elevenlabs.io",
+    tags: ["voice", "text-to-speech", "cloning", "audio", "podcast"],
+    isFeatured: true, isTrending: true, alternatives: ["murf-ai", "lovo-ai"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-05",
   },
+
   {
     id: "17", slug: "suno", name: "Suno",
     description: "Generate complete songs and music tracks from text descriptions",
@@ -204,6 +222,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["elevenlabs"],
     submittedAt: "2025-02-10", updatedAt: "2026-05-15",
   },
+
   {
     id: "18", slug: "jasper", name: "Jasper",
     description: "AI writing assistant for creating marketing content, articles, and copy",
@@ -215,6 +234,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["grammarly", "notion-ai"],
     submittedAt: "2025-01-20", updatedAt: "2026-05-05",
   },
+
   {
     id: "19", slug: "grammarly", name: "Grammarly",
     description: "AI-powered writing assistant that improves grammar, clarity, and style",
@@ -226,28 +246,33 @@ export const tools: Tool[] = [
     isFeatured: true, isTrending: false, alternatives: ["jasper"],
     submittedAt: "2025-01-08", updatedAt: "2026-05-12",
   },
+
   {
     id: "20", slug: "notion-ai", name: "Notion AI",
-    description: "AI assistant built into Notion for writing, organizing, and productivity",
-    longDescription: "Notion AI brings intelligent assistance directly into your Notion workspace. It can summarize documents, generate content, translate text, extract action items, and help organize your knowledge base.",
-    category: "productivity", pricingModel: "freemium", rating: 4.5, reviewCount: 5400,
-    features: ["Summarization", "Content Generation", "Translation", "Action Items", "Q&A"],
-    pros: ["Integrated in Notion", "Summarize long docs", "Extracts action items"], cons: ["Notion subscription needed", "Limited to Notion"],
-    websiteUrl: "https://notion.so", affiliateUrl: "https://www.notion.so/?via=topaitools", imageUrl: "https://icon.horse/icon/notion.so", tags: ["productivity", "organization", "writing", "workspace"],
-    isFeatured: false, isTrending: false, alternatives: ["chatgpt"],
-    submittedAt: "2025-03-05", updatedAt: "2026-05-08",
+    description: "AI-powered workspace that writes, summarizes, organizes, and brainstorms within Notion",
+    longDescription: "Notion AI brings intelligent AI capabilities directly into the Notion workspace. It can write content, summarize notes, generate action items, brainstorm ideas, translate text, and help organize your knowledge base — all within your existing Notion workflow.",
+    category: "productivity", pricingModel: "paid", rating: 4.5, reviewCount: 8700,
+    features: ["AI Writing", "Summarization", "Action Items", "Translation", "Q&A on Docs"],
+    pros: ["Integrated in workspace", "Versatile", "Great for teams"], cons: ["Paid add-on", "Limited to Notion ecosystem"],
+    websiteUrl: "https://www.notion.so/product/ai", imageUrl: "https://icon.horse/icon/notion.so",
+    tags: ["workspace", "writing", "productivity", "notes", "team"],
+    isFeatured: false, isTrending: false, alternatives: ["gamma-app", "zapier-ai", "tome"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-05",
   },
+
   {
     id: "21", slug: "figma-ai", name: "Figma AI",
-    description: "AI-powered design tools integrated directly into Figma's design platform",
-    longDescription: "Figma AI brings intelligent design capabilities directly into the world's most popular design tool. It can generate layouts, suggest improvements, rename layers, and automate repetitive design tasks.",
-    category: "design", pricingModel: "freemium", rating: 4.6, reviewCount: 4900,
-    features: ["Auto Layout", "Layer Naming", "Design Suggestions", "Content Generation", "Image Fill"],
-    pros: ["Native Figma integration", "Saves design time", "Intelligent suggestions"], cons: ["Limited AI features", "Requires Figma plan"],
-    websiteUrl: "https://figma.com", affiliateUrl: "https://figma.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/figma.com", tags: ["design", "ui", "ux", "prototyping"],
-    isFeatured: false, isTrending: true, alternatives: ["canva-ai"],
-    submittedAt: "2025-04-01", updatedAt: "2026-05-20",
+    description: "AI-powered design features in Figma for auto-layout, content generation, and prototyping",
+    longDescription: "Figma AI brings intelligent design assistance to the world's most popular design tool. Features include auto-layout suggestions, AI-generated content for mockups, intelligent prototyping, and design system recommendations — all within the Figma environment.",
+    category: "design", pricingModel: "freemium", rating: 4.4, reviewCount: 6400,
+    features: ["Auto Layout AI", "Content Generation", "Design Systems", "Prototyping", "Plugin Ecosystem"],
+    pros: ["Industry standard tool", "Real-time collaboration", "Huge plugin ecosystem"], cons: ["Free tier limited", "Requires learning"],
+    websiteUrl: "https://www.figma.com", imageUrl: "https://icon.horse/icon/figma.com",
+    tags: ["design", "ui-ux", "prototyping", "collaboration", "interface"],
+    isFeatured: false, isTrending: false, alternatives: ["canva", "photoroom"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-05",
   },
+
   {
     id: "22", slug: "canva-ai", name: "Canva AI",
     description: "AI design tools within Canva for creating images, videos, and presentations",
@@ -259,6 +284,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["figma-ai"],
     submittedAt: "2025-01-22", updatedAt: "2026-05-10",
   },
+
   {
     id: "23", slug: "perplexity", name: "Perplexity",
     description: "AI-powered search engine combining search with chat and cited sources",
@@ -270,6 +296,7 @@ export const tools: Tool[] = [
     isFeatured: true, isTrending: true, alternatives: ["consensus"],
     submittedAt: "2025-01-16", updatedAt: "2026-05-22",
   },
+
   {
     id: "24", slug: "consensus", name: "Consensus",
     description: "AI search engine that answers questions using published research papers",
@@ -281,19 +308,20 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["perplexity"],
     submittedAt: "2025-02-25", updatedAt: "2026-04-30",
   },
+
   {
     id: "25", slug: "descript", name: "Descript",
-    description: "All-in-one AI video and podcast editor that edits media as easily as editing a document",
-    longDescription: "Descript revolutionizes video editing with its AI-powered approach. Edit videos and podcasts by editing text transcriptions, remove filler words automatically, clone your voice, and generate screen recordings with AI.",
-    category: "video", pricingModel: "freemium", rating: 4.5, reviewCount: 4100,
-    features: ["Text-based Editing", "Filler Word Removal", "Screen Recording", "Voice Cloning", "Transcription"],
-    pros: ["Incredibly easy to use", "Great for podcasts", "AI transcription is excellent"], cons: ["Can be slow on long videos", "Limited color grading"],
-    websiteUrl: "https://descript.com", imageUrl: "https://icon.horse/icon/descript.com",
-    affiliateUrl: "https://www.descript.com/?via=topaitools",
-    tags: ["video", "podcast", "editing", "transcription"],
-    isFeatured: false, isTrending: true, alternatives: ["runway", "pika"],
-    submittedAt: "2025-03-15", updatedAt: "2026-05-20",
+    description: "AI-powered video and podcast editor that edits media like a text document",
+    longDescription: "Descript revolutionizes video and audio editing by letting you edit media as easily as a text document. Its AI features include filler word removal, automatic transcription, screen recording, and AI voice cloning.",
+    category: "audio", pricingModel: "freemium", rating: 4.5, reviewCount: 6200,
+    features: ["Text-Based Editing", "Filler Word Removal", "AI Transcription", "Screen Recording", "AI Voice Clone"],
+    pros: ["Revolutionary editing approach", "All-in-one tool", "Great for podcasts"], cons: ["Heavy on resources", "Limited advanced video effects"],
+    websiteUrl: "https://www.descript.com", affiliateUrl: "https://www.descript.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/descript.com",
+    tags: ["video", "audio", "podcast", "transcription", "editing"],
+    isFeatured: false, isTrending: false, alternatives: ["otter-ai", "adobe-podcast"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-01",
   },
+
   {
     id: "26", slug: "leonardo-ai", name: "Leonardo AI",
     description: "AI image generator with fine-tuned models for game assets, concept art, and illustrations",
@@ -307,32 +335,33 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["midjourney", "stable-diffusion"],
     submittedAt: "2025-03-20", updatedAt: "2026-05-18",
   },
+
   {
     id: "27", slug: "adobe-firefly", name: "Adobe Firefly",
-    description: "Adobe's commercially safe AI image generator integrated across Creative Cloud apps",
-    longDescription: "Adobe Firefly is designed to be commercially safe, trained on Adobe Stock images and public domain content. It integrates seamlessly with Photoshop, Illustrator, and other Creative Cloud apps for a professional workflow.",
-    category: "image", pricingModel: "freemium", rating: 4.3, reviewCount: 6200,
-    features: ["Commercially Safe", "Creative Cloud Integration", "Text Effects", "Generative Fill", "Recolor"],
-    pros: ["Commercially safe training", "Photoshop integration", "Enterprise ready"], cons: ["Quality behind Midjourney", "Requires Adobe account"],
-    websiteUrl: "https://firefly.adobe.com", imageUrl: "https://icon.horse/icon/adobe.com",
-    affiliateUrl: "https://www.adobe.com/products/firefly.html?ref=topaitools",
-    tags: ["images", "design", "commercial", "adobe"],
-    isFeatured: false, isTrending: false, alternatives: ["midjourney", "dalle-3"],
-    submittedAt: "2025-04-05", updatedAt: "2026-05-10",
+    description: "Adobe's AI image generator trained on licensed content — commercially safe AI art",
+    longDescription: "Adobe Firefly is Adobe's family of AI generative models, trained exclusively on licensed content. It generates images, text effects, and vector graphics that are commercially safe. Integrated into Creative Cloud apps like Photoshop, Illustrator, and Express.",
+    category: "image", pricingModel: "freemium", rating: 4.4, reviewCount: 7200,
+    features: ["Text-to-Image", "Generative Fill", "Text Effects", "Vector Generation", "Photoshop Integration"],
+    pros: ["Commercially safe", "Adobe ecosystem integration", "High quality"], cons: ["Limited free credits", "Requires Adobe account"],
+    websiteUrl: "https://firefly.adobe.com", imageUrl: "https://icon.horse/icon/firefly.adobe.com",
+    tags: ["image-generation", "creative", "adobe", "design", "commercial"],
+    isFeatured: false, isTrending: true, alternatives: ["midjourney", "dalle-3", "flux-pro"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-05",
   },
+
   {
     id: "28", slug: "synthesia", name: "Synthesia",
-    description: "Create professional AI videos with virtual avatars in 130+ languages without cameras",
-    longDescription: "Synthesia is the leading AI video generation platform for businesses. Create professional training, marketing, and internal communication videos using realistic AI avatars, supporting over 130 languages.",
-    category: "video", pricingModel: "paid", rating: 4.4, reviewCount: 4800,
-    features: ["AI Avatars", "130+ Languages", "Custom Avatars", "Templates", "Screen Recording"],
-    pros: ["Very professional output", "Many languages", "Custom branding"], cons: ["Expensive", "Limited customization of gestures"],
-    websiteUrl: "https://synthesia.io", imageUrl: "https://icon.horse/icon/synthesia.io",
-    affiliateUrl: "https://synthesia.io/?ref=topaitools",
-    tags: ["video", "avatar", "enterprise", "training"],
-    isFeatured: false, isTrending: false, alternatives: ["heygen", "runway"],
-    submittedAt: "2025-01-30", updatedAt: "2026-05-05",
+    description: "Create professional AI videos with realistic digital avatars — no camera needed",
+    longDescription: "Synthesia is the leading AI video generation platform that creates professional videos using digital avatars. Choose from 200+ avatars, type your script, and generate a studio-quality video in 120+ languages. Perfect for training, marketing, and corporate communications.",
+    category: "video", pricingModel: "paid", rating: 4.4, reviewCount: 6700,
+    features: ["200+ AI Avatars", "120+ Languages", "Custom Avatars", "Brand Templates", "API Access"],
+    pros: ["Professional quality", "Wide language support", "No camera needed"], cons: ["Expensive", "Avatar movements can feel stiff"],
+    websiteUrl: "https://www.synthesia.io", imageUrl: "https://icon.horse/icon/synthesia.io",
+    tags: ["video", "avatars", "marketing", "training", "enterprise"],
+    isFeatured: false, isTrending: false, alternatives: ["heygen", "d-id"],
+    submittedAt: "2025-09-05", updatedAt: "2026-06-05",
   },
+
   {
     id: "29", slug: "copy-ai", name: "Copy.ai",
     description: "AI-powered copywriting tool for marketing teams with 90+ templates and workflows",
@@ -346,6 +375,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["jasper", "chatgpt"],
     submittedAt: "2025-02-05", updatedAt: "2026-04-28",
   },
+
   {
     id: "30", slug: "pi-ai", name: "Pi AI",
     description: "Inflection AI's personal assistant with emotional intelligence and conversational memory",
@@ -357,19 +387,20 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["chatgpt", "claude"],
     submittedAt: "2025-03-25", updatedAt: "2026-05-08",
   },
+
   {
     id: "31", slug: "remove-bg", name: "Remove.bg",
-    description: "AI-powered background removal tool for images with instant, accurate results",
-    longDescription: "Remove.bg uses advanced AI to remove backgrounds from images instantly. Perfect for product photos, portraits, and graphic design, it delivers cutout-quality results in seconds.",
-    category: "image", pricingModel: "freemium", rating: 4.5, reviewCount: 8900,
-    features: ["Instant Removal", "Bulk Processing", "API Access", "HD Quality", "Photo Editing"],
-    pros: ["Lightning fast", "Very accurate", "API available"], cons: ["Free tier limited resolution", "Single purpose"],
-    websiteUrl: "https://remove.bg", imageUrl: "https://icon.horse/icon/remove.bg",
-    affiliateUrl: "https://remove.bg/?ref=topaitools",
-    tags: ["images", "background", "editing", "product photos"],
-    isFeatured: false, isTrending: false, alternatives: ["canva-ai", "figma-ai"],
-    submittedAt: "2025-01-12", updatedAt: "2026-04-25",
+    description: "Remove image backgrounds instantly with AI — 100% automatic, 5 seconds",
+    longDescription: "Remove.bg uses AI to automatically remove backgrounds from images in seconds. It handles complex edges like hair and fur perfectly. Available as a web tool, API, and mobile app for designers, e-commerce sellers, and content creators.",
+    category: "image", pricingModel: "freemium", rating: 4.5, reviewCount: 15200,
+    features: ["Automatic Removal", "Hair Detection", "Bulk Processing", "API Access", "Photo Editing"],
+    pros: ["Extremely fast", "Handles complex edges", "Free for personal use"], cons: ["Limited free credits", "Basic editing only"],
+    websiteUrl: "https://www.remove.bg", imageUrl: "https://icon.horse/icon/remove.bg",
+    tags: ["background", "photo-editing", "ecommerce", "design", "image"],
+    isFeatured: false, isTrending: false, alternatives: ["photoroom", "canva"],
+    submittedAt: "2025-08-10", updatedAt: "2026-06-05",
   },
+
   {
     id: "32", slug: "windsurf", name: "Windsurf",
     description: "AI-first code editor by Codeium with intelligent code generation and chat",
@@ -382,6 +413,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["cursor", "github-copilot"],
     submittedAt: "2025-04-10", updatedAt: "2026-05-22",
   },
+
   {
     id: "33", slug: "podcast-ai", name: "Podcastle",
     description: "AI-powered podcast recording and editing studio with studio-quality sound",
@@ -395,6 +427,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["descript", "elevenlabs"],
     submittedAt: "2025-03-10", updatedAt: "2026-05-12",
   },
+
   {
     id: "34", slug: "luma-dream-machine", name: "Luma Dream Machine",
     description: "Fast AI video generation model creating realistic videos from text and images",
@@ -407,6 +440,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["runway", "kling-ai"],
     submittedAt: "2025-04-20", updatedAt: "2026-05-25",
   },
+
   {
     id: "35", slug: "gamma", name: "Gamma",
     description: "AI-powered presentation and document builder that creates polished slides, docs, and webpages",
@@ -418,6 +452,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["notion-ai", "canva-ai"],
     submittedAt: "2025-05-01", updatedAt: "2026-05-30",
   },
+
   {
     id: "36", slug: "kittl", name: "Kittl",
     description: "AI-powered design tool for creating t-shirts, logos, and print-on-demand graphics",
@@ -431,17 +466,20 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["canva-ai", "figma-ai"],
     submittedAt: "2025-03-30", updatedAt: "2026-05-10",
   },
+
   {
     id: "37", slug: "deepseek", name: "DeepSeek",
-    description: "Powerful open-weight AI model excelling at coding, math, and reasoning tasks",
-    longDescription: "DeepSeek is a leading open-weight AI model that delivers exceptional performance in coding, mathematical reasoning, and complex analysis. It offers a compelling alternative to proprietary models with competitive benchmarks and affordable API pricing.",
-    category: "chatbot", pricingModel: "free", rating: 4.5, reviewCount: 6200,
-    features: ["Code Generation", "Math Reasoning", "Deep Analysis", "Open Weights", "Affordable API"],
-    pros: ["Excellent at coding", "Open-weight model", "Free to use", "Strong reasoning"], cons: ["Less polished UI", "Fewer integrations than competitors"],
-    websiteUrl: "https://chat.deepseek.com", affiliateUrl: "https://chat.deepseek.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/deepseek.com", tags: ["chat", "coding", "reasoning", "open-source", "math"],
-    isFeatured: false, isTrending: true, alternatives: ["chatgpt", "claude"],
-    submittedAt: "2025-04-15", updatedAt: "2026-05-30",
+    description: "Powerful open-source AI model excelling at code, math, and reasoning tasks",
+    longDescription: "DeepSeek is a leading open-source AI model that rivals proprietary models in coding, mathematical reasoning, and complex analysis. Available for free with competitive performance, it's become a favorite among developers and researchers who need powerful AI without cost.",
+    category: "chatbot", pricingModel: "free", rating: 4.5, reviewCount: 9200,
+    features: ["Code Generation", "Math Reasoning", "Open Source", "API Access", "Free Usage"],
+    pros: ["Free and powerful", "Excellent at code", "Open source"], cons: ["Limited creative writing", "Less polished UI"],
+    websiteUrl: "https://chat.deepseek.com", imageUrl: "https://icon.horse/icon/deepseek.com",
+    tags: ["open-source", "coding", "math", "reasoning", "free-ai"],
+    isFeatured: false, isTrending: true, alternatives: ["chatgpt", "claude", "gemini"],
+    submittedAt: "2026-02-20", updatedAt: "2026-06-05",
   },
+
   {
     id: "38", slug: "writesonic", name: "Writesonic",
     description: "AI writing platform with SEO-optimized content generation and brand voice tools",
@@ -455,6 +493,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["jasper", "copy-ai"],
     submittedAt: "2025-02-15", updatedAt: "2026-05-01",
   },
+
   {
     id: "39", slug: "uscope", name: "Uscope",
     description: "AI-powered competitive analysis tool that tracks and analyzes competitor strategies",
@@ -466,6 +505,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["perplexity", "chatgpt"],
     submittedAt: "2025-05-10", updatedAt: "2026-05-20",
   },
+
   {
     id: "40", slug: "sora", name: "Sora",
     description: "OpenAI's advanced AI video generation model creating cinematic videos from text prompts",
@@ -478,17 +518,20 @@ export const tools: Tool[] = [
     isFeatured: true, isTrending: true, alternatives: ["runway", "kling-ai"],
     submittedAt: "2025-04-25", updatedAt: "2026-05-30",
   },
+
   {
     id: "41", slug: "grok", name: "Grok",
-    description: "xAI's conversational AI with real-time X (Twitter) data integration and witty personality",
-    longDescription: "Grok is xAI's AI assistant that uniquely integrates real-time data from X (formerly Twitter) to provide up-to-the-minute information. Known for its witty and less filtered personality, it excels at current events, trending topics, and real-time analysis.",
-    category: "chatbot", pricingModel: "freemium", rating: 4.3, reviewCount: 4100,
-    features: ["Real-time X Data", "Witty Personality", "Image Generation", "Code Analysis", "Unfiltered Responses"],
-    pros: ["Real-time information", "Less restricted responses", "Image generation"], cons: ["Sometimes too casual", "Smaller ecosystem", "Limited plugins"],
-    websiteUrl: "https://grok.com", affiliateUrl: "https://grok.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/x.com", tags: ["chat", "real-time", "social", "xai"],
-    isFeatured: false, isTrending: true, alternatives: ["chatgpt", "claude"],
-    submittedAt: "2025-05-01", updatedAt: "2026-06-01",
+    description: "xAI's witty and uncensored AI chatbot with real-time Twitter data access",
+    longDescription: "Grok is an AI chatbot built by xAI (Elon Musk's company) that differentiates itself with a witty, rebellious personality and real-time access to X (Twitter) data. It provides unfiltered responses and current information.",
+    category: "chatbot", pricingModel: "paid", rating: 4.2, reviewCount: 4500,
+    features: ["Real-Time X Data", "Unfiltered Responses", "Witty Personality", "Image Generation", "Code Help"],
+    pros: ["Real-time information", "Less restrictive", "X platform integration"], cons: ["Paid only (via X Premium)", "Can be inconsistent"],
+    websiteUrl: "https://grok.x.ai", affiliateUrl: "https://grok.x.ai/?ref=topaitools", imageUrl: "https://icon.horse/icon/x.ai",
+    tags: ["chat", "real-time", "social", "xai", "uncensored"],
+    isFeatured: false, isTrending: true, alternatives: ["chatgpt", "claude", "gemini"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-01",
   },
+
   {
     id: "42", slug: "codex-cli", name: "Claude Code",
     description: "Anthropic's AI coding agent that lives in your terminal for rapid software development",
@@ -501,6 +544,7 @@ export const tools: Tool[] = [
     isFeatured: true, isTrending: true, alternatives: ["cursor", "github-copilot"],
     submittedAt: "2025-05-10", updatedAt: "2026-06-01",
   },
+
   {
     id: "43", slug: "flux", name: "Flux",
     description: "State-of-the-art open-source image generation model with exceptional quality and prompt adherence",
@@ -513,6 +557,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["stable-diffusion", "midjourney"],
     submittedAt: "2025-05-05", updatedAt: "2026-06-01",
   },
+
   {
     id: "44", slug: "replit", name: "Replit AI",
     description: "AI-powered cloud IDE that builds, deploys, and hosts applications from natural language",
@@ -525,18 +570,20 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["bolt", "cursor"],
     submittedAt: "2025-04-01", updatedAt: "2026-05-20",
   },
+
   {
     id: "45", slug: "tome", name: "Tome",
-    description: "AI-native presentation and storytelling tool that creates polished decks from prompts",
-    longDescription: "Tome is an AI-first storytelling tool that generates beautiful, immersive presentations from simple prompts. It combines AI-generated text, images, and layout to create compelling narratives for business pitches, reports, and creative projects.",
-    category: "productivity", pricingModel: "freemium", rating: 4.3, reviewCount: 3400,
-    features: ["AI Presentations", "Auto Layout", "Image Generation", "Collaboration", "Embedding"],
-    pros: ["Beautiful output", "Fast creation", "Good for storytelling"], cons: ["Limited customization", "Free tier restricted"],
-    websiteUrl: "https://tome.app", affiliateUrl: "https://tome.app/?ref=topaitools", imageUrl: "https://icon.horse/icon/tome.app",
-    tags: ["productivity", "presentations", "storytelling", "ai"],
-    isFeatured: false, isTrending: false, alternatives: ["gamma", "canva-ai"],
-    submittedAt: "2025-03-15", updatedAt: "2026-05-15",
+    description: "AI-powered storytelling presentations with beautiful, narrative-driven slides",
+    longDescription: "Tome is an AI presentation tool focused on storytelling and narrative-driven presentations. It generates beautiful slides from prompts, includes built-in image generation, and creates immersive presentations that go beyond traditional bullet points.",
+    category: "productivity", pricingModel: "freemium", rating: 4.3, reviewCount: 3800,
+    features: ["Story Structure", "AI Image Generation", "Interactive Elements", "Web Presentations", "Collaboration"],
+    pros: ["Unique narrative approach", "Built-in images", "Modern design"], cons: ["Limited export options", "Niche use case"],
+    websiteUrl: "https://tome.app", imageUrl: "https://icon.horse/icon/tome.app",
+    tags: ["presentations", "storytelling", "slides", "design", "productivity"],
+    isFeatured: false, isTrending: false, alternatives: ["gamma-app", "canva"],
+    submittedAt: "2026-01-15", updatedAt: "2026-06-05",
   },
+
   {
     id: "46", slug: "opencanvas", name: "OpenCanvas",
     description: "Open-source generative UI platform for creating interactive canvases with AI components",
@@ -549,6 +596,7 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["v0", "bolt"],
     submittedAt: "2025-05-15", updatedAt: "2026-06-01",
   },
+
   {
     id: "47", slug: "murf-ai", name: "Murf AI",
     description: "AI voice generator with 120+ realistic voices for voiceovers, presentations, and videos",
@@ -561,20 +609,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["elevenlabs", "podcastle"],
     submittedAt: "2025-02-20", updatedAt: "2026-05-10",
   },
+
   {
-    id: "48", slug: "notion-ai", name: "Notion AI (Updated)",
-    description: "Notion's enhanced AI assistant for writing, analysis, and knowledge management",
-    longDescription: "Notion AI has evolved significantly with enhanced writing capabilities, AI-powered knowledge Q&A across your entire workspace, automated task management, and intelligent content generation that understands your team's context.",
-    category: "productivity", pricingModel: "freemium", rating: 4.5, reviewCount: 7800,
-    features: ["AI Q&A", "Writing Assistant", "Task Automation", "Summarization", "Translation"],
-    pros: ["Deep workspace integration", "Q&A across all docs", "Team features"], cons: ["Requires Notion subscription", "Add-on cost"],
-    websiteUrl: "https://notion.so/product/ai", affiliateUrl: "https://www.notion.so/?via=topaitools", imageUrl: "https://icon.horse/icon/notion.so",
-    tags: ["productivity", "writing", "organization", "knowledge", "workspace"],
-    isFeatured: false, isTrending: false, alternatives: ["gamma", "chatgpt"],
-    submittedAt: "2025-03-05", updatedAt: "2026-06-01",
-  },
-  {
-    id: "49", slug: "kapwing", name: "Kapwing",
+    id: "48", slug: "kapwing", name: "Kapwing",
     description: "AI-powered online video editor with automatic subtitles, resizing, and content repurposing",
     longDescription: "Kapwing is an AI-powered online video editor designed for content creators. It offers automatic subtitle generation, smart video resizing, content repurposing, and a collaborative editing environment — all in the browser.",
     category: "video", pricingModel: "freemium", rating: 4.3, reviewCount: 5200,
@@ -585,32 +622,35 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["descript", "runway"],
     submittedAt: "2025-04-10", updatedAt: "2026-05-18",
   },
+
   {
-    id: "50", slug: "huggingface", name: "Hugging Face",
-    description: "The leading open-source AI platform with models, datasets, and spaces for ML development",
-    longDescription: "Hugging Face is the GitHub of AI — a collaborative platform hosting hundreds of thousands of open-source models, datasets, and applications. It provides tools for training, deploying, and sharing machine learning models.",
-    category: "code", pricingModel: "free", rating: 4.7, reviewCount: 9200,
+    id: "49", slug: "huggingface", name: "Hugging Face",
+    description: "The AI community hub — models, datasets, and spaces for open-source machine learning",
+    longDescription: "Hugging Face is the largest open-source AI community platform. It hosts over 500,000 models, 100,000 datasets, and thousands of AI demo spaces. Essential for anyone working with AI — from researchers to developers to enthusiasts.",
+    category: "code", pricingModel: "free", rating: 4.8, reviewCount: 19500,
     features: ["Model Hub", "Datasets", "Spaces", "Inference API", "Transformers Library"],
-    pros: ["Massive model library", "Free to use", "Community driven"], cons: ["Technical knowledge needed", "API rate limits on free"],
-    websiteUrl: "https://huggingface.co", affiliateUrl: "https://huggingface.co/?ref=topaitools", imageUrl: "https://icon.horse/icon/huggingface.co",
-    tags: ["coding", "machine-learning", "open-source", "models", "deployment"],
-    isFeatured: true, isTrending: false, alternatives: ["github-copilot", "cursor"],
-    submittedAt: "2025-01-05", updatedAt: "2026-06-01",
+    pros: ["Massive model library", "Free and open source", "Active community"], cons: ["Can be overwhelming", "API rate limits"],
+    websiteUrl: "https://huggingface.co", imageUrl: "https://icon.horse/icon/huggingface.co",
+    tags: ["open-source", "models", "datasets", "community", "developer"],
+    isFeatured: true, isTrending: false, alternatives: ["replicate", "github"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-05",
   },
+
   {
-    id: "51", slug: "otter-ai", name: "Otter.ai",
-    description: "AI meeting assistant that records, transcribes, and summarizes meetings in real-time",
-    longDescription: "Otter.ai is an intelligent meeting assistant that automatically records, transcribes, and generates summaries of meetings in real-time. It integrates with Zoom, Google Meet, and Microsoft Teams for seamless workflow integration.",
-    category: "productivity", pricingModel: "freemium", rating: 4.4, reviewCount: 7600,
-    features: ["Real-time Transcription", "Meeting Summary", "Action Items", "Zoom Integration", "Search"],
-    pros: ["Great transcription accuracy", "Action item extraction", "Easy sharing"], cons: ["Free tier limited minutes", "Sometimes slow on long meetings"],
-    websiteUrl: "https://otter.ai", affiliateUrl: "https://otter.ai/?ref=topaitools", imageUrl: "https://icon.horse/icon/otter.ai",
-    tags: ["productivity", "meetings", "transcription", "collaboration", "notes"],
-    isFeatured: false, isTrending: false, alternatives: ["notion-ai", "gamma"],
-    submittedAt: "2025-02-01", updatedAt: "2026-05-15",
+    id: "50", slug: "otter-ai", name: "Otter.ai",
+    description: "AI meeting transcription and note-taking — capture every word automatically",
+    longDescription: "Otter.ai is an AI-powered meeting assistant that provides real-time transcription, automated note-taking, action item extraction, and meeting summaries. It integrates with Zoom, Google Meet, and Teams to automatically join and transcribe meetings.",
+    category: "productivity", pricingModel: "freemium", rating: 4.4, reviewCount: 7900,
+    features: ["Real-time Transcription", "Meeting Notes", "Action Items", "Speaker ID", "Integration"],
+    pros: ["Accurate transcription", "Auto-joins meetings", "Good free tier"], cons: ["English-focused", "Privacy concerns"],
+    websiteUrl: "https://otter.ai", imageUrl: "https://icon.horse/icon/otter.ai",
+    tags: ["transcription", "meetings", "notes", "productivity", "business"],
+    isFeatured: false, isTrending: false, alternatives: ["notion-ai", "grammarly"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-05",
   },
+
   {
-    id: "52", slug: "capybara-ai", name: "Capybara",
+    id: "51", slug: "capybara-ai", name: "Capybara",
     description: "AI-powered spreadsheet automation that turns natural language into formulas and data analysis",
     longDescription: "Capybara brings AI to spreadsheets, allowing users to describe what they want in plain language and get instant formulas, charts, and data analysis. It works with Google Sheets and Excel to automate repetitive data tasks.",
     category: "productivity", pricingModel: "freemium", rating: 4.1, reviewCount: 2800,
@@ -621,8 +661,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["notion-ai", "chatgpt"],
     submittedAt: "2025-05-01", updatedAt: "2026-05-20",
   },
+
   {
-    id: "53", slug: "maya-ai", name: "Maya AI",
+    id: "52", slug: "maya-ai", name: "Maya AI",
     description: "AI research assistant that synthesizes information from multiple sources with cited references",
     longDescription: "Maya AI is an advanced research assistant that analyzes and synthesizes information from multiple sources, providing comprehensive answers with proper citations. It's designed for academics, analysts, and professionals who need evidence-based insights.",
     category: "research", pricingModel: "freemium", rating: 4.2, reviewCount: 2300,
@@ -633,8 +674,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["perplexity", "consensus"],
     submittedAt: "2025-04-20", updatedAt: "2026-05-22",
   },
+
   {
-    id: "54", slug: "wepik", name: "Wepik",
+    id: "53", slug: "wepik", name: "Wepik",
     description: "Free AI design tool by Freepik for creating professional graphics, logos, and social media content",
     longDescription: "Wepik by Freepik combines AI design generation with an extensive library of templates, photos, and icons. Create professional social media posts, logos, flyers, and marketing materials with AI assistance or by customizing templates.",
     category: "design", pricingModel: "free", rating: 4.2, reviewCount: 3900,
@@ -645,8 +687,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["canva-ai", "kittl"],
     submittedAt: "2025-03-20", updatedAt: "2026-05-12",
   },
+
   {
-    id: "55", slug: "playHT", name: "PlayHT",
+    id: "54", slug: "playHT", name: "PlayHT",
     description: "Enterprise-grade AI voice generation with ultra-realistic voices and voice cloning",
     longDescription: "PlayHT offers enterprise-grade AI text-to-speech with over 800 ultra-realistic voices in 142 languages. Features include voice cloning from just 30 seconds of audio, SSML support, and streaming API for real-time applications.",
     category: "audio", pricingModel: "freemium", rating: 4.5, reviewCount: 3600,
@@ -657,20 +700,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["elevenlabs", "murf-ai"],
     submittedAt: "2025-04-05", updatedAt: "2026-05-25",
   },
+
   {
-    id: "56", slug: "Udio", name: "Udio",
-    description: "AI music generation platform creating studio-quality songs with vocals and instruments from text",
-    longDescription: "Udio is a powerful AI music generation platform that creates full songs with vocals, lyrics, and instrumentation from text descriptions. It produces studio-quality tracks across all genres with remarkable musicality and emotional expression.",
-    category: "audio", pricingModel: "freemium", rating: 4.5, reviewCount: 4200,
-    features: ["Full Song Generation", "Vocals & Instruments", "All Genres", "Lyrics Generation", "Remix & Extend"],
-    pros: ["Studio-quality output", "Great vocals", "All genres"], cons: ["Free credits limited", "Can be inconsistent"],
-    websiteUrl: "https://udio.com", affiliateUrl: "https://udio.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/udio.com",
-    tags: ["music", "songs", "generation", "audio", "creative"],
-    isFeatured: false, isTrending: true, alternatives: ["suno"],
-    submittedAt: "2025-05-01", updatedAt: "2026-06-01",
-  },
-  {
-    id: "57", slug: "photoroom", name: "Photoroom",
+    id: "55", slug: "photoroom", name: "Photoroom",
     description: "AI photo editor for e-commerce with background removal, product staging, and batch editing",
     longDescription: "Photoroom is an AI-powered photo editor built for e-commerce and product photography. It offers instant background removal, AI product staging, batch editing, and template-based image creation optimized for online stores and marketplaces.",
     category: "image", pricingModel: "freemium", rating: 4.5, reviewCount: 5500,
@@ -681,20 +713,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["remove-bg", "canva-ai"],
     submittedAt: "2025-03-10", updatedAt: "2026-05-20",
   },
+
   {
-    id: "58", slug: "vercel-sdk", name: "Vercel AI SDK",
-    description: "Open-source toolkit for building AI-powered web applications with React, Next.js, and any LLM",
-    longDescription: "Vercel AI SDK is an open-source toolkit that streamlines building AI-powered web applications. It provides hooks for chat interfaces, streaming responses, function calling, and works with any LLM provider through a unified API.",
-    category: "code", pricingModel: "free", rating: 4.6, reviewCount: 5100,
-    features: ["Chat UI Hooks", "Streaming", "Function Calling", "Multi-provider", "TypeScript"],
-    pros: ["Free and open source", "Excellent DX", "Works with any LLM"], cons: ["Requires coding knowledge", "React-focused"],
-    websiteUrl: "https://sdk.vercel.ai", affiliateUrl: "https://sdk.vercel.ai/?ref=topaitools", imageUrl: "https://icon.horse/icon/vercel.com",
-    tags: ["coding", "sdk", "ai", "react", "nextjs", "open-source"],
-    isFeatured: false, isTrending: true, alternatives: ["v0", "bolt"],
-    submittedAt: "2025-05-10", updatedAt: "2026-06-01",
-  },
-  {
-    id: "59", slug: "rowy", name: "Rowy",
+    id: "56", slug: "rowy", name: "Rowy",
     description: "AI-powered Firebase spreadsheet interface for building backend logic without coding",
     longDescription: "Rowy provides a spreadsheet-like interface for managing Firebase data with built-in AI capabilities. Build backend logic, cloud functions, and automations visually without writing code — perfect for no-code and low-code developers.",
     category: "code", pricingModel: "free", rating: 4.1, reviewCount: 2200,
@@ -705,8 +726,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["bolt", "replit"],
     submittedAt: "2025-04-15", updatedAt: "2026-05-18",
   },
+
   {
-    id: "60", slug: "d-id", name: "D-ID",
+    id: "57", slug: "d-id", name: "D-ID",
     description: "AI video platform creating realistic talking avatar videos from text and still images",
     longDescription: "D-ID's Creative Reality Studio lets you create AI-generated videos featuring realistic talking avatars. Upload a photo and text, and D-ID generates a video of the person speaking. Used for marketing, training, and personalized video messages.",
     category: "video", pricingModel: "freemium", rating: 4.2, reviewCount: 4100,
@@ -717,32 +739,35 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["heygen", "synthesia"],
     submittedAt: "2025-02-28", updatedAt: "2026-05-08",
   },
+
   {
-    id: "61", slug: "chatpdf", name: "ChatPDF",
-    description: "AI tool that lets you chat with any PDF document for instant answers and insights",
-    longDescription: "ChatPDF lets you upload any PDF document and interact with it using natural language. Ask questions, get summaries, extract key information, and navigate long documents instantly. Perfect for research papers, contracts, textbooks, and reports.",
-    category: "research", pricingModel: "freemium", rating: 4.3, reviewCount: 5800,
-    features: ["PDF Chat", "Summarization", "Q&A", "Multi-language", "Cross-document Analysis"],
-    pros: ["Very easy to use", "Fast responses", "Great for research"], cons: ["Free tier limited PDFs", "Large PDFs can be slow"],
-    websiteUrl: "https://chatpdf.com", affiliateUrl: "https://chatpdf.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/chatpdf.com",
-    tags: ["research", "pdf", "documents", "analysis", "productivity"],
-    isFeatured: false, isTrending: true, alternatives: ["perplexity", "consensus"],
-    submittedAt: "2025-03-01", updatedAt: "2026-05-25",
+    id: "58", slug: "chatpdf", name: "ChatPDF",
+    description: "Chat with any PDF document using AI — perfect for research papers and textbooks",
+    longDescription: "ChatPDF lets you upload any PDF and interact with it conversationally. It provides instant summaries, extracts key information, answers questions, and helps you understand complex documents. Perfect for students, researchers, and professionals.",
+    category: "research", pricingModel: "freemium", rating: 4.3, reviewCount: 8900,
+    features: ["PDF Chat", "Multi-language", "Summarization", "Citation Tracking", "Multi-document Chat"],
+    pros: ["Simple to use", "Great for academic papers", "Free tier generous"], cons: ["Limited to PDFs", "Occasional accuracy issues"],
+    websiteUrl: "https://www.chatpdf.com", imageUrl: "https://icon.horse/icon/chatpdf.com",
+    tags: ["pdf", "research", "documents", "education", "analysis"],
+    isFeatured: false, isTrending: false, alternatives: ["notebooklm", "perplexity"],
+    submittedAt: "2026-01-20", updatedAt: "2026-06-05",
   },
+
   {
-    id: "62", slug: "quillbot", name: "QuillBot",
-    description: "AI writing tool for paraphrasing, summarizing, grammar checking, and content enhancement",
-    longDescription: "QuillBot is an AI-powered writing assistant that helps improve your writing with paraphrasing, summarizing, grammar checking, and content expansion. It supports multiple modes including fluency, formal, and creative to match your desired tone.",
-    category: "text", pricingModel: "freemium", rating: 4.3, reviewCount: 8700,
-    features: ["Paraphrasing", "Summarization", "Grammar Check", "Plagiarism Detection", "Translator"],
-    pros: ["Great paraphrasing", "Multiple modes", "Browser extension"], cons: ["Character limits on free", "Can over-paraphrase"],
-    websiteUrl: "https://quillbot.com", affiliateUrl: "https://quillbot.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/quillbot.com",
-    tags: ["writing", "paraphrasing", "grammar", "summarization", "editing"],
-    isFeatured: false, isTrending: false, alternatives: ["grammarly", "jasper"],
-    submittedAt: "2025-01-25", updatedAt: "2026-05-12",
+    id: "59", slug: "quillbot", name: "QuillBot",
+    description: "AI paraphrasing and writing tool for rewriting, summarizing, and improving text",
+    longDescription: "QuillBot is a popular AI writing assistant specializing in paraphrasing, grammar checking, summarizing, and text improvement. It offers multiple writing modes, a synonym slider, and integrates with popular writing platforms like Google Docs and Microsoft Word.",
+    category: "text", pricingModel: "freemium", rating: 4.4, reviewCount: 11300,
+    features: ["Paraphrasing", "Grammar Check", "Summarizer", "Translator", "Citation Generator"],
+    pros: ["Great paraphrasing quality", "Browser extension", "Affordable"], cons: ["Limited free mode", "Can over-paraphrase"],
+    websiteUrl: "https://quillbot.com", imageUrl: "https://icon.horse/icon/quillbot.com",
+    tags: ["paraphrasing", "writing", "grammar", "summarizer", "education"],
+    isFeatured: false, isTrending: false, alternatives: ["grammarly", "jasper", "copy-ai"],
+    submittedAt: "2025-08-01", updatedAt: "2026-06-05",
   },
+
   {
-    id: "63", slug: "bigmp4", name: "BigMP4",
+    id: "60", slug: "bigmp4", name: "BigMP4",
     description: "AI-powered video quality enhancer that upscales and improves resolution of low-quality videos",
     longDescription: "BigMP4 uses AI to enhance and upscale video quality up to 4K. It can improve old footage, fix blurry videos, increase frame rates, and restore details in low-quality content. Used by content creators and filmmakers for video restoration.",
     category: "video", pricingModel: "freemium", rating: 4.1, reviewCount: 2900,
@@ -753,8 +778,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["kapwing", "runway"],
     submittedAt: "2025-05-01", updatedAt: "2026-05-28",
   },
+
   {
-    id: "64", slug: "recurse-chat", name: "RecurseChat",
+    id: "61", slug: "recurse-chat", name: "RecurseChat",
     description: "Privacy-focused AI chat client that runs entirely on your device with local LLM support",
     longDescription: "RecurseChat is a privacy-first AI chat application that runs completely on your device. It supports local LLM models through Ollama integration, ensuring your conversations never leave your computer. Ideal for sensitive work and privacy-conscious users.",
     category: "chatbot", pricingModel: "free", rating: 4.3, reviewCount: 1800,
@@ -765,8 +791,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["deepseek", "pi-ai"],
     submittedAt: "2025-05-15", updatedAt: "2026-06-01",
   },
+
   {
-    id: "65", slug: "eden-ai", name: "Eden AI",
+    id: "62", slug: "eden-ai", name: "Eden AI",
     description: "Unified API platform providing access to 70+ AI models from different providers in one interface",
     longDescription: "Eden AI aggregates 70+ AI models from various providers (OpenAI, Google, AWS, etc.) into a single API. Compare outputs, costs, and performance across models for text generation, image creation, speech, and more — all from one dashboard.",
     category: "code", pricingModel: "freemium", rating: 4.2, reviewCount: 2500,
@@ -777,8 +804,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["huggingface", "cursor"],
     submittedAt: "2025-04-25", updatedAt: "2026-05-30",
   },
+
   {
-    id: "66", slug: "copilot-workspace", name: "Copilot Workspace",
+    id: "63", slug: "copilot-workspace", name: "Copilot Workspace",
     description: "GitHub's AI-native developer environment that turns issues into pull requests with AI agents",
     longDescription: "Copilot Workspace is GitHub's task-oriented AI developer environment that can take a GitHub issue, create a plan, implement the code changes, and generate a pull request — all driven by natural language. It integrates deeply with repositories and understands codebase context.",
     category: "code", pricingModel: "freemium", rating: 4.3, reviewCount: 2800,
@@ -789,8 +817,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["github-copilot", "cursor"],
     submittedAt: "2025-04-20", updatedAt: "2026-06-01",
   },
+
   {
-    id: "67", slug: "dust", name: "Dust",
+    id: "64", slug: "dust", name: "Dust",
     description: "AI assistant builder for teams that creates custom chatbots powered by your company data",
     longDescription: "Dust lets teams build custom AI assistants connected to their own data sources like Notion, Google Drive, Slack, and databases. It provides secure, privacy-first AI chatbots that can answer questions based on internal knowledge without exposing data to public models.",
     category: "productivity", pricingModel: "freemium", rating: 4.2, reviewCount: 1900,
@@ -801,8 +830,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["notion-ai", "chatgpt"],
     submittedAt: "2025-03-25", updatedAt: "2026-05-15",
   },
+
   {
-    id: "68", slug: "tavily", name: "Tavily",
+    id: "65", slug: "tavily", name: "Tavily",
     description: "AI search API designed for LLM applications with real-time, accurate web results",
     longDescription: "Tavily is a search API purpose-built for AI agents and LLM applications. It delivers real-time, relevant, and structured search results optimized for AI consumption, making it the go-to choice for developers building AI-powered research and analysis tools.",
     category: "research", pricingModel: "freemium", rating: 4.5, reviewCount: 3100,
@@ -813,8 +843,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["perplexity", "consensus"],
     submittedAt: "2025-04-10", updatedAt: "2026-05-25",
   },
+
   {
-    id: "69", slug: "microsoft-copilot", name: "Microsoft Copilot",
+    id: "66", slug: "microsoft-copilot", name: "Microsoft Copilot",
     description: "Microsoft's AI assistant integrated across Office 365, Windows, and Edge for everyday productivity",
     longDescription: "Microsoft Copilot brings AI assistance to the tools millions of people already use daily — Word, Excel, PowerPoint, Outlook, and Windows. It leverages GPT-4 to help draft documents, analyze data, create presentations, and manage email, all within the Microsoft ecosystem.",
     category: "productivity", pricingModel: "freemium", rating: 4.4, reviewCount: 9500,
@@ -825,8 +856,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["notion-ai", "chatgpt"],
     submittedAt: "2025-02-15", updatedAt: "2026-05-30",
   },
+
   {
-    id: "70", slug: "krea-ai", name: "Krea AI",
+    id: "67", slug: "krea-ai", name: "Krea AI",
     description: "Real-time AI image generation and editing tool with an interactive canvas and style control",
     longDescription: "Krea AI offers a real-time, interactive canvas for AI image generation and editing. As you type or sketch, the AI generates and modifies images live on screen, giving artists and designers unprecedented creative control with instant visual feedback.",
     category: "image", pricingModel: "freemium", rating: 4.4, reviewCount: 3400,
@@ -837,8 +869,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["leonardo-ai", "stable-diffusion"],
     submittedAt: "2025-04-15", updatedAt: "2026-06-01",
   },
+
   {
-    id: "71", slug: "wondercraft-ai", name: "Wondercraft AI",
+    id: "68", slug: "wondercraft-ai", name: "Wondercraft AI",
     description: "AI-powered podcast production tool that creates full episodes with voices, music, and scripts from prompts",
     longDescription: "Wondercraft AI enables anyone to create professional podcast episodes from a single prompt or article. It automatically generates scripts, selects AI voices, adds background music, and produces a polished audio episode ready for distribution — no studio or recording equipment needed.",
     category: "audio", pricingModel: "freemium", rating: 4.3, reviewCount: 2100,
@@ -849,8 +882,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["podcastle", "suno"],
     submittedAt: "2025-03-10", updatedAt: "2026-05-20",
   },
+
   {
-    id: "72", slug: "poe", name: "Poe",
+    id: "69", slug: "poe", name: "Poe",
     description: "Quora's multi-model AI chat platform offering access to ChatGPT, Claude, Gemini, and more in one place",
     longDescription: "Poe by Quora is a unified AI chat platform that lets you access dozens of AI models including GPT-4, Claude, Gemini, Llama, and many others from a single interface. Create custom bots, compare model responses side-by-side, and discover community-built AI personalities.",
     category: "chatbot", pricingModel: "freemium", rating: 4.3, reviewCount: 5600,
@@ -861,8 +895,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["chatgpt", "claude"],
     submittedAt: "2025-02-20", updatedAt: "2026-06-01",
   },
+
   {
-    id: "73", slug: "supermaven", name: "Supermaven",
+    id: "70", slug: "supermaven", name: "Supermaven",
     description: "Ultra-fast AI code autocomplete with a 300,000-token context window for lightning-fast coding",
     longDescription: "Supermaven is an AI coding assistant known for its exceptional speed and massive 300,000-token context window. It provides near-instant code completions that understand your entire project, supporting all major IDEs with an emphasis on low-latency performance.",
     category: "code", pricingModel: "freemium", rating: 4.5, reviewCount: 2100,
@@ -873,8 +908,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["github-copilot", "windsurf"],
     submittedAt: "2025-04-25", updatedAt: "2026-06-01",
   },
+
   {
-    id: "74", slug: "vectors", name: "Vectara",
+    id: "71", slug: "vectors", name: "Vectara",
     description: "AI-powered semantic search and RAG platform for building custom search and Q&A applications",
     longDescription: "Vectara provides a powerful retrieval-augmented generation (RAG) platform that lets developers build custom search, Q&A, and conversational AI applications over their own data. It offers accurate semantic search with built-in LLM summarization and hallucination detection.",
     category: "research", pricingModel: "freemium", rating: 4.4, reviewCount: 2200,
@@ -885,8 +921,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["tavily", "perplexity"],
     submittedAt: "2025-04-20", updatedAt: "2026-05-28",
   },
+
   {
-    id: "75", slug: "clipdrop", name: "Clipdrop",
+    id: "72", slug: "clipdrop", name: "Clipdrop",
     description: "Stability AI's suite of AI image tools for editing, cleanup, relighting, and generation",
     longDescription: "Clipdrop by Stability AI provides a comprehensive suite of AI-powered image tools including background removal, image cleanup, relighting, upscaling, and generation. It integrates as a browser extension, mobile app, and web platform for seamless editing workflows.",
     category: "image", pricingModel: "freemium", rating: 4.3, reviewCount: 4600,
@@ -897,8 +934,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["photoroom", "remove-bg"],
     submittedAt: "2025-03-15", updatedAt: "2026-05-20",
   },
+
   {
-    id: "76", slug: "coze", name: "Coze",
+    id: "73", slug: "coze", name: "Coze",
     description: "Platform for building and deploying AI chatbots and agents without coding using visual workflows",
     longDescription: "Coze (by ByteDance) is a no-code platform for building AI chatbots and agents with visual workflow editing. Connect models, add plugins, set up knowledge bases, and deploy bots to multiple channels — all through an intuitive drag-and-drop interface.",
     category: "chatbot", pricingModel: "free", rating: 4.2, reviewCount: 3000,
@@ -909,8 +947,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["poe", "chatgpt"],
     submittedAt: "2025-05-01", updatedAt: "2026-06-01",
   },
+
   {
-    id: "77", slug: "dubverse-ai", name: "Dubverse AI",
+    id: "74", slug: "dubverse-ai", name: "Dubverse AI",
     description: "AI-powered video dubbing platform that translates and voices videos in 40+ languages with natural voices",
     longDescription: "Dubverse AI enables content creators and businesses to dub their videos into 40+ languages with AI-generated voices that match the original speaker's tone and emotion. It handles lip-sync, maintains natural pacing, and supports batch processing for large video libraries.",
     category: "video", pricingModel: "freemium", rating: 4.2, reviewCount: 2200,
@@ -921,20 +960,22 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["heygen", "synthesia"],
     submittedAt: "2025-04-01", updatedAt: "2026-05-18",
   },
+
   {
-    id: "78", slug: "zapier-ai", name: "Zapier AI",
-    description: "AI-powered automation platform that connects 6,000+ apps and creates workflows with natural language",
-    longDescription: "Zapier AI brings intelligent automation to the world's largest app integration platform. Describe what you want to automate in plain language, and Zapier creates the workflow connecting 6,000+ apps. It can suggest automations, explain complex Zaps, and troubleshoot issues.",
-    category: "productivity", pricingModel: "freemium", rating: 4.5, reviewCount: 7800,
-    features: ["Natural Language Automation", "6000+ App Integrations", "AI Suggestions", "Workflow Templates", "Error Handling"],
-    pros: ["Massive app ecosystem", "Easy no-code automation", "AI simplifies complex workflows"], cons: ["Expensive at scale", "Free tier very limited", "Complex Zaps need iteration"],
+    id: "75", slug: "zapier-ai", name: "Zapier AI",
+    description: "AI-powered workflow automation with natural language automation building",
+    longDescription: "Zapier's AI features let you describe automations in plain English and have them built automatically. Connect 6,000+ apps and create complex workflows without coding, powered by AI to suggest and optimize your automations.",
+    category: "productivity", pricingModel: "freemium", rating: 4.4, reviewCount: 8700,
+    features: ["Natural Language Automation", "6000+ App Integrations", "AI Suggestions", "Workflow Templates", "Conditional Logic"],
+    pros: ["Massive app ecosystem", "AI simplifies automation", "Reliable"], cons: ["Can get expensive", "Complex workflows need learning"],
     websiteUrl: "https://zapier.com", affiliateUrl: "https://zapier.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/zapier.com",
-    tags: ["productivity", "automation", "integration", "workflow", "no-code"],
-    isFeatured: false, isTrending: true, alternatives: ["notion-ai", "microsoft-copilot"],
-    submittedAt: "2025-02-01", updatedAt: "2026-05-25",
+    tags: ["automation", "integration", "workflow", "no-code", "productivity"],
+    isFeatured: false, isTrending: false, alternatives: ["make-automation", "ifttt"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-01",
   },
+
   {
-    id: "79", slug: "haiper-ai", name: "Haiper AI",
+    id: "76", slug: "haiper-ai", name: "Haiper AI",
     description: "AI video generation platform creating high-quality, stylistic short videos from text and images",
     longDescription: "Haiper AI is a next-generation video generation platform founded by former Google DeepMind researchers. It creates high-quality, stylistic short videos from text descriptions and images, with a focus on artistic control and consistency. The platform is designed to be accessible for creators of all skill levels.",
     category: "video", pricingModel: "freemium", rating: 4.2, reviewCount: 1900,
@@ -945,8 +986,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["luma-dream-machine", "runway"],
     submittedAt: "2025-04-30", updatedAt: "2026-05-28",
   },
+
   {
-    id: "80", slug: "pixlr", name: "Pixlr",
+    id: "77", slug: "pixlr", name: "Pixlr",
     description: "AI-powered online photo editor with one-click effects, background removal, and design tools",
     longDescription: "Pixlr is a browser-based photo editor powered by AI that offers a full range of editing tools, one-click AI effects, background removal, and templates. With both a quick-edit and advanced editor, it is accessible for beginners and powerful enough for experienced designers.",
     category: "image", pricingModel: "freemium", rating: 4.2, reviewCount: 5100,
@@ -957,8 +999,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["photoroom", "adobe-firefly"],
     submittedAt: "2025-01-20", updatedAt: "2026-05-15",
   },
+
   {
-    id: "81", slug: "codiumai", name: "CodiumAI",
+    id: "78", slug: "codiumai", name: "CodiumAI",
     description: "AI-powered code testing tool that automatically generates meaningful test suites for your codebase",
     longDescription: "CodiumAI (now Qodo) analyzes your code and automatically generates meaningful test suites that cover edge cases and real-world scenarios. It suggests which tests to write, generates them, and helps you achieve better code coverage with less manual effort.",
     category: "code", pricingModel: "freemium", rating: 4.3, reviewCount: 2400,
@@ -969,8 +1012,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["github-copilot", "cursor"],
     submittedAt: "2025-03-05", updatedAt: "2026-05-15",
   },
+
   {
-    id: "82", slug: "semanticscholar", name: "Semantic Scholar",
+    id: "79", slug: "semanticscholar", name: "Semantic Scholar",
     description: "AI-enhanced academic search engine by Allen Institute for finding relevant research papers",
     longDescription: "Semantic Scholar is a free, AI-powered academic search engine developed by the Allen Institute for AI. It uses natural language processing to help researchers find relevant papers, understand citation context, and discover influential research across all scientific disciplines.",
     category: "research", pricingModel: "free", rating: 4.6, reviewCount: 4800,
@@ -981,8 +1025,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["consensus", "perplexity"],
     submittedAt: "2025-01-20", updatedAt: "2026-05-30",
   },
+
   {
-    id: "83", slug: "elevenlabs-music", name: "ElevenLabs Music",
+    id: "80", slug: "elevenlabs-music", name: "ElevenLabs Music",
     description: "AI music and sound effects generator creating custom tracks, jingles, and audio for any project",
     longDescription: "ElevenLabs Music extends ElevenLabs' AI audio capabilities into music and sound effects generation. Create custom music tracks, jingles, background music, and sound effects from text descriptions — perfect for videos, podcasts, games, and presentations.",
     category: "audio", pricingModel: "freemium", rating: 4.2, reviewCount: 1800,
@@ -993,8 +1038,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["suno", "udio"],
     submittedAt: "2025-05-01", updatedAt: "2026-06-01",
   },
+
   {
-    id: "84", slug: "magician-for-figma", name: "Magician for Figma",
+    id: "81", slug: "magician-for-figma", name: "Magician for Figma",
     description: "Figma plugin suite with AI-powered design generation, icon creation, and copywriting tools",
     longDescription: "Magician is a popular Figma plugin suite that brings AI capabilities directly into the Figma design tool. Generate icons, write copy, generate images, and get design suggestions — all within your Figma workspace through a magical wand interface.",
     category: "design", pricingModel: "freemium", rating: 4.4, reviewCount: 3800,
@@ -1005,20 +1051,22 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["figma-ai", "canva-ai"],
     submittedAt: "2025-02-25", updatedAt: "2026-05-22",
   },
+
   {
-    id: "85", slug: "lovo", name: "Lovo AI",
-    description: "AI voiceover platform with 500+ realistic voices for ads, videos, podcasts, and e-learning",
-    longDescription: "Lovo AI (Genny) provides a comprehensive AI voiceover platform with over 500 natural-sounding voices in 100 languages. It includes a built-in video editor, sound effects library, and emotion control — making it a one-stop shop for professional voiceover production.",
-    category: "audio", pricingModel: "freemium", rating: 4.3, reviewCount: 3200,
-    features: ["500+ Voices", "100 Languages", "Built-in Video Editor", "Sound Effects", "Emotion Control"],
-    pros: ["Huge voice library", "Built-in editor", "Emotion settings"], cons: ["Expensive for full access", "Free tier watermarked", "Can sound unnatural sometimes"],
-    websiteUrl: "https://lovo.ai", affiliateUrl: "https://lovo.ai/?ref=topaitools", imageUrl: "https://icon.horse/icon/lovo.ai",
-    tags: ["audio", "voiceover", "tts", "video", "e-learning"],
+    id: "82", slug: "lovo", name: "Lovo AI",
+    description: "AI voice platform with 500+ voices for ads, podcasts, and content creation",
+    longDescription: "Lovo AI (Genny) is a comprehensive AI voice platform offering 500+ voices in 100 languages. It combines text-to-speech, voice cloning, video editing, and sound effects in one platform, making it ideal for ads, podcasts, audiobooks, and social media content.",
+    category: "audio", pricingModel: "freemium", rating: 4.2, reviewCount: 3600,
+    features: ["500+ Voices", "Voice Cloning", "Video Editor", "Sound Effects", "100 Languages"],
+    pros: ["Huge voice library", "All-in-one platform", "Good quality"], cons: ["Expensive premium plan", "UI can be complex"],
+    websiteUrl: "https://lovo.ai", imageUrl: "https://icon.horse/icon/lovo.ai",
+    tags: ["voiceover", "text-to-speech", "podcast", "ads", "content"],
     isFeatured: false, isTrending: false, alternatives: ["elevenlabs", "murf-ai"],
-    submittedAt: "2025-02-20", updatedAt: "2026-05-15",
+    submittedAt: "2025-09-10", updatedAt: "2026-06-05",
   },
+
   {
-    id: "86", slug: "tldr-this", name: "TLDR This",
+    id: "83", slug: "tldr-this", name: "TLDR This",
     description: "AI-powered article summarizer that extracts key points from web pages and long-form content",
     longDescription: "TLDR This automatically summarizes any article, web page, or document into concise, easy-to-digest summaries. It extracts key sentences, eliminates fluff, and presents the essential information — perfect for students, researchers, and busy professionals who need to quickly grasp content.",
     category: "research", pricingModel: "freemium", rating: 4.2, reviewCount: 3600,
@@ -1029,8 +1077,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["chatpdf", "perplexity"],
     submittedAt: "2025-02-15", updatedAt: "2026-05-12",
   },
+
   {
-    id: "87", slug: "excelformulabot", name: "ExcelFormulaBot",
+    id: "84", slug: "excelformulabot", name: "ExcelFormulaBot",
     description: "AI tool that generates Excel and Google Sheets formulas from plain English descriptions",
     longDescription: "ExcelFormulaBot translates plain English instructions into Excel and Google Sheets formulas instantly. Whether you need a VLOOKUP, complex nested IF statement, or custom data analysis formula, just describe what you need and get the correct formula with an explanation.",
     category: "productivity", pricingModel: "freemium", rating: 4.3, reviewCount: 4200,
@@ -1041,8 +1090,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["notion-ai", "chatgpt"],
     submittedAt: "2025-02-10", updatedAt: "2026-05-12",
   },
+
   {
-    id: "88", slug: "genspark", name: "Genspark",
+    id: "85", slug: "genspark", name: "Genspark",
     description: "AI search engine that generates custom Sparkpages for any query with synthesized, cited information",
     longDescription: "Genspark is an AI-powered search engine that creates custom, dynamic pages called Sparkpages for any query. Each Sparkpage synthesizes information from multiple sources with citations, comparisons, and structured data — providing a comprehensive, Wikipedia-style answer for any topic.",
     category: "research", pricingModel: "free", rating: 4.3, reviewCount: 2700,
@@ -1053,8 +1103,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["perplexity", "chatpdf"],
     submittedAt: "2025-05-10", updatedAt: "2026-06-01",
   },
+
   {
-    id: "89", slug: "rival-ai", name: "Rival AI",
+    id: "86", slug: "rival-ai", name: "Rival AI",
     description: "AI-powered competitor monitoring tool that tracks brand mentions, pricing, and marketing strategies",
     longDescription: "Rival AI automates competitive intelligence by tracking competitor websites, social media, pricing changes, and marketing campaigns. It delivers AI-generated insights and alerts so businesses can respond quickly to market shifts and competitive threats.",
     category: "research", pricingModel: "paid", rating: 4.1, reviewCount: 1400,
@@ -1065,8 +1116,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["uscope", "perplexity"],
     submittedAt: "2025-03-20", updatedAt: "2026-05-18",
   },
+
   {
-    id: "90", slug: "afforai", name: "Afforai",
+    id: "87", slug: "afforai", name: "Afforai",
     description: "AI research assistant that reads, summarizes, and analyzes documents and web pages for researchers",
     longDescription: "Afforai is a research-focused AI tool that can ingest documents, web pages, and papers to provide accurate, cited summaries and answers. It is designed for students, academics, and professionals who need to quickly extract insights from large volumes of information.",
     category: "research", pricingModel: "freemium", rating: 4.2, reviewCount: 2800,
@@ -1077,8 +1129,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["chatpdf", "perplexity"],
     submittedAt: "2025-04-10", updatedAt: "2026-05-20",
   },
+
   {
-    id: "91", slug: "khroma", name: "Khroma",
+    id: "88", slug: "khroma", name: "Khroma",
     description: "AI color tool that learns your preferences and generates personalized color palettes for design projects",
     longDescription: "Khroma uses AI to learn your color preferences and generate beautiful, personalized color palettes, gradients, and typography pairings. The more you interact with it, the better it gets at suggesting colors that match your aesthetic — invaluable for designers and brand builders.",
     category: "design", pricingModel: "free", rating: 4.2, reviewCount: 2100,
@@ -1089,8 +1142,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["canva-ai", "figma-ai"],
     submittedAt: "2025-03-20", updatedAt: "2026-05-15",
   },
+
   {
-    id: "92", slug: "pencil-ai", name: "Pencil AI",
+    id: "89", slug: "pencil-ai", name: "Pencil AI",
     description: "AI-powered ad creative platform that generates and tests high-performing marketing visuals at scale",
     longDescription: "Pencil AI helps brands and agencies generate ad creatives at scale using AI. It creates multiple design variations, predicts performance, and enables rapid A/B testing — turning weeks of creative work into hours. Trusted by major brands for their digital advertising.",
     category: "design", pricingModel: "paid", rating: 4.3, reviewCount: 2600,
@@ -1101,8 +1155,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["canva-ai", "adobe-firefly"],
     submittedAt: "2025-03-15", updatedAt: "2026-05-25",
   },
+
   {
-    id: "93", slug: "featherless", name: "Featherless AI",
+    id: "90", slug: "featherless", name: "Featherless AI",
     description: "Serverless platform for running open-source LLMs at scale without managing infrastructure",
     longDescription: "Featherless AI is a serverless inference platform that lets developers and researchers run open-source large language models without managing GPU infrastructure. It supports thousands of models from Hugging Face with fast, cost-effective inference and automatic scaling.",
     category: "code", pricingModel: "freemium", rating: 4.1, reviewCount: 1500,
@@ -1113,20 +1168,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: true, alternatives: ["huggingface", "eden-ai"],
     submittedAt: "2025-05-10", updatedAt: "2026-06-01",
   },
+
   {
-    id: "94", slug: "jasper-ai", name: "Jasper AI",
-    description: "Enterprise AI marketing platform for creating on-brand content, ads, and campaigns at scale",
-    longDescription: "Jasper AI is the leading enterprise AI content platform that helps marketing teams create on-brand content across every channel. With brand voice training, campaign management, and collaboration features, it ensures consistent, high-quality content at scale.",
-    category: "text", pricingModel: "paid", rating: 4.4, reviewCount: 6800,
-    features: ["Brand Voice", "Campaign Builder", "Team Collaboration", "Template Library", "SEO Optimization"],
-    pros: ["Enterprise-grade features", "Brand consistency", "Many integrations"], cons: ["Expensive for individuals", "Learning curve", "Requires subscription"],
-    websiteUrl: "https://jasper.ai", affiliateUrl: "https://jasper.ai/?ref=topaitools", imageUrl: "https://icon.horse/icon/jasper.ai",
-    tags: ["writing", "marketing", "enterprise", "branding", "content"],
-    isFeatured: false, isTrending: false, alternatives: ["copy-ai", "writesonic"],
-    submittedAt: "2025-01-20", updatedAt: "2026-05-05",
-  },
-  {
-    id: "95", slug: "wized", name: "Wized",
+    id: "91", slug: "wized", name: "Wized",
     description: "AI-powered no-code backend builder that creates serverless APIs and database logic from natural language",
     longDescription: "Wized is a no-code backend platform that lets users create serverless APIs, database schemas, and authentication systems using natural language. It bridges the gap between front-end design tools like Webflow and powerful backend logic without writing code.",
     category: "code", pricingModel: "freemium", rating: 4.0, reviewCount: 1200,
@@ -1137,8 +1181,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["bolt", "replit"],
     submittedAt: "2025-04-20", updatedAt: "2026-05-20",
   },
+
   {
-    id: "96", slug: "freedcamp", name: "Freedcamp",
+    id: "92", slug: "freedcamp", name: "Freedcamp",
     description: "Project management platform with AI-powered task automation and team collaboration features",
     longDescription: "Freedcamp is a comprehensive project management platform enhanced with AI capabilities. It automates task creation, provides smart scheduling, generates project summaries, and offers team collaboration tools including chat, file sharing, and time tracking — all in one workspace.",
     category: "productivity", pricingModel: "freemium", rating: 4.2, reviewCount: 3400,
@@ -1149,8 +1194,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["notion-ai", "gamma"],
     submittedAt: "2025-02-10", updatedAt: "2026-05-12",
   },
+
   {
-    id: "97", slug: "img2go", name: "Img2Go",
+    id: "93", slug: "img2go", name: "Img2Go",
     description: "AI-powered image conversion and enhancement tool for resizing, compressing, and transforming images",
     longDescription: "Img2Go offers a comprehensive suite of AI-powered image tools including format conversion, compression, resizing, background removal, and image enhancement. It handles batch processing and supports dozens of formats, making it a go-to tool for quick image optimization.",
     category: "image", pricingModel: "freemium", rating: 4.0, reviewCount: 3200,
@@ -1161,8 +1207,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["remove-bg", "photoroom"],
     submittedAt: "2025-03-01", updatedAt: "2026-05-10",
   },
+
   {
-    id: "98", slug: "headlime", name: "Headlime",
+    id: "94", slug: "headlime", name: "Headlime",
     description: "AI landing page builder that generates high-converting copy and page designs from a description",
     longDescription: "Headlime uses AI to generate complete landing pages with compelling copy and professional designs. Describe your product or service, and Headlime creates headlines, body text, CTAs, and full page layouts optimized for conversions — perfect for marketers and startups.",
     category: "text", pricingModel: "freemium", rating: 4.0, reviewCount: 1800,
@@ -1173,8 +1220,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["copy-ai", "writesonic"],
     submittedAt: "2025-03-01", updatedAt: "2026-05-10",
   },
+
   {
-    id: "99", slug: "resemble-ai", name: "Resemble AI",
+    id: "95", slug: "resemble-ai", name: "Resemble AI",
     description: "Enterprise AI voice platform for generating ultra-realistic custom voice clones and speech synthesis",
     longDescription: "Resemble AI specializes in enterprise-grade voice cloning and speech synthesis. Clone a voice from just a few minutes of audio, generate speech in multiple languages, and integrate via API for call centers, gaming, marketing, and accessibility applications.",
     category: "audio", pricingModel: "freemium", rating: 4.3, reviewCount: 1800,
@@ -1185,8 +1233,9 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["elevenlabs", "playHT"],
     submittedAt: "2025-03-15", updatedAt: "2026-05-18",
   },
+
   {
-    id: "100", slug: "felo-search", name: "Felo",
+    id: "96", slug: "felo-search", name: "Felo",
     description: "AI-powered real-time search engine with multi-language support and cited answers",
     longDescription: "Felo is an AI-powered real-time search engine that provides cited, accurate answers across multiple languages. It combines large language models with real-time web search to deliver trustworthy information with source attribution.",
     category: "research", pricingModel: "free", rating: 4.1, reviewCount: 2100,
@@ -1197,6 +1246,240 @@ export const tools: Tool[] = [
     isFeatured: false, isTrending: false, alternatives: ["perplexity", "tavily"],
     submittedAt: "2025-05-05", updatedAt: "2026-05-25",
   },
+
+  {
+    id: "97", slug: "notebooklm", name: "NotebookLM",
+    description: "Google's AI research assistant that turns your documents into podcasts and study guides",
+    longDescription: "NotebookLM is Google's AI-powered research tool that lets you upload documents, notes, and sources, then generates summaries, study guides, and even podcast-style audio overviews. It's designed for students, researchers, and professionals.",
+    category: "research", pricingModel: "free", rating: 4.6, reviewCount: 5200,
+    features: ["Document Analysis", "Podcast Generation", "Study Guides", "Source Citation", "Audio Overview"],
+    pros: ["Completely free", "Unique podcast feature", "Google integration"], cons: ["Limited to Google ecosystem", "Basic AI capabilities"],
+    websiteUrl: "https://notebooklm.google.com", affiliateUrl: "https://notebooklm.google.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/google.com",
+    tags: ["research", "study", "podcast", "documents", "google"],
+    isFeatured: true, isTrending: true, alternatives: ["perplexity", "chatgpt"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-01",
+  },
+
+  {
+    id: "98", slug: "julius-ai", name: "Julius AI",
+    description: "AI data analysis tool that creates charts, graphs, and insights from your data",
+    longDescription: "Julius AI is an intelligent data analysis tool that lets you upload spreadsheets and datasets, then uses AI to generate visualizations, statistical analyses, and actionable insights — all through natural language conversation.",
+    category: "productivity", pricingModel: "freemium", rating: 4.3, reviewCount: 1900,
+    features: ["Data Visualization", "Statistical Analysis", "Chat Interface", "Chart Generation", "CSV/Excel Support"],
+    pros: ["Easy to use", "No coding needed", "Good visualizations"], cons: ["Limited advanced statistics", "File size limits"],
+    websiteUrl: "https://julius.ai", affiliateUrl: "https://julius.ai/?ref=topaitools", imageUrl: "https://icon.horse/icon/julius.ai",
+    tags: ["data", "analytics", "charts", "visualization", "spreadsheet"],
+    isFeatured: false, isTrending: false, alternatives: ["chatgpt-code-interpreter", "notion-ai"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-01",
+  },
+
+  {
+    id: "99", slug: "loom-ai", name: "Loom AI",
+    description: "AI-powered video messaging with auto-titles, chapters, and summaries",
+    longDescription: "Loom AI enhances video communication with AI-generated titles, chapter markers, summaries, and to-dos from your video recordings. It makes async video communication more efficient and searchable.",
+    category: "productivity", pricingModel: "freemium", rating: 4.4, reviewCount: 3100,
+    features: ["Auto Chapters", "Video Summaries", "AI Titles", "To-Do Extraction", "Transcription"],
+    pros: ["Great for remote teams", "Saves time", "Easy to share"], cons: ["Free tier limited", "Requires Loom account"],
+    websiteUrl: "https://www.loom.com", affiliateUrl: "https://www.loom.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/loom.com",
+    tags: ["video", "communication", "async", "productivity", "transcription"],
+    isFeatured: false, isTrending: false, alternatives: ["otter-ai", "fireflies"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-01",
+  },
+
+  {
+    id: "100", slug: "flux-pro", name: "Flux Pro",
+    description: "Black Forest Labs' high-quality image model with exceptional prompt adherence",
+    longDescription: "Flux Pro by Black Forest Labs (founded by Stability AI creators) is a state-of-the-art image generation model known for exceptional prompt adherence, photorealism, and text rendering. Available through various partners.",
+    category: "image", pricingModel: "freemium", rating: 4.6, reviewCount: 2600,
+    features: ["Photorealism", "Text Rendering", "Prompt Adherence", "High Resolution", "API Access"],
+    pros: ["Excellent quality", "Good text rendering", "Strong prompt following"], cons: ["Limited free access", "Not standalone app"],
+    websiteUrl: "https://blackforestlabs.ai", affiliateUrl: "https://blackforestlabs.ai/?ref=topaitools", imageUrl: "https://icon.horse/icon/blackforestlabs.ai",
+    tags: ["images", "photorealism", "text", "creative", "open-source"],
+    isFeatured: false, isTrending: true, alternatives: ["midjourney", "ideogram", "stable-diffusion"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-01",
+  },
+
+  {
+    id: "101", slug: "pollinations", name: "Pollinations AI",
+    description: "Completely free, open-source AI image generation with no sign-up required",
+    longDescription: "Pollinations AI offers free, open-source AI image generation through a simple URL-based API. No sign-up, no API keys, no limits — just describe what you want and get images. Perfect for developers and casual users alike.",
+    category: "image", pricingModel: "free", rating: 4.1, reviewCount: 1800,
+    features: ["Free Generation", "No Sign-Up", "URL API", "Open Source", "Unlimited Use"],
+    pros: ["Completely free", "No account needed", "Simple API"], cons: ["Lower quality than paid tools", "Limited control"],
+    websiteUrl: "https://pollinations.ai", affiliateUrl: "https://pollinations.ai/?ref=topaitools", imageUrl: "https://icon.horse/icon/pollinations.ai",
+    tags: ["images", "free", "open-source", "api", "generative"],
+    isFeatured: false, isTrending: false, alternatives: ["stable-diffusion", "ideogram"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-01",
+  },
+
+  {
+    id: "102", slug: "codeium", name: "Codeium",
+    description: "Free AI coding assistant with autocomplete and chat across 70+ languages",
+    longDescription: "Codeium is a free AI coding assistant that provides intelligent code autocomplete, search, and chat across 70+ programming languages and 40+ IDEs. It offers a generous free tier that rivals paid alternatives.",
+    category: "code", pricingModel: "free", rating: 4.4, reviewCount: 3400,
+    features: ["Code Autocomplete", "AI Chat", "70+ Languages", "40+ IDEs", "Enterprise Support"],
+    pros: ["Generous free tier", "Wide language support", "Fast"], cons: ["Less powerful than Cursor", "No multi-file editing in free tier"],
+    websiteUrl: "https://codeium.com", affiliateUrl: "https://codeium.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/codeium.com",
+    tags: ["autocomplete", "ide", "coding", "free", "developer"],
+    isFeatured: false, isTrending: false, alternatives: ["copilot", "windsurf", "cursor"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-01",
+  },
+
+  {
+    id: "103", slug: "sanalabs", name: "Sana Labs",
+    description: "AI learning platform that creates personalized courses and training content",
+    longDescription: "Sana Labs is an AI-powered learning and knowledge platform used by enterprises to create interactive courses, assessments, and training materials. It personalizes learning paths and tracks employee progress with AI-driven insights.",
+    category: "productivity", pricingModel: "paid", rating: 4.3, reviewCount: 1200,
+    features: ["AI Course Creation", "Interactive Learning", "Assessments", "Progress Tracking", "Enterprise Features"],
+    pros: ["Powerful AI course builder", "Enterprise-ready", "Interactive content"], cons: ["Enterprise pricing", "Complex setup"],
+    websiteUrl: "https://www.sanalabs.com", affiliateUrl: "https://www.sanalabs.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/sanalabs.com",
+    tags: ["learning", "education", "training", "enterprise", "courses"],
+    isFeatured: false, isTrending: false, alternatives: ["coursera", "udemy"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-01",
+  },
+
+  {
+    id: "104", slug: "udio", name: "Udio",
+    description: "AI music generation platform creating studio-quality songs with vocals and instruments from text",
+    longDescription: "Udio is a powerful AI music generation platform that creates full songs with vocals, lyrics, and instrumentation from text descriptions. It produces studio-quality tracks across all genres with remarkable musicality and emotional expression.",
+    category: "audio", pricingModel: "freemium", rating: 4.5, reviewCount: 4200,
+    features: ["Full Song Generation", "Vocals & Instruments", "All Genres", "Lyrics Generation", "Remix & Extend"],
+    pros: ["Studio-quality output", "Great vocals", "All genres"], cons: ["Free credits limited", "Can be inconsistent"],
+    websiteUrl: "https://udio.com", affiliateUrl: "https://udio.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/udio.com",
+    tags: ["music", "songs", "generation", "audio", "creative"],
+    isFeatured: false, isTrending: true, alternatives: ["suno"],
+    submittedAt: "2025-05-01", updatedAt: "2026-06-01",
+  },
+
+  {
+    id: "105", slug: "firecrawl", name: "Firecrawl",
+    description: "Turn any website into clean, structured data with AI-powered web scraping",
+    longDescription: "Firecrawl is an AI web scraping API that converts websites into clean markdown, structured data, or screenshots. It handles JavaScript rendering, pagination, and anti-bot protection, making it ideal for AI applications that need web data.",
+    category: "code", pricingModel: "freemium", rating: 4.6, reviewCount: 2100,
+    features: ["Markdown Conversion", "JavaScript Rendering", "Sitemap Extraction", "Batch Crawling", "API Access"],
+    pros: ["Excellent data quality", "Handles complex sites", "Great API"], cons: ["Credit-based pricing", "Can be slow on large sites"],
+    websiteUrl: "https://www.firecrawl.dev", imageUrl: "https://icon.horse/icon/firecrawl.dev",
+    tags: ["scraping", "api", "data", "web", "developer"],
+    isFeatured: false, isTrending: true, alternatives: ["perplexity", "tavily"],
+    submittedAt: "2026-01-15", updatedAt: "2026-06-05",
+  },
+
+  {
+    id: "106", slug: "lemonsqueezy", name: "Lemon Squeezy",
+    description: "All-in-one platform for selling digital products with AI-powered merchant of record",
+    longDescription: "Lemon Squeezy is a comprehensive e-commerce platform for selling digital products, SaaS subscriptions, and online services. It handles payments, taxes, compliance, and delivery — making it easy for creators and developers to sell globally.",
+    category: "productivity", pricingModel: "freemium", rating: 4.5, reviewCount: 3200,
+    features: ["Payment Processing", "Tax Handling", "Subscription Management", "Checkout Pages", "Analytics"],
+    pros: ["Handles global taxes", "Easy setup", "Great for SaaS"], cons: ["Transaction fees", "Limited customization"],
+    websiteUrl: "https://www.lemonsqueezy.com", imageUrl: "https://icon.horse/icon/lemonsqueezy.com",
+    tags: ["payments", "ecommerce", "saas", "digital-products", "business"],
+    isFeatured: false, isTrending: false, alternatives: ["stripe", "gumroad"],
+    submittedAt: "2026-01-10", updatedAt: "2026-06-05",
+  },
+
+  {
+    id: "107", slug: "veed-io", name: "Veed.io",
+    description: "Online video editor with AI features for auto-subtitles, editing, and enhancement",
+    longDescription: "Veed.io is a browser-based video editor that makes professional video editing accessible to everyone. With AI-powered features like auto-subtitles, eye contact correction, background removal, and one-click translations, it's perfect for content creators and businesses.",
+    category: "video", pricingModel: "freemium", rating: 4.4, reviewCount: 7600,
+    features: ["Auto Subtitles", "Eye Contact AI", "Background Removal", "Screen Recorder", "Translation"],
+    pros: ["Browser-based", "Easy to use", "Great AI features"], cons: ["Watermark on free", "Rendering can be slow"],
+    websiteUrl: "https://www.veed.io", imageUrl: "https://icon.horse/icon/veed.io",
+    tags: ["video-editing", "subtitles", "content-creation", "online-editor"],
+    isFeatured: false, isTrending: false, alternatives: ["descript", "capcut"],
+    submittedAt: "2025-10-05", updatedAt: "2026-06-05",
+  },
+
+  {
+    id: "108", slug: "krakenai", name: "Kraken AI",
+    description: "AI-powered image upscaler and enhancer for stunning high-resolution results",
+    longDescription: "Kraken AI specializes in AI-powered image upscaling and enhancement. It can increase image resolution up to 8x while maintaining quality, remove artifacts, enhance details, and restore old or low-quality photos.",
+    category: "image", pricingModel: "freemium", rating: 4.3, reviewCount: 2900,
+    features: ["8x Upscaling", "Artifact Removal", "Face Enhancement", "Batch Processing", "API Access"],
+    pros: ["Excellent upscaling quality", "Fast processing", "Affordable"], cons: ["Limited free uses", "Single purpose"],
+    websiteUrl: "https://www.kraken.ai", imageUrl: "https://icon.horse/icon/kraken.ai",
+    tags: ["upscaling", "image-enhancement", "photo", "resolution", "design"],
+    isFeatured: false, isTrending: false, alternatives: ["topaz-gigapixel", "remini"],
+    submittedAt: "2026-03-01", updatedAt: "2026-06-05",
+  },
+
+  {
+    id: "109", slug: "calendly-ai", name: "Calendly",
+    description: "AI-powered scheduling assistant that eliminates back-and-forth to find meeting times",
+    longDescription: "Calendly uses AI to intelligently schedule meetings, detect scheduling conflicts, suggest optimal meeting times, and automate workflow integrations. It connects with your calendar, email, and video conferencing tools for seamless scheduling.",
+    category: "productivity", pricingModel: "freemium", rating: 4.5, reviewCount: 9800,
+    features: ["Smart Scheduling", "Conflict Detection", "Team Scheduling", "Workflow Automation", "Integrations"],
+    pros: ["Eliminates scheduling hassle", "Great integrations", "Free tier solid"], cons: ["Limited AI features on free", "Can feel rigid"],
+    websiteUrl: "https://calendly.com", imageUrl: "https://icon.horse/icon/calendly.com",
+    tags: ["scheduling", "meetings", "calendar", "automation", "business"],
+    isFeatured: false, isTrending: false, alternatives: ["clockwise", "reclaim"],
+    submittedAt: "2025-06-01", updatedAt: "2026-06-05",
+  },
+
+  {
+    id: "110", slug: "aiva", name: "AIVA",
+    description: "AI music composer for creating original soundtracks, film scores, and classical music",
+    longDescription: "AIVA is an AI music composition tool that specializes in creating original soundtracks, film scores, and classical music. It generates MIDI compositions that can be further edited in any DAW, making it a powerful tool for composers and content creators.",
+    category: "audio", pricingModel: "freemium", rating: 4.2, reviewCount: 2100,
+    features: ["Film Scoring", "Classical Composition", "MIDI Export", "Custom Styles", "DAW Integration"],
+    pros: ["Excellent for orchestral music", "MIDI export for editing", "Free for personal use"], cons: ["Limited genre variety", "Learning curve"],
+    websiteUrl: "https://www.aiva.ai", imageUrl: "https://icon.horse/icon/aiva.ai",
+    tags: ["music", "composition", "film-scoring", "classical", "audio"],
+    isFeatured: false, isTrending: false, alternatives: ["suno", "udio", "soundraw"],
+    submittedAt: "2025-11-20", updatedAt: "2026-06-05",
+  },
+
+  {
+    id: "111", slug: "soundraw", name: "Soundraw",
+    description: "Create customizable royalty-free music beats and instrumentals with AI",
+    longDescription: "Soundraw is an AI music generator focused on creating customizable beats and instrumentals. Unlike other AI music tools, it doesn't generate vocals — instead, it excels at producing clean, adjustable background music perfect for videos, podcasts, and content creation.",
+    category: "audio", pricingModel: "paid", rating: 4.3, reviewCount: 1800,
+    features: ["Beat Generation", "Instrument Customization", "Mood Control", "Royalty-Free", "Unlimited Downloads"],
+    pros: ["Royalty-free forever", "Great for content creators", "Customizable"], cons: ["No vocals", "Limited genres"],
+    websiteUrl: "https://soundraw.io", imageUrl: "https://icon.horse/icon/soundraw.io",
+    tags: ["music", "beats", "instrumental", "royalty-free", "content-creation"],
+    isFeatured: false, isTrending: false, alternatives: ["suno", "udio", "aiva"],
+    submittedAt: "2026-02-15", updatedAt: "2026-06-05",
+  },
+
+  {
+    id: "112", slug: "headshotpro", name: "HeadshotPro",
+    description: "AI professional headshot generator — studio-quality portraits from selfies",
+    longDescription: "HeadshotPro creates professional AI-generated headshots from your uploaded selfies. It produces 4K quality portraits in multiple styles — corporate, creative, and casual — perfect for LinkedIn, company websites, and professional portfolios.",
+    category: "image", pricingModel: "paid", rating: 4.4, reviewCount: 5800,
+    features: ["4K Quality", "Multiple Styles", "Fast Turnaround", "Background Options", "Outfit Changes"],
+    pros: ["Professional quality", "Fast results", "Multiple styles"], cons: ["One-time purchase per session", "Results vary"],
+    websiteUrl: "https://www.headshotpro.com", imageUrl: "https://icon.horse/icon/headshotpro.com",
+    tags: ["headshots", "photography", "professional", "portrait", "ai"],
+    isFeatured: false, isTrending: false, alternatives: ["photoroom", "remove-bg"],
+    submittedAt: "2026-01-25", updatedAt: "2026-06-05",
+  },
+
+  {
+    id: "113", slug: "exa-ai", name: "Exa AI",
+    description: "AI-powered search engine that understands intent and finds exactly what you need",
+    longDescription: "Exa AI (formerly Metaphor) is an AI-native search engine that understands the meaning behind queries rather than just matching keywords. It's designed for researchers, developers, and anyone who needs precise, high-quality search results powered by neural search.",
+    category: "research", pricingModel: "freemium", rating: 4.4, reviewCount: 1900,
+    features: ["Semantic Search", "Content Filtering", "API Access", "Real-time Crawling", "Neural Embeddings"],
+    pros: ["Unique semantic approach", "Excellent for research", "Good API"], cons: ["Limited general search", "Niche use case"],
+    websiteUrl: "https://exa.ai", imageUrl: "https://icon.horse/icon/exa.ai",
+    tags: ["search", "semantic", "api", "research", "developer"],
+    isFeatured: false, isTrending: false, alternatives: ["perplexity", "tavily", "firecrawl"],
+    submittedAt: "2026-03-10", updatedAt: "2026-06-05",
+  },
+
+  {
+    id: "114", slug: "replicate", name: "Replicate",
+    description: "Run open-source AI models in the cloud with a simple API — no infrastructure needed",
+    longDescription: "Replicate lets developers run any open-source AI model in the cloud through a simple API. From image generation to speech synthesis, language models to video creation — spin up any model in seconds without managing servers or GPUs.",
+    category: "code", pricingModel: "freemium", rating: 4.5, reviewCount: 4500,
+    features: ["Cloud AI Models", "Simple API", "Auto-scaling", " Thousands of Models", "Custom Fine-tuning"],
+    pros: ["Huge model library", "No infrastructure needed", "Pay per use"], cons: ["Can get expensive at scale", "Limited control"],
+    websiteUrl: "https://replicate.com", imageUrl: "https://icon.horse/icon/replicate.com",
+    tags: ["cloud", "api", "open-source", "developer", "infrastructure"],
+    isFeatured: false, isTrending: true, alternatives: ["huggingface", "firecrawl"],
+    submittedAt: "2026-02-05", updatedAt: "2026-06-05",
+  }
 ];
 
 export function searchTools(query: string): Tool[] {

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { tools, getToolBySlug, getToolsByCategory } from "@/data/tools";
 import { ToolDetailContent } from "./ToolDetailContent";
+import { siteConfig } from "@/data/site-config";
 import type { Metadata } from "next";
 
 interface ToolPageProps {
@@ -43,7 +44,10 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
     "@type": "SoftwareApplication",
     name: tool.name,
     description: tool.description,
+    url: `${siteConfig.url}/tools/${tool.slug}`,
     applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    image: tool.imageUrl,
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: tool.rating,
@@ -56,7 +60,33 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
       price: tool.pricingModel === "free" ? "0" : undefined,
       priceCurrency: "USD",
       availability: tool.pricingModel === "free" ? "https://schema.org/InStock" : undefined,
+      category: tool.pricingModel === "free" ? "Free" : tool.pricingModel === "freemium" ? "Freemium" : "Paid",
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteConfig.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "AI Tools",
+        item: `${siteConfig.url}/tools`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: tool.name,
+        item: `${siteConfig.url}/tools/${tool.slug}`,
+      },
+    ],
   };
 
   return (
@@ -64,6 +94,10 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <ToolDetailContent
         tool={tool}

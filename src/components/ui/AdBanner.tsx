@@ -4,51 +4,64 @@ import { useEffect, useRef } from "react";
 
 interface AdBannerProps {
   slot: "sidebar" | "inline" | "banner";
-  format?: "horizontal" | "vertical";
+  format?: "auto" | "horizontal" | "vertical" | "rectangle";
   className?: string;
 }
 
-const AD_SIZES = {
-  sidebar: { width: "300px", height: "250px" },
-  inline: { width: "100%", height: "90px" },
-  banner: { width: "100%", height: "60px" },
+const AD_CONFIG = {
+  sidebar: {
+    style: { width: "300px", height: "250px" } as React.CSSProperties,
+    format: "rectangle" as const,
+  },
+  inline: {
+    style: { width: "100%", minHeight: "90px" } as React.CSSProperties,
+    format: "horizontal" as const,
+  },
+  banner: {
+    style: { width: "100%", minHeight: "60px" } as React.CSSProperties,
+    format: "auto" as const,
+  },
 };
 
-export function AdBanner({ slot, format = "horizontal", className = "" }: AdBannerProps) {
+export function AdBanner({ slot, format, className = "" }: AdBannerProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const adLoaded = useRef(false);
 
   useEffect(() => {
-    if (!ref.current) return;
+    if (!ref.current || adLoaded.current) return;
+    adLoaded.current = true;
 
-    const placement = slot === "sidebar" ? "topaitools-sidebar" : slot === "banner" ? "topaitools-banner" : "topaitools-inline";
+    const config = AD_CONFIG[slot];
+    const ins = document.createElement("ins");
+    ins.className = "adsbygoogle";
+    ins.style.cssText = "display:block";
+    if (config.style.width) ins.style.width = String(config.style.width);
+    if (config.style.height) ins.style.height = String(config.style.height);
+    if (config.style.minHeight) ins.style.minHeight = String(config.style.minHeight);
+    ins.setAttribute("data-ad-client", "ca-pub-1624976458211100");
+    ins.setAttribute("data-ad-slot", "");
+    ins.setAttribute("data-ad-format", format || config.format);
+    ins.setAttribute("data-full-width-responsive", "true");
 
-    // Carbon Ads / EthicalAds integration
-    // Replace SERVICE_ID and PLACEMENT with your actual ad network values
+    ref.current.appendChild(ins);
+
     try {
-      const s = document.createElement("script");
-      s.async = true;
-      s.id = "_carbonads_js";
-      s.src = `//cdn.carbonads.com/carbon.js?serve=PLACEHOLDER&placement=${placement}`;
-      ref.current.appendChild(s);
+      // @ts-expect-error adsbygoogle is injected by the AdSense script in layout.tsx
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch {
-      // Ad network not loaded — show fallback
+      // AdSense not yet loaded or blocked
     }
+  }, [slot, format]);
 
-    return () => {
-      const existing = document.getElementById("_carbonads_js");
-      if (existing) existing.remove();
-    };
-  }, [slot]);
-
-  const size = AD_SIZES[slot];
+  const config = AD_CONFIG[slot];
 
   return (
     <div
       ref={ref}
       className={`relative overflow-hidden rounded-lg border border-border bg-muted/20 ${className}`}
-      style={{ minHeight: format === "vertical" ? "250px" : "90px", ...size }}
+      style={{ minHeight: slot === "sidebar" ? "250px" : slot === "inline" ? "90px" : "60px", ...config.style }}
     >
-      {/* Fallback placeholder shown when no ad network is configured */}
+      {/* Fallback placeholder shown when no ad is loaded */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground text-xs opacity-50">
         <span>Ad</span>
       </div>
