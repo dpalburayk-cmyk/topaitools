@@ -15,7 +15,7 @@ Hey everyone,
 
 I got tired of trying to find good AI tools through endless Google searches and sponsored listicles, so I built my own directory:
 
-**topaitools.xyz** — 150+ curated AI tools across 9 categories:
+**topaitools.xyz** — 110+ curated AI tools across 9 categories:
 
 - 🤖 AI Chatbots (ChatGPT, Claude, Gemini, Grok, and more)
 - 🎨 Image Generation (Midjourney, DALL-E 3, Flux Pro, Ideogram)
@@ -40,7 +40,7 @@ https://topaitools.xyz
 ```
 
 ### r/ChatGPT (ChatGPT community)
-**Title:** Built a directory comparing ChatGPT alternatives — 150+ AI tools with honest reviews
+**Title:** Built a directory comparing ChatGPT alternatives — 110+ AI tools with honest reviews
 
 **Body:**
 ```
@@ -68,7 +68,7 @@ Would love to hear what you think and if I'm missing any must-have tools!
 I spent the last few months building topaitools.xyz — a curated AI tools directory.
 
 What it does:
-- 150+ AI tools organized across 9 categories
+- 110+ AI tools organized across 9 categories
 - Honest reviews with pros/cons for each tool
 - Side-by-side comparison tool
 - Save/favorite tools
@@ -87,14 +87,14 @@ https://topaitools.xyz
 
 ## 2. Hacker News — Show HN
 
-**Title:** Show HN: TopAITools – A curated directory of 150+ AI tools with honest reviews
+**Title:** Show HN: TopAITools – A curated directory of 110+ AI tools with honest reviews
 
 **Body:**
 ```
 I built topaitools.xyz because I was frustrated with AI tool directories that are either pay-to-win, cluttered with ads, or just link farms.
 
 It's a curated directory with:
-- 150+ AI tools across 9 categories (chatbots, image gen, video, audio, code, writing, productivity, design, research)
+- 110+ AI tools across 9 categories (chatbots, image gen, video, audio, code, writing, productivity, design, research)
 - Honest reviews with pros/cons and real user ratings
 - Side-by-side comparison tool
 - Clean, fast UI (statically generated with Next.js)
@@ -116,7 +116,7 @@ Happy to answer any questions about the build or the tools listed!
 
 ### Tweet 1 (Launch announcement)
 ```
-🚀 Excited to launch topaitools.xyz — a curated directory of 150+ AI tools with honest reviews!
+🚀 Excited to launch topaitools.xyz — a curated directory of 110+ AI tools with honest reviews!
 
 🔍 Browse tools across 9 categories
 ⚖️ Compare tools side by side  
@@ -160,7 +160,7 @@ I'm excited to share a project I've been working on: topaitools.xyz — a curate
 The problem: Finding the right AI tool is overwhelming. There are thousands of options, and most directories are either pay-to-win, ad-heavy, or don't provide real insights.
 
 The solution: A clean, fast directory with:
-✅ 150+ curated AI tools across 9 categories
+✅ 110+ curated AI tools across 9 categories
 ✅ Honest reviews with pros/cons
 ✅ Side-by-side comparison tool
 ✅ Real user ratings
