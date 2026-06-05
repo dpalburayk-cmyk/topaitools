@@ -7,7 +7,7 @@ export const siteConfig: SiteConfig = {
   url: "https://topaitools.xyz",
   ogImage: "https://topaitools.xyz/og.png",
   links: {
-    twitter: "https://twitter.com/topaitools",
+    twitter: "https://x.com/topaitoolsxyz",
     github: "https://github.com/topaitools",
   },
 };

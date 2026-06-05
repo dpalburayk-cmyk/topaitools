@@ -90,7 +90,7 @@ export default function RootLayout({
     url: siteConfig.url,
     logo: `${siteConfig.url}/logo.png`,
     sameAs: [
-      "https://twitter.com/topaitools",
+      "https://x.com/topaitoolsxyz",
       "https://github.com/topaitools",
     ],
   };
