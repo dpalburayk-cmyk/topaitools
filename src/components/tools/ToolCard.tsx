@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import type { Tool } from "@/types";
 import { FavoriteButton } from "@/components/ui/FavoriteButton";
 import { CompareButton } from "@/components/ui/CompareButton";
+import { ToolIcon } from "./ToolIcon";
 
 interface ToolCardProps {
   tool: Tool;
@@ -40,13 +41,7 @@ export function ToolCard({ tool, index = 0 }: ToolCardProps) {
       <div className="relative z-10 flex-1 flex flex-col">
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-indigo-500/20 overflow-hidden">
-              {tool.imageUrl ? (
-                <img src={tool.imageUrl} alt={tool.name} className="w-full h-full object-cover" loading="lazy" />
-              ) : (
-                tool.name.charAt(0)
-              )}
-            </div>
+            <ToolIcon name={tool.name} imageUrl={tool.imageUrl} websiteUrl={tool.websiteUrl} size="md" className="shadow-md shadow-indigo-500/20" />
             <div>
               <h3 className="font-semibold text-sm group-hover:text-indigo-500 transition-colors">{tool.name}</h3>
               <span className={cn("text-[10px] font-medium px-2 py-0.5 rounded-full capitalize", pricingColors[tool.pricingModel])}>

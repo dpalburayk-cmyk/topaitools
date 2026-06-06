@@ -7,6 +7,7 @@ import { Search, Menu, X, Sun, Moon, ChevronDown, Command, Heart } from "lucide-
 import { cn } from "@/lib/utils";
 import { searchTools, tools } from "@/data/tools";
 import { useFavorites } from "@/hooks/useFavorites";
+import { ToolIcon } from "@/components/tools/ToolIcon";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -149,13 +150,7 @@ export function Header() {
                               onClick={() => { setSearchOpen(false); setSearchQuery(""); }}
                               className="flex items-center gap-3 px-4 py-3 hover:bg-accent transition-colors"
                             >
-                              <div className="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-500 text-xs font-bold overflow-hidden">
-                                {tool.imageUrl ? (
-                                  <img src={tool.imageUrl} alt={tool.name} className="w-full h-full object-cover" />
-                                ) : (
-                                  tool.name.charAt(0)
-                                )}
-                              </div>
+                              <ToolIcon name={tool.name} imageUrl={tool.imageUrl} websiteUrl={tool.websiteUrl} size="sm" />
                               <div className="flex-1 min-w-0">
                                 <p className="text-sm font-medium truncate">{tool.name}</p>
                                 <p className="text-xs text-muted-foreground truncate">{tool.description}</p>

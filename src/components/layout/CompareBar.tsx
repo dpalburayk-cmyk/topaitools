@@ -4,6 +4,7 @@ import { X, GitCompare, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { useCompareContext } from "@/components/layout/CompareProvider";
 import { tools } from "@/data/tools";
+import { ToolIcon } from "@/components/tools/ToolIcon";
 
 export function CompareBar() {
   const { compareSlugs, removeFromCompare, clearCompare, mounted } =
@@ -29,13 +30,7 @@ export function CompareBar() {
                       key={tool.id}
                       className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-muted text-sm shrink-0"
                     >
-                      <span className="w-5 h-5 rounded-md bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white text-[10px] font-bold overflow-hidden">
-                        {tool.imageUrl ? (
-                          <img src={tool.imageUrl} alt={tool.name} className="w-full h-full object-cover" />
-                        ) : (
-                          tool.name.charAt(0)
-                        )}
-                      </span>
+                      <ToolIcon name={tool.name} imageUrl={tool.imageUrl} websiteUrl={tool.websiteUrl} size="sm" />
                       <span className="font-medium text-xs whitespace-nowrap">
                         {tool.name}
                       </span>

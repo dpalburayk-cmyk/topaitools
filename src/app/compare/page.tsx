@@ -14,6 +14,7 @@ import {
 import Link from "next/link";
 import { getToolLink } from "@/lib/tracking";
 import { cn } from "@/lib/utils";
+import { ToolIcon } from "@/components/tools/ToolIcon";
 
 const pricingColors = {
   free: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
@@ -248,13 +249,7 @@ export default function ComparePage() {
                         <th key={tool.id} className="p-0 min-w-[200px]">
                           <div className="p-4 border-b border-border text-center">
                             <div className="flex flex-col items-center gap-2">
-                              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold text-lg shadow-md shadow-indigo-500/20 overflow-hidden">
-                                {tool.imageUrl ? (
-                                  <img src={tool.imageUrl} alt={tool.name} className="w-full h-full object-cover" />
-                                ) : (
-                                  tool.name.charAt(0)
-                                )}
-                              </div>
+                              <ToolIcon name={tool.name} imageUrl={tool.imageUrl} websiteUrl={tool.websiteUrl} size="lg" className="shadow-md shadow-indigo-500/20" />
                               <div>
                                 <Link
                                   href={`/tools/${tool.slug}`}
@@ -324,13 +319,7 @@ export default function ComparePage() {
                   >
                     <div className="p-4 border-b border-border flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold text-sm overflow-hidden">
-                          {tool.imageUrl ? (
-                            <img src={tool.imageUrl} alt={tool.name} className="w-full h-full object-cover" />
-                          ) : (
-                            tool.name.charAt(0)
-                          )}
-                        </div>
+                        <ToolIcon name={tool.name} imageUrl={tool.imageUrl} websiteUrl={tool.websiteUrl} size="md" />
                         <div>
                           <Link
                             href={`/tools/${tool.slug}`}

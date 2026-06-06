@@ -207,7 +207,7 @@ export const tools: Tool[] = [
     pros: ["Best voice quality", "Fast cloning", "Wide language support"], cons: ["Free tier limited", "Clone quality varies"],
     websiteUrl: "https://elevenlabs.io", imageUrl: "https://icon.horse/icon/elevenlabs.io",
     tags: ["voice", "text-to-speech", "cloning", "audio", "podcast"],
-    isFeatured: true, isTrending: true, alternatives: ["murf-ai", "lovo-ai"],
+    isFeatured: true, isTrending: true, alternatives: ["murf-ai", "lovo"],
     submittedAt: "2025-06-01", updatedAt: "2026-06-05",
   },
 
@@ -256,7 +256,7 @@ export const tools: Tool[] = [
     pros: ["Integrated in workspace", "Versatile", "Great for teams"], cons: ["Paid add-on", "Limited to Notion ecosystem"],
     websiteUrl: "https://www.notion.so/product/ai", imageUrl: "https://icon.horse/icon/notion.so",
     tags: ["workspace", "writing", "productivity", "notes", "team"],
-    isFeatured: false, isTrending: false, alternatives: ["gamma-app", "zapier-ai", "tome"],
+    isFeatured: false, isTrending: false, alternatives: ["gamma", "zapier-ai", "tome"],
     submittedAt: "2025-06-01", updatedAt: "2026-06-05",
   },
 
@@ -269,7 +269,7 @@ export const tools: Tool[] = [
     pros: ["Industry standard tool", "Real-time collaboration", "Huge plugin ecosystem"], cons: ["Free tier limited", "Requires learning"],
     websiteUrl: "https://www.figma.com", imageUrl: "https://icon.horse/icon/figma.com",
     tags: ["design", "ui-ux", "prototyping", "collaboration", "interface"],
-    isFeatured: false, isTrending: false, alternatives: ["canva", "photoroom"],
+    isFeatured: false, isTrending: false, alternatives: ["canva-ai", "photoroom"],
     submittedAt: "2025-06-01", updatedAt: "2026-06-05",
   },
 
@@ -318,7 +318,7 @@ export const tools: Tool[] = [
     pros: ["Revolutionary editing approach", "All-in-one tool", "Great for podcasts"], cons: ["Heavy on resources", "Limited advanced video effects"],
     websiteUrl: "https://www.descript.com", affiliateUrl: "https://www.descript.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/descript.com",
     tags: ["video", "audio", "podcast", "transcription", "editing"],
-    isFeatured: false, isTrending: false, alternatives: ["otter-ai", "adobe-podcast"],
+    isFeatured: false, isTrending: false, alternatives: ["otter-ai", "podcast-ai"],
     submittedAt: "2025-06-01", updatedAt: "2026-06-01",
   },
 
@@ -397,7 +397,7 @@ export const tools: Tool[] = [
     pros: ["Extremely fast", "Handles complex edges", "Free for personal use"], cons: ["Limited free credits", "Basic editing only"],
     websiteUrl: "https://www.remove.bg", imageUrl: "https://icon.horse/icon/remove.bg",
     tags: ["background", "photo-editing", "ecommerce", "design", "image"],
-    isFeatured: false, isTrending: false, alternatives: ["photoroom", "canva"],
+    isFeatured: false, isTrending: false, alternatives: ["photoroom", "canva-ai"],
     submittedAt: "2025-08-10", updatedAt: "2026-06-05",
   },
 
@@ -580,7 +580,7 @@ export const tools: Tool[] = [
     pros: ["Unique narrative approach", "Built-in images", "Modern design"], cons: ["Limited export options", "Niche use case"],
     websiteUrl: "https://tome.app", imageUrl: "https://icon.horse/icon/tome.app",
     tags: ["presentations", "storytelling", "slides", "design", "productivity"],
-    isFeatured: false, isTrending: false, alternatives: ["gamma-app", "canva"],
+    isFeatured: false, isTrending: false, alternatives: ["gamma", "canva-ai"],
     submittedAt: "2026-01-15", updatedAt: "2026-06-05",
   },
 
@@ -606,7 +606,7 @@ export const tools: Tool[] = [
     pros: ["Many voice options", "Good quality", "Easy to use"], cons: ["Free tier limited", "Can sound robotic sometimes"],
     websiteUrl: "https://murf.ai", affiliateUrl: "https://murf.ai/?ref=topaitools", imageUrl: "https://icon.horse/icon/murf.ai",
     tags: ["audio", "voice", "tts", "voiceover", "text-to-speech"],
-    isFeatured: false, isTrending: false, alternatives: ["elevenlabs", "podcastle"],
+    isFeatured: false, isTrending: false, alternatives: ["elevenlabs", "podcast-ai"],
     submittedAt: "2025-02-20", updatedAt: "2026-05-10",
   },
 
@@ -632,7 +632,7 @@ export const tools: Tool[] = [
     pros: ["Massive model library", "Free and open source", "Active community"], cons: ["Can be overwhelming", "API rate limits"],
     websiteUrl: "https://huggingface.co", imageUrl: "https://icon.horse/icon/huggingface.co",
     tags: ["open-source", "models", "datasets", "community", "developer"],
-    isFeatured: true, isTrending: false, alternatives: ["replicate", "github"],
+    isFeatured: true, isTrending: false, alternatives: ["replicate", "github-copilot"],
     submittedAt: "2025-06-01", updatedAt: "2026-06-05",
   },
 
@@ -879,7 +879,7 @@ export const tools: Tool[] = [
     pros: ["Full podcast in minutes", "No recording needed", "Great voices"], cons: ["Output can feel templated", "Free credits limited", "Limited control over audio mix"],
     websiteUrl: "https://wondercraft.ai", affiliateUrl: "https://wondercraft.ai/?ref=topaitools", imageUrl: "https://icon.horse/icon/wondercraft.ai",
     tags: ["audio", "podcast", "generation", "content", "voices"],
-    isFeatured: false, isTrending: false, alternatives: ["podcastle", "suno"],
+    isFeatured: false, isTrending: false, alternatives: ["podcast-ai", "suno"],
     submittedAt: "2025-03-10", updatedAt: "2026-05-20",
   },
 
@@ -970,7 +970,7 @@ export const tools: Tool[] = [
     pros: ["Massive app ecosystem", "AI simplifies automation", "Reliable"], cons: ["Can get expensive", "Complex workflows need learning"],
     websiteUrl: "https://zapier.com", affiliateUrl: "https://zapier.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/zapier.com",
     tags: ["automation", "integration", "workflow", "no-code", "productivity"],
-    isFeatured: false, isTrending: false, alternatives: ["make-automation", "ifttt"],
+    isFeatured: false, isTrending: false, alternatives: ["dust", "zapier-ai"],
     submittedAt: "2025-06-01", updatedAt: "2026-06-01",
   },
 
@@ -1269,7 +1269,7 @@ export const tools: Tool[] = [
     pros: ["Easy to use", "No coding needed", "Good visualizations"], cons: ["Limited advanced statistics", "File size limits"],
     websiteUrl: "https://julius.ai", affiliateUrl: "https://julius.ai/?ref=topaitools", imageUrl: "https://icon.horse/icon/julius.ai",
     tags: ["data", "analytics", "charts", "visualization", "spreadsheet"],
-    isFeatured: false, isTrending: false, alternatives: ["chatgpt-code-interpreter", "notion-ai"],
+    isFeatured: false, isTrending: false, alternatives: ["chatgpt", "notion-ai"],
     submittedAt: "2025-06-01", updatedAt: "2026-06-01",
   },
 
@@ -1282,7 +1282,7 @@ export const tools: Tool[] = [
     pros: ["Great for remote teams", "Saves time", "Easy to share"], cons: ["Free tier limited", "Requires Loom account"],
     websiteUrl: "https://www.loom.com", affiliateUrl: "https://www.loom.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/loom.com",
     tags: ["video", "communication", "async", "productivity", "transcription"],
-    isFeatured: false, isTrending: false, alternatives: ["otter-ai", "fireflies"],
+    isFeatured: false, isTrending: false, alternatives: ["otter-ai", "loom-ai"],
     submittedAt: "2025-06-01", updatedAt: "2026-06-01",
   },
 
@@ -1321,7 +1321,7 @@ export const tools: Tool[] = [
     pros: ["Generous free tier", "Wide language support", "Fast"], cons: ["Less powerful than Cursor", "No multi-file editing in free tier"],
     websiteUrl: "https://codeium.com", affiliateUrl: "https://codeium.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/codeium.com",
     tags: ["autocomplete", "ide", "coding", "free", "developer"],
-    isFeatured: false, isTrending: false, alternatives: ["copilot", "windsurf", "cursor"],
+    isFeatured: false, isTrending: false, alternatives: ["github-copilot", "windsurf", "cursor"],
     submittedAt: "2025-06-01", updatedAt: "2026-06-01",
   },
 
@@ -1334,7 +1334,7 @@ export const tools: Tool[] = [
     pros: ["Powerful AI course builder", "Enterprise-ready", "Interactive content"], cons: ["Enterprise pricing", "Complex setup"],
     websiteUrl: "https://www.sanalabs.com", affiliateUrl: "https://www.sanalabs.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/sanalabs.com",
     tags: ["learning", "education", "training", "enterprise", "courses"],
-    isFeatured: false, isTrending: false, alternatives: ["coursera", "udemy"],
+    isFeatured: false, isTrending: false, alternatives: ["afforai", "notebooklm"],
     submittedAt: "2025-06-01", updatedAt: "2026-06-01",
   },
 
@@ -1373,7 +1373,7 @@ export const tools: Tool[] = [
     pros: ["Handles global taxes", "Easy setup", "Great for SaaS"], cons: ["Transaction fees", "Limited customization"],
     websiteUrl: "https://www.lemonsqueezy.com", imageUrl: "https://icon.horse/icon/lemonsqueezy.com",
     tags: ["payments", "ecommerce", "saas", "digital-products", "business"],
-    isFeatured: false, isTrending: false, alternatives: ["stripe", "gumroad"],
+    isFeatured: false, isTrending: false, alternatives: ["freedcamp", "rowy"],
     submittedAt: "2026-01-10", updatedAt: "2026-06-05",
   },
 
@@ -1386,7 +1386,7 @@ export const tools: Tool[] = [
     pros: ["Browser-based", "Easy to use", "Great AI features"], cons: ["Watermark on free", "Rendering can be slow"],
     websiteUrl: "https://www.veed.io", imageUrl: "https://icon.horse/icon/veed.io",
     tags: ["video-editing", "subtitles", "content-creation", "online-editor"],
-    isFeatured: false, isTrending: false, alternatives: ["descript", "capcut"],
+    isFeatured: false, isTrending: false, alternatives: ["descript", "kapwing"],
     submittedAt: "2025-10-05", updatedAt: "2026-06-05",
   },
 
@@ -1399,7 +1399,7 @@ export const tools: Tool[] = [
     pros: ["Excellent upscaling quality", "Fast processing", "Affordable"], cons: ["Limited free uses", "Single purpose"],
     websiteUrl: "https://www.kraken.ai", imageUrl: "https://icon.horse/icon/kraken.ai",
     tags: ["upscaling", "image-enhancement", "photo", "resolution", "design"],
-    isFeatured: false, isTrending: false, alternatives: ["topaz-gigapixel", "remini"],
+    isFeatured: false, isTrending: false, alternatives: ["clipdrop", "img2go"],
     submittedAt: "2026-03-01", updatedAt: "2026-06-05",
   },
 
@@ -1412,7 +1412,7 @@ export const tools: Tool[] = [
     pros: ["Eliminates scheduling hassle", "Great integrations", "Free tier solid"], cons: ["Limited AI features on free", "Can feel rigid"],
     websiteUrl: "https://calendly.com", imageUrl: "https://icon.horse/icon/calendly.com",
     tags: ["scheduling", "meetings", "calendar", "automation", "business"],
-    isFeatured: false, isTrending: false, alternatives: ["clockwise", "reclaim"],
+    isFeatured: false, isTrending: false, alternatives: ["loom-ai", "notion-ai"],
     submittedAt: "2025-06-01", updatedAt: "2026-06-05",
   },
 

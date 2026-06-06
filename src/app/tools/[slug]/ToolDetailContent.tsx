@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Star, ExternalLink, Check, X, ThumbsUp, ThumbsDown, Tag, Globe, Calendar } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ToolCard } from "@/components/tools/ToolCard";
+import { ToolIcon } from "@/components/tools/ToolIcon";
 import { tools, getToolsByCategory } from "@/data/tools";
 import { getToolLink } from "@/lib/tracking";
 import { AdBanner } from "@/components/ui/AdBanner";
@@ -46,13 +47,7 @@ export function ToolDetailContent({ tool, alternatives, relatedTools }: ToolDeta
           {/* Header */}
           <div>
             <div className="flex items-start gap-4 mb-4">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-indigo-500/20 shrink-0 overflow-hidden">
-                {tool.imageUrl ? (
-                  <img src={tool.imageUrl} alt={tool.name} className="w-full h-full object-cover" />
-                ) : (
-                  tool.name.charAt(0)
-                )}
-              </div>
+              <ToolIcon name={tool.name} imageUrl={tool.imageUrl} websiteUrl={tool.websiteUrl} size="lg" className="shadow-lg shadow-indigo-500/20" />
               <div>
                 <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">{tool.name}</h1>
                 <div className="flex items-center gap-3 mt-1">
@@ -131,11 +126,7 @@ export function ToolDetailContent({ tool, alternatives, relatedTools }: ToolDeta
             <div className="aspect-video rounded-xl border border-border bg-muted/30 flex items-center justify-center">
               <div className="text-center text-muted-foreground">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 flex items-center justify-center mx-auto mb-3 overflow-hidden">
-                  {tool.imageUrl ? (
-                    <img src={tool.imageUrl} alt={tool.name} className="w-full h-full object-cover" />
-                  ) : (
-                    <span className="text-2xl font-bold text-indigo-500">{tool.name.charAt(0)}</span>
-                  )}
+                  <ToolIcon name={tool.name} imageUrl={tool.imageUrl} websiteUrl={tool.websiteUrl} size="xl" />
                 </div>
                 <p className="text-sm">{tool.name} screenshot coming soon</p>
               </div>
@@ -211,13 +202,7 @@ export function ToolDetailContent({ tool, alternatives, relatedTools }: ToolDeta
                     href={`/tools/${rt.slug}`}
                     className="flex items-center gap-3 group"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white text-xs font-bold shrink-0 overflow-hidden">
-                      {rt.imageUrl ? (
-                        <img src={rt.imageUrl} alt={rt.name} className="w-full h-full object-cover" />
-                      ) : (
-                        rt.name.charAt(0)
-                      )}
-                    </div>
+                    <ToolIcon name={rt.name} imageUrl={rt.imageUrl} websiteUrl={rt.websiteUrl} size="sm" />
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium truncate group-hover:text-indigo-500 transition-colors">{rt.name}</p>
                       <div className="flex items-center gap-1">
