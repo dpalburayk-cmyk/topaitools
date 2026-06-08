@@ -2,6 +2,7 @@
 
 import { ToolCard } from "@/components/tools/ToolCard";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { AdBanner } from "@/components/ui/AdBanner";
 import type { Category, Tool } from "@/types";
 
 interface CategoryDetailContentProps {
@@ -33,6 +34,12 @@ export function CategoryDetailContent({ category, categoryTools }: CategoryDetai
           <ToolCard key={tool.id} tool={tool} index={i} />
         ))}
       </div>
+
+      {categoryTools.length > 3 && (
+        <div className="mt-8">
+          <AdBanner slot="inline" />
+        </div>
+      )}
 
       {categoryTools.length === 0 && (
         <div className="text-center py-16">

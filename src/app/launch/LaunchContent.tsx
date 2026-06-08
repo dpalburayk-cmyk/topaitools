@@ -20,9 +20,9 @@ export function LaunchContent() {
       <div className="relative z-10">
         {/* Hero */}
         <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-600 dark:text-orange-400 text-xs font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-medium mb-6">
             <Rocket className="w-3.5 h-3.5" />
-            Launching Today on Product Hunt
+            Now Live on Product Hunt — Thanks for your support!
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
@@ -45,13 +45,13 @@ export function LaunchContent() {
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a
-              href="https://www.producthunt.com/posts/topaitools"
+              href="https://www.producthunt.com/posts/top-ai-tools-3"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-border bg-card font-semibold text-base hover:bg-muted transition-colors"
             >
               <ExternalLink className="w-4 h-4" />
-              Upvote on Product Hunt
+              View on Product Hunt
             </a>
           </div>
 

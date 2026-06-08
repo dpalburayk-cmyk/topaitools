@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { blogPosts, getBlogPostBySlug } from "@/data/tools";
+import { siteConfig } from "@/data/site-config";
 import { BlogPostContent } from "./BlogPostContent";
 import type { Metadata } from "next";
 
@@ -31,9 +32,26 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
-    author: { "@type": "Person", name: post.author },
+    url: `${siteConfig.url}/blog/${post.slug}`,
+    image: post.coverImage || `${siteConfig.url}/og.png`,
+    author: {
+      "@type": "Person",
+      name: post.author,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: { "@type": "ImageObject", url: `${siteConfig.url}/logo.png` },
+    },
     datePublished: post.publishedAt,
-    readTime: `${post.readTime} min`,
+    dateModified: post.publishedAt,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${siteConfig.url}/blog/${post.slug}`,
+    },
+    keywords: post.tags.join(", "),
   };
 
   return (

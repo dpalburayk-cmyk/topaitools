@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Mail, Check, ArrowRight, Loader2 } from "lucide-react";
+import { track } from "@/lib/tracking";
 
 export function Newsletter() {
   const [email, setEmail] = useState("");
@@ -27,6 +28,7 @@ export function Newsletter() {
         setStatus("success");
         setMessage(data.message || "You're subscribed! Check your inbox.");
         setEmail("");
+        track.newsletterSubscribe(email);
       } else {
         setStatus("error");
         setMessage(data.error || "Something went wrong");

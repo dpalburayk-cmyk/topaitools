@@ -20,7 +20,7 @@ const faqJsonLd = {
       name: "What is Top AI Tools?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Top AI Tools is a curated directory of 110+ AI tools across 9 categories including chatbots, image generation, video, audio, coding, writing, productivity, design, and research. Each tool includes honest reviews, pros and cons, ratings, and pricing information.",
+        text: `Top AI Tools is a curated directory of ${tools.length}+ AI tools across ${categories.length} categories including chatbots, image generation, video, audio, coding, writing, productivity, design, and research. Each tool includes honest reviews, pros and cons, ratings, and pricing information.`,
       },
     },
     {
@@ -44,7 +44,7 @@ const faqJsonLd = {
       name: "How can I compare AI tools on Top AI Tools?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Simply click the compare button on any tool card, or visit the compare page to select up to 3 tools and see their features, pricing, ratings, and pros/cons side by side.",
+        text: "Simply click the compare button on any tool card, or visit the compare page to select up to 4 tools and see their features, pricing, ratings, and pros/cons side by side.",
       },
     },
   ],

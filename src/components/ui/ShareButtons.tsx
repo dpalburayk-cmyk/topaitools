@@ -3,6 +3,7 @@
 import { Share2, X, Link2, Check } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { track } from "@/lib/tracking";
 
 interface ShareButtonsProps {
   url: string;
@@ -22,15 +23,18 @@ export function ShareButtons({ url, title, className = "" }: ShareButtonsProps) 
   };
 
   const handleTwitter = () => {
+    track.share("twitter", url.replace("https://topaitools.xyz/tools/", ""));
     window.open(`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`, "_blank", "noopener,noreferrer");
   };
 
   const handleLinkedIn = () => {
+    track.share("linkedin", url.replace("https://topaitools.xyz/tools/", ""));
     window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`, "_blank", "noopener,noreferrer");
   };
 
   const handleNative = async () => {
     if (navigator.share) {
+      track.share("native", url.replace("https://topaitools.xyz/tools/", ""));
       await navigator.share({ title, url });
     }
   };

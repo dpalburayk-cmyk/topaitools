@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ToolCard } from "@/components/tools/ToolCard";
 import { ToolIcon } from "@/components/tools/ToolIcon";
 import { tools, getToolsByCategory } from "@/data/tools";
-import { getToolLink } from "@/lib/tracking";
+import { getToolLink, track } from "@/lib/tracking";
 import { AdBanner } from "@/components/ui/AdBanner";
 import { ShareButtons } from "@/components/ui/ShareButtons";
 import { FavoriteButton } from "@/components/ui/FavoriteButton";
@@ -154,6 +154,7 @@ export function ToolDetailContent({ tool, alternatives, relatedTools }: ToolDeta
               href={getToolLink(tool)}
               target="_blank"
               rel="noopener noreferrer sponsored"
+              onClick={() => track.toolVisit(tool.name, tool.slug)}
               className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-indigo-500 text-white font-medium text-sm hover:bg-indigo-600 transition-colors shadow-lg shadow-indigo-500/25"
             >
               Visit {tool.name}
@@ -163,7 +164,7 @@ export function ToolDetailContent({ tool, alternatives, relatedTools }: ToolDeta
             <div className="mt-6 space-y-4">
               <div className="flex items-center gap-3 text-sm">
                 <Globe className="w-4 h-4 text-muted-foreground shrink-0" />
-                <a href={getToolLink(tool)} target="_blank" rel="noopener noreferrer sponsored" className="text-indigo-500 hover:underline truncate">
+                <a href={getToolLink(tool)} target="_blank" rel="noopener noreferrer sponsored" onClick={() => track.toolVisit(tool.name, tool.slug)} className="text-indigo-500 hover:underline truncate">
                   {tool.websiteUrl}
                 </a>
               </div>

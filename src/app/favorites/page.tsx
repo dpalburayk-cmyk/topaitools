@@ -4,6 +4,7 @@ import { useFavorites } from "@/hooks/useFavorites";
 import { tools } from "@/data/tools";
 import { ToolCard } from "@/components/tools/ToolCard";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { AdBanner } from "@/components/ui/AdBanner";
 import { Heart, Search } from "lucide-react";
 import Link from "next/link";
 
@@ -45,11 +46,16 @@ export default function FavoritesPage() {
         </div>
 
         {favoriteTools.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {favoriteTools.map((tool, i) => (
-              <ToolCard key={tool.id} tool={tool} index={i} />
-            ))}
-          </div>
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {favoriteTools.map((tool, i) => (
+                <ToolCard key={tool.id} tool={tool} index={i} />
+              ))}
+            </div>
+            <div className="mt-8">
+              <AdBanner slot="inline" />
+            </div>
+          </>
         ) : (
           <div className="text-center py-20">
             <div className="w-20 h-20 rounded-2xl bg-muted/50 flex items-center justify-center mx-auto mb-6">
