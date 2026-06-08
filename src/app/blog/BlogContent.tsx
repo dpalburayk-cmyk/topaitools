@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Clock, User } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { AdBanner } from "@/components/ui/AdBanner";
+import { BlogCoverImage } from "@/components/ui/BlogCoverImage";
 import { blogPosts } from "@/data/tools";
 
 export function BlogContent() {
@@ -23,9 +24,7 @@ export function BlogContent() {
             href={`/blog/${post.slug}`}
             className="group flex flex-col rounded-xl border border-border bg-card overflow-hidden hover:border-indigo-500/30 hover:shadow-lg hover:-translate-y-0.5 transition-all"
           >
-            <div className="aspect-[2/1] bg-gradient-to-br from-indigo-500/10 to-violet-500/10 flex items-center justify-center">
-              <span className="text-4xl font-bold text-indigo-500/20">{post.title.charAt(0)}</span>
-            </div>
+            <BlogCoverImage title={post.title} category={post.category} size="sm" />
             <div className="p-5 flex-1 flex flex-col">
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-500">

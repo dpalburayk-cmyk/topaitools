@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { tools, categories } from "@/data/tools";
 
 export const runtime = "edge";
 export const alt = "Top AI Tools - Discover the Best AI Tools";
@@ -6,6 +7,8 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image() {
+  const statsLabels = [`${tools.length}+ Tools`, `${categories.length} Categories`, "Honest Reviews"];
+
   return new ImageResponse(
     (
       <div
@@ -97,7 +100,7 @@ export default async function Image() {
               marginBottom: 40,
             }}
           >
-            {["110+ Tools", "9 Categories", "Honest Reviews"].map((label) => (
+            {statsLabels.map((label) => (
               <div
                 key={label}
                 style={{

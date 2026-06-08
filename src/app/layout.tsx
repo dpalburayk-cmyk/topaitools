@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { CompareProvider } from "@/components/layout/CompareProvider";
+import { GoogleAnalytics } from "@/components/layout/GoogleAnalytics";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CompareBar } from "@/components/layout/CompareBar";
@@ -141,6 +142,7 @@ export default function RootLayout({
             <CompareBar />
           </CompareProvider>
         </ThemeProvider>
+        <GoogleAnalytics />
         <Analytics />
       </body>
     </html>

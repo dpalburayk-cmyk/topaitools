@@ -5,6 +5,7 @@ import Markdown from "react-markdown";
 import { ArrowLeft, Clock, User, Calendar, Tag } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { AdBanner } from "@/components/ui/AdBanner";
+import { BlogCoverImage } from "@/components/ui/BlogCoverImage";
 import type { BlogPost } from "@/types";
 
 interface BlogPostContentProps {
@@ -46,13 +47,13 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
         </header>
 
         {/* Cover image */}
-        <div className="aspect-[2/1] rounded-xl border border-border bg-gradient-to-br from-indigo-500/10 to-violet-500/10 flex items-center justify-center overflow-hidden">
-          {post.coverImage ? (
+        {post.coverImage ? (
+          <div className="aspect-[2/1] rounded-xl border border-border overflow-hidden">
             <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover" />
-          ) : (
-            <span className="text-6xl font-bold text-indigo-500/20">{post.title.charAt(0)}</span>
-          )}
-        </div>
+          </div>
+        ) : (
+          <BlogCoverImage title={post.title} category={post.category} size="lg" className="rounded-xl border border-border" />
+        )}
 
         <AdBanner slot="inline" />
 

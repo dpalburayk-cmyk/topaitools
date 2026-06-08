@@ -115,8 +115,24 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// GET endpoint for admin review (optional, protected by secret in production)
-export async function GET() {
+// GET endpoint for admin review — requires ADMIN_API_KEY env var + Bearer token
+export async function GET(request: NextRequest) {
+  const adminKey = process.env.ADMIN_API_KEY;
+
+  // If no admin key is configured, the endpoint is disabled entirely
+  if (!adminKey) {
+    return NextResponse.json({ error: "Admin API not configured" }, { status: 503 });
+  }
+
+  // Validate Bearer token from Authorization header or ?key= query param
+  const authHeader = request.headers.get("authorization");
+  const queryKey = new URL(request.url).searchParams.get("key");
+  const token = authHeader?.replace("Bearer ", "") ?? queryKey;
+
+  if (!token || token !== adminKey) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   try {
     await ensureDataFile();
     const fileContent = await fs.readFile(DATA_FILE, "utf-8");

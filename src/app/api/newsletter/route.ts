@@ -12,8 +12,7 @@ export async function POST(request: NextRequest) {
     const audienceId = process.env.RESEND_AUDIENCE_ID;
 
     if (!apiKey || !audienceId) {
-      // In development without API keys, simulate success
-      console.log(`[Newsletter] Subscribe request: ${email} (no Resend API key configured)`);
+      // In development without API keys, simulate success silently
       return NextResponse.json({ success: true, message: "Subscribed successfully!" });
     }
 
