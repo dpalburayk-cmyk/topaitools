@@ -29,7 +29,7 @@ export function Footer() {
               <a href={siteConfig.links.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">
                 <ExternalLink className="w-4 h-4" />
               </a>
-              <a href="/blog" className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">
+              <a href="/feed.xml" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors" title="RSS Feed">
                 <Rss className="w-4 h-4" />
               </a>
             </div>
