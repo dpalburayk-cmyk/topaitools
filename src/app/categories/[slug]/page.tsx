@@ -16,9 +16,22 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   const { slug } = await params;
   const category = getCategoryBySlug(slug);
   if (!category) return {};
+  const url = `${siteConfig.url}/categories/${category.slug}`;
   return {
-    title: `${category.name} AI Tools`,
+    title: `${category.name} AI Tools — ${siteConfig.name}`,
     description: category.description,
+    openGraph: {
+      title: `${category.name} AI Tools | ${siteConfig.name}`,
+      description: category.description,
+      url,
+      siteName: siteConfig.name,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${category.name} AI Tools | ${siteConfig.name}`,
+      description: category.description,
+    },
+    alternates: { canonical: url },
   };
 }
 

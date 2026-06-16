@@ -16,13 +16,23 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
   const { slug } = await params;
   const tool = getToolBySlug(slug);
   if (!tool) return {};
+  const url = `${siteConfig.url}/tools/${tool.slug}`;
   return {
     title: `${tool.name} — AI Tool Review`,
     description: tool.description,
     openGraph: {
       title: `${tool.name} | Top AI Tools`,
       description: tool.description,
+      url,
+      siteName: siteConfig.name,
+      type: "website",
     },
+    twitter: {
+      card: "summary_large_image",
+      title: `${tool.name} — AI Tool Review | Top AI Tools`,
+      description: tool.description,
+    },
+    alternates: { canonical: url },
   };
 }
 
