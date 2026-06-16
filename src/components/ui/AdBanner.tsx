@@ -9,25 +9,34 @@ interface AdBannerProps {
   className?: string;
 }
 
-const AD_CONFIG = {
+// AdSense ad units — create these in your AdSense dashboard at https://www.google.com/adsense/
+// Replace these placeholder values with real data-ad-slot IDs from your AdSense account
+const AD_UNITS: Record<string, { style: React.CSSProperties; format: string; minHeight: string; adSlot: string }> = {
   sidebar: {
-    style: { width: "300px", height: "250px" } as React.CSSProperties,
-    format: "rectangle" as const,
+    style: { display: "block", width: "300px", height: "250px" },
+    format: "rectangle",
     minHeight: "250px",
+    // TODO: Replace with your real ad unit slot ID from AdSense → By ad unit → Get code
+    adSlot: process.env.NEXT_PUBLIC_ADSENSE_SIDEBAR_SLOT || "",
   },
   inline: {
-    style: { width: "100%", minHeight: "90px" } as React.CSSProperties,
-    format: "horizontal" as const,
+    style: { display: "block", width: "100%" },
+    format: "horizontal",
     minHeight: "90px",
+    // TODO: Replace with your real ad unit slot ID from AdSense → By ad unit → Get code
+    adSlot: process.env.NEXT_PUBLIC_ADSENSE_INLINE_SLOT || "",
   },
   banner: {
-    style: { width: "100%", minHeight: "60px" } as React.CSSProperties,
-    format: "auto" as const,
+    style: { display: "block", width: "100%" },
+    format: "auto",
     minHeight: "60px",
+    adSlot: process.env.NEXT_PUBLIC_ADSENSE_BANNER_SLOT || "",
   },
 };
 
-export function AdBanner({ slot, format, adSlot, className = "" }: AdBannerProps) {
+const PUBLISHER_ID = "ca-pub-1624976458211100";
+
+export function AdBanner({ slot, format, adSlot: adSlotProp, className = "" }: AdBannerProps) {
   const ref = useRef<HTMLDivElement>(null);
   const adLoaded = useRef(false);
   const [visible, setVisible] = useState(false);
@@ -59,7 +68,8 @@ export function AdBanner({ slot, format, adSlot, className = "" }: AdBannerProps
     if (!visible || !ref.current || adLoaded.current) return;
     adLoaded.current = true;
 
-    const config = AD_CONFIG[slot];
+    const config = AD_UNITS[slot];
+    const slotId = adSlotProp || config.adSlot;
 
     // Create a wrapper for the ad inside the observed div
     const wrapper = document.createElement("div");
@@ -68,12 +78,12 @@ export function AdBanner({ slot, format, adSlot, className = "" }: AdBannerProps
     const ins = document.createElement("ins");
     ins.className = "adsbygoogle";
     ins.style.cssText = "display:block";
-    if (config.style.width && slot === "sidebar") ins.style.width = String(config.style.width);
-    if (config.style.height && slot === "sidebar") ins.style.height = String(config.style.height);
+    if (config.style.width) ins.style.width = String(config.style.width);
+    if (config.style.height) ins.style.height = String(config.style.height);
     if (config.style.minHeight) ins.style.minHeight = String(config.style.minHeight);
-    ins.setAttribute("data-ad-client", "ca-pub-1624976458211100");
-    if (adSlot) {
-      ins.setAttribute("data-ad-slot", adSlot);
+    ins.setAttribute("data-ad-client", PUBLISHER_ID);
+    if (slotId) {
+      ins.setAttribute("data-ad-slot", slotId);
     }
     ins.setAttribute("data-ad-format", format || config.format);
     ins.setAttribute("data-full-width-responsive", "true");
@@ -87,15 +97,15 @@ export function AdBanner({ slot, format, adSlot, className = "" }: AdBannerProps
     } catch {
       // AdSense not yet loaded or blocked
     }
-  }, [slot, format, adSlot, visible]);
+  }, [slot, format, adSlotProp, visible]);
 
-  const config = AD_CONFIG[slot];
+  const config = AD_UNITS[slot];
 
   return (
     <div
       ref={ref}
       className={`relative overflow-hidden rounded-lg border border-border bg-muted/20 my-6 ${className}`}
-      style={{ minHeight: config.minHeight, ...config.style }}
+      style={{ minHeight: config.minHeight }}
       aria-label="Advertisement"
     >
       {/* Fallback placeholder shown when no ad is loaded */}

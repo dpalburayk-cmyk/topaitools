@@ -1,5 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
-import { tools } from "@/data/tools";
+import { tools, categories } from "@/data/tools";
+import { blogPosts } from "@/data/tools";
+
+// IndexNow key — must match the key file at /public/topaitools2026.txt
+const INDEXNOW_KEY = process.env.INDEXNOW_KEY || "topaitools2026";
+
+// Recommended IndexNow endpoints (official)
+const INDEXNOW_ENDPOINTS = [
+  "https://api.indexnow.org/indexnow",
+  "https://www.bing.com/indexnow",
+  "https://indexnow.google.com/indexnow",
+  "https://search.yahoo.com/indexnow",
+  "https://search.yahoo.co.jp/indexnow",
+];
 
 interface IndexNowPayload {
   host: string;
@@ -7,8 +20,7 @@ interface IndexNowPayload {
   urlList: string[];
 }
 
-// Submit all tool URLs to Google and Bing via IndexNow API
-// This runs as a POST endpoint that can be triggered manually or via webhook
+// Submit all URLs to IndexNow via multiple endpoints
 export async function POST(_request: NextRequest) {
   const siteUrl = "https://topaitools.xyz";
 
@@ -17,8 +29,11 @@ export async function POST(_request: NextRequest) {
     `${siteUrl}/tools`,
     `${siteUrl}/blog`,
     `${siteUrl}/categories`,
+    `${siteUrl}/compare`,
+    `${siteUrl}/about`,
     ...tools.map((tool) => `${siteUrl}/tools/${tool.slug}`),
-    ...tools.map((tool) => `${siteUrl}/tools/${tool.slug}`).slice(0, 100), // extra push
+    ...categories.map((cat) => `${siteUrl}/categories/${cat.slug}`),
+    ...blogPosts.map((post) => `${siteUrl}/blog/${post.slug}`),
   ];
 
   // Remove duplicates
@@ -26,61 +41,49 @@ export async function POST(_request: NextRequest) {
 
   const results: { engine: string; status: string; message: string }[] = [];
 
-  // 1. Submit to Google IndexNow API
-  try {
-    const googleRes = await fetch("https://indexnow.google.com/IndexNow", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        host: "topaitools.xyz",
-        key: process.env.GOOGLE_INDEXNOW_KEY || "topaitools-indexnow-key",
-        urlList: uniqueUrls.slice(0, 200), // max 200 per request
-      }),
-    });
-    results.push({
-      engine: "Google",
-      status: googleRes.ok ? "success" : "failed",
-      message: googleRes.ok ? `Submitted ${uniqueUrls.slice(0, 200).length} URLs` : `Error: ${googleRes.status}`,
-    });
-  } catch (e) {
-    results.push({ engine: "Google", status: "failed", message: "Network error" });
+  // Submit to all IndexNow endpoints (they all share the same API)
+  const batches: string[][] = [];
+  for (let i = 0; i < uniqueUrls.length; i += 200) {
+    batches.push(uniqueUrls.slice(i, i + 200));
   }
 
-  // 2. Submit to Bing IndexNow API
-  try {
-    const bingRes = await fetch("https://www.bing.com/indexnow", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        host: "topaitools.xyz",
-        key: process.env.BING_INDEXNOW_KEY || "topaitools-indexnow-key",
-        urlList: uniqueUrls.slice(0, 200),
-      }),
-    });
-    results.push({
-      engine: "Bing",
-      status: bingRes.ok ? "success" : "failed",
-      message: bingRes.ok ? `Submitted ${uniqueUrls.slice(0, 200).length} URLs` : `Error: ${bingRes.status}`,
-    });
-  } catch (e) {
-    results.push({ engine: "Bing", status: "failed", message: "Network error" });
-  }
-
-  // 3. Submit remaining URLs in batches
-  const remaining = uniqueUrls.slice(200);
-  for (let i = 0; i < remaining.length; i += 200) {
-    const batch = remaining.slice(i, i + 200);
+  for (const endpoint of INDEXNOW_ENDPOINTS) {
+    const engineName = new URL(endpoint).hostname;
     try {
-      await fetch("https://www.bing.com/indexnow", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+      for (const batch of batches) {
+        const payload: IndexNowPayload = {
           host: "topaitools.xyz",
-          key: process.env.BING_INDEXNOW_KEY || "topaitools-indexnow-key",
+          key: INDEXNOW_KEY,
           urlList: batch,
-        }),
+        };
+
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json; charset=utf-8" },
+          body: JSON.stringify(payload),
+        });
+
+        if (res.ok || res.status === 202) {
+          results.push({
+            engine: engineName,
+            status: "success",
+            message: `Submitted ${batch.length} URLs (${res.status})`,
+          });
+        } else {
+          results.push({
+            engine: engineName,
+            status: "failed",
+            message: `Error: ${res.status} ${res.statusText}`,
+          });
+        }
+      }
+    } catch (e) {
+      results.push({
+        engine: engineName,
+        status: "failed",
+        message: "Network error",
       });
-    } catch {}
+    }
   }
 
   return NextResponse.json({
