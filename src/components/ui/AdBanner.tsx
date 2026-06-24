@@ -34,7 +34,7 @@ const AD_UNITS: Record<string, { style: React.CSSProperties; format: string; min
   },
 };
 
-const PUBLISHER_ID = "ca-pub-1624976458211100";
+const PUBLISHER_ID = "ca-pub-9813677683114838";
 
 export function AdBanner({ slot, format, adSlot: adSlotProp, className = "" }: AdBannerProps) {
   const ref = useRef<HTMLDivElement>(null);

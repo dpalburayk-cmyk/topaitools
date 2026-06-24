@@ -89,6 +89,42 @@ export async function POST(request: NextRequest) {
     inquiries.push(newInquiry);
     await fs.writeFile(DATA_FILE, JSON.stringify(inquiries, null, 2));
 
+    // Send email notification via Resend (optional — only if API key is set)
+    try {
+      const resendKey = process.env.RESEND_API_KEY;
+      if (resendKey) {
+        const { Resend } = await import("resend");
+        const resend = new Resend(resendKey);
+        const budgetLabels: Record<string, string> = {
+          "under-100": "Under $100",
+          "100-300": "$100 - $300",
+          "300-500": "$300 - $500",
+          "500-plus": "$500+",
+          "one-time": "One-time",
+        };
+        await resend.emails.send({
+          from: "Top AI Tools <noreply@topaitools.xyz>",
+          to: ["advertising@topaitools.xyz", "dpalburayk@gmail.com"],
+          subject: `New Ad Inquiry: ${newInquiry.company} (${budgetLabels[newInquiry.budget] || newInquiry.budget})`,
+          html: `
+            <h2>New Advertising Inquiry</h2>
+            <table style="border-collapse:collapse; font-family:sans-serif;">
+              <tr><td style="padding:8px; border:1px solid #ddd;"><strong>Name</strong></td><td style="padding:8px; border:1px solid #ddd;">${newInquiry.name}</td></tr>
+              <tr><td style="padding:8px; border:1px solid #ddd;"><strong>Email</strong></td><td style="padding:8px; border:1px solid #ddd;">${newInquiry.email}</td></tr>
+              <tr><td style="padding:8px; border:1px solid #ddd;"><strong>Company</strong></td><td style="padding:8px; border:1px solid #ddd;">${newInquiry.company}</td></tr>
+              <tr><td style="padding:8px; border:1px solid #ddd;"><strong>Tool URL</strong></td><td style="padding:8px; border:1px solid #ddd;"><a href="${newInquiry.toolUrl}">${newInquiry.toolUrl}</a></td></tr>
+              <tr><td style="padding:8px; border:1px solid #ddd;"><strong>Budget</strong></td><td style="padding:8px; border:1px solid #ddd;">${budgetLabels[newInquiry.budget] || newInquiry.budget}</td></tr>
+              <tr><td style="padding:8px; border:1px solid #ddd;"><strong>Message</strong></td><td style="padding:8px; border:1px solid #ddd;">${newInquiry.message.replace(/\n/g, "<br>")}</td></tr>
+            </table>
+            <p style="margin-top:16px; color:#666;">Submitted: ${new Date(newInquiry.submittedAt).toLocaleString()}</p>
+          `,
+        });
+      }
+    } catch (emailError) {
+      console.error("Failed to send ad inquiry email notification:", emailError);
+      // Don't fail the request if email fails
+    }
+
     return NextResponse.json(
       {
         success: true,

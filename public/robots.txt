@@ -1,9 +1,0 @@
-# Robots.txt for topaitools.xyz
-User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://topaitools.xyz/sitemap.xml
-
-# Disallow admin/internal paths
-Disallow: /api/

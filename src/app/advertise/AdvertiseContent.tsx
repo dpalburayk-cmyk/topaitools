@@ -18,8 +18,8 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { siteConfig } from "@/data/site-config";
 
 const stats = [
-  { label: "1,000+ monthly visitors", icon: Users },
-  { label: "110+ AI tools listed", icon: Tag },
+  { label: "Growing monthly visitors", icon: Users },
+  { label: "130+ AI tools listed", icon: Tag },
   { label: "9 categories", icon: Sparkles },
   { label: "90% organic traffic", icon: BarChart3 },
 ];

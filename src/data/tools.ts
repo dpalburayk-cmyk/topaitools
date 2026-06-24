@@ -7,7 +7,7 @@ export const categories: Category[] = [
   { id: "4", slug: "audio", name: "Audio & Music", description: "Generate realistic speech, music, and audio content with AI", icon: "🎵", toolCount: 13 },
   { id: "5", slug: "code", name: "Code & Development", description: "AI-powered coding assistants and development tools", icon: "💻", toolCount: 24 },
   { id: "6", slug: "text", name: "Writing & Content", description: "AI writing tools for content creation, editing, and copywriting", icon: "✍️", toolCount: 7 },
-  { id: "7", slug: "productivity", name: "Productivity", description: "Boost your workflow with AI-powered productivity tools", icon: "⚡", toolCount: 22 },
+  { id: "7", slug: "productivity", name: "Productivity", description: "Boost your workflow with AI-powered productivity tools", icon: "⚡", toolCount: 23 },
   { id: "8", slug: "design", name: "Design & UI", description: "AI-assisted design tools for interfaces, graphics, and branding", icon: "🖌️", toolCount: 9 },
   { id: "9", slug: "research", name: "Research & Search", description: "AI-powered search engines and research tools for deep analysis", icon: "🔍", toolCount: 15 },
 ];
