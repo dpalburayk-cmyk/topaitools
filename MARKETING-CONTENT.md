@@ -7,13 +7,13 @@ Ready-to-use content for all platforms. Copy and paste as needed.
 ## 1. Reddit Posts
 
 ### r/SideProject — Showoff Saturday
-**Title:** `[Showoff Saturday] I built a curated AI tools directory with 114 tools, honest reviews, and comparison features`
+**Title:** `[Showoff Saturday] I built a curated AI tools directory with 149 tools, honest reviews, and comparison features`
 
 **Body:**
 ```
 Hey everyone! 👋
 
-I just launched **Top AI Tools** (https://topaitools.xyz) — a curated directory of 114+ AI tools across 9 categories.
+I just launched **Top AI Tools** (https://topaitools.xyz) — a curated directory of 149+ AI tools across 9 categories.
 
 **What makes it different:**
 - Honest ratings and pros/cons for each tool (no sponsored listings)
@@ -34,7 +34,7 @@ Would love to hear your feedback! What features would you want in an AI tools di
 ---
 
 ### r/artificial
-**Title:** `I built an honest AI tools directory with 114 tools, real reviews, and side-by-side comparisons`
+**Title:** `I built an honest AI tools directory with 149 tools, real reviews, and side-by-side comparisons`
 
 **Body:**
 ```
@@ -62,13 +62,13 @@ What AI tools do you think are missing? I'm actively adding more.
 ---
 
 ### r/SaaS — Self-promo Saturday
-**Title:** `[Self-Promo Saturday] Top AI Tools — An honest AI tools directory with 114 tools and comparison features`
+**Title:** `[Self-Promo Saturday] Top AI Tools — An honest AI tools directory with 149 tools and comparison features`
 
 **Body:**
 ```
 Hey r/SaaS! 👋
 
-I built **Top AI Tools** (https://topaitools.xyz) — a free, curated directory of 114+ AI tools with honest reviews and side-by-side comparisons.
+I built **Top AI Tools** (https://topaitools.xyz) — a free, curated directory of 149+ AI tools with honest reviews and side-by-side comparisons.
 
 **Key features:**
 - 9 categories (Chatbots, Image, Video, Audio, Code, Writing, Productivity, Design, Research)
@@ -88,13 +88,13 @@ I'm a solo developer building this on the side. Would love feedback from the Saa
 
 ## 2. Hacker News — Show HN
 
-**Title:** `Show HN: Top AI Tools — Curated directory of 114 AI tools with honest reviews`
+**Title:** `Show HN: Top AI Tools — Curated directory of 149 AI tools with honest reviews`
 
 **Body:**
 ```
 I built Top AI Tools (https://topaitools.xyz) because I was frustrated with AI tool review sites that are just collections of affiliate links.
 
-It's a curated directory of 114 AI tools across 9 categories (chatbots, image, video, audio, code, writing, productivity, design, research). Each tool has:
+It's a curated directory of 149 AI tools across 9 categories (chatbots, image, video, audio, code, writing, productivity, design, research). Each tool has:
 
 - Honest pros/cons (not marketing copy)
 - User ratings
@@ -120,7 +120,7 @@ What do you think could be improved? I'm actively adding more tools and features
 
 **Tweet 1:**
 ```
-🚀 I just launched Top AI Tools — a curated directory of 114+ AI tools with honest reviews, pros/cons, and side-by-side comparisons.
+🚀 I just launched Top AI Tools — a curated directory of 149+ AI tools with honest reviews, pros/cons, and side-by-side comparisons.
 
 No affiliate spam. No paywall. Just real info to help you pick the right AI tools.
 
@@ -196,7 +196,7 @@ I built a curated AI tools directory (https://topaitools.xyz) because I was tire
 
 Here's what it includes:
 
-📊 114 AI tools across 9 categories (Chatbots, Image, Video, Audio, Code, Writing, Productivity, Design, Research)
+📊 149 AI tools across 9 categories (Chatbots, Image, Video, Audio, Code, Writing, Productivity, Design, Research)
 
 ⚖️ Compare feature — pick any tools and compare them side by side
 
@@ -220,10 +220,10 @@ If you're exploring AI tools for your work, I'd love to hear what you think. Wha
 ## 5. Directory Submissions
 
 ### DevHunt (https://devhunt.org)
-**Tagline:** Curated directory of 114 AI tools with honest reviews and comparisons
+**Tagline:** Curated directory of 149 AI tools with honest reviews and comparisons
 **Description:**
 ```
-Top AI Tools is a curated directory of 114 AI tools across 9 categories. Features honest pros/cons, side-by-side comparison, price filters, favorites, and 15 in-depth blog posts. Built with Next.js 16 and TypeScript. No login required.
+Top AI Tools is a curated directory of 149 AI tools across 9 categories. Features honest pros/cons, side-by-side comparison, price filters, favorites, and 15 in-depth blog posts. Built with Next.js 16 and TypeScript. No login required.
 ```
 **Categories:** Productivity, Developer Tools, AI
 **Website:** https://topaitools.xyz
@@ -236,7 +236,7 @@ Top AI Tools is a curated directory of 114 AI tools across 9 categories. Feature
 **Tagline:** Discover, compare, and choose the best AI tools
 **Description:**
 ```
-Top AI Tools is a free, curated directory of 114+ AI tools with honest reviews, side-by-side comparisons, and in-depth blog posts. Filter by price (free/freemium/paid), category, or trending status. Compare any tools side by side to make informed decisions.
+Top AI Tools is a free, curated directory of 149+ AI tools with honest reviews, side-by-side comparisons, and in-depth blog posts. Filter by price (free/freemium/paid), category, or trending status. Compare any tools side by side to make informed decisions.
 ```
 **Categories:** AI, Productivity, Directory
 **Pricing:** Free
@@ -249,7 +249,7 @@ Top AI Tools is a free, curated directory of 114+ AI tools with honest reviews, 
 **Tagline:** The honest AI tools directory
 **Description:**
 ```
-A curated directory of 114 AI tools across 9 categories with honest reviews, pros/cons, and side-by-side comparisons. Includes 15 in-depth blog posts comparing popular tools like Claude vs ChatGPT. Free to use, no login required.
+A curated directory of 149 AI tools across 9 categories with honest reviews, pros/cons, and side-by-side comparisons. Includes 15 in-depth blog posts comparing popular tools like Claude vs ChatGPT. Free to use, no login required.
 ```
 **Stage:** Launched
 **Website:** https://topaitools.xyz
@@ -260,7 +260,7 @@ A curated directory of 114 AI tools across 9 categories with honest reviews, pro
 ### There's An AI For That (https://theresanaiforthat.com/submit)
 **Tool Name:** Top AI Tools (Directory)
 **URL:** https://topaitools.xyz
-**Description:** Curated directory of 114 AI tools with honest reviews, comparisons, and blog posts. Free, no login required.
+**Description:** Curated directory of 149 AI tools with honest reviews, comparisons, and blog posts. Free, no login required.
 **Categories:** Directory, Reviews, Productivity
 
 ---
@@ -281,7 +281,7 @@ I built a free AI tools directory that I think some of you might find useful:
 
 🔍 https://topaitools.xyz
 
-It has 114+ tools across 9 categories with:
+It has 149+ tools across 9 categories with:
 - Honest pros and cons
 - Side-by-side comparison
 - Price filters (free/freemium/paid)

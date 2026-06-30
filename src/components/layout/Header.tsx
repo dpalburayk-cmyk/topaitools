@@ -64,6 +64,7 @@ export function Header() {
     { href: "/tools", label: "Tools" },
     { href: "/categories", label: "Categories" },
     { href: "/blog", label: "Blog" },
+    { href: "/pricing", label: "Pricing" },
     { href: "/submit", label: "Submit" },
     { href: "/about", label: "About" },
   ];

@@ -5,7 +5,7 @@ export const siteConfig: SiteConfig = {
   description:
     "Discover, compare, and choose the best AI tools for every task. Curated reviews, honest ratings, and up-to-date insights.",
   url: "https://topaitools.xyz",
-  ogImage: "https://topaitools.xyz/og.png",
+  ogImage: "https://topaitools.xyz/opengraph-image",
   links: {
     twitter: "https://x.com/topaitoolsxyz",
     github: "https://github.com/topaitools",

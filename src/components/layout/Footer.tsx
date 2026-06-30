@@ -43,6 +43,7 @@ export function Footer() {
                 { href: "/tools?pricing=free", label: "Free Tools" },
                 { href: "/tools?pricing=paid", label: "Paid Tools" },
                 { href: "/submit", label: "Submit a Tool" },
+                { href: "/pricing", label: "Pricing" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -71,6 +72,7 @@ export function Footer() {
             <ul className="space-y-2.5">
               {[
                 { href: "/blog", label: "Blog" },
+                { href: "/pricing", label: "Pricing" },
                 { href: "/about", label: "About" },
                 { href: "/advertise", label: "Advertise" },
                 { href: "/about", label: "Contact" },

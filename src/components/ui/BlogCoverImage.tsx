@@ -15,6 +15,22 @@ import {
 import type { LucideIcon } from "lucide-react";
 
 const CATEGORY_STYLES: Record<string, { gradient: string; icon: LucideIcon }> = {
+  roundup: {
+    gradient: "from-blue-500/20 via-indigo-500/15 to-cyan-500/20",
+    icon: TrendingUp,
+  },
+  comparison: {
+    gradient: "from-purple-500/20 via-violet-500/15 to-pink-500/20",
+    icon: BarChart3,
+  },
+  guide: {
+    gradient: "from-green-500/20 via-emerald-500/15 to-teal-500/20",
+    icon: Lightbulb,
+  },
+  review: {
+    gradient: "from-amber-500/20 via-orange-500/15 to-red-500/20",
+    icon: BarChart3,
+  },
   "ai news": {
     gradient: "from-blue-500/20 via-indigo-500/15 to-cyan-500/20",
     icon: TrendingUp,

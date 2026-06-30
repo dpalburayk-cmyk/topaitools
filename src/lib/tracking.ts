@@ -60,4 +60,10 @@ export const track = {
   favoriteToggle(toolSlug: string, added: boolean) {
     trackEvent(added ? "favorite_add" : "favorite_remove", { item_id: toolSlug });
   },
+  pricingView(planName?: string) {
+    trackEvent("pricing_view", { plan_name: planName || "all" });
+  },
+  pricingClick(planName: string) {
+    trackEvent("pricing_click", { plan_name: planName, destination: "mailto" });
+  },
 };

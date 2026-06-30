@@ -6,20 +6,22 @@ import {
   Users,
   BarChart3,
   Shield,
-  Star,
   ArrowRight,
   Check,
   Sparkles,
-  Megaphone,
   Tag,
   Loader2,
+  Megaphone,
+  Package,
+  Handshake,
 } from "lucide-react";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { siteConfig } from "@/data/site-config";
 
 const stats = [
   { label: "Growing monthly visitors", icon: Users },
-  { label: "130+ AI tools listed", icon: Tag },
+  { label: "134 AI tools listed", icon: Tag },
   { label: "9 categories", icon: Sparkles },
   { label: "90% organic traffic", icon: BarChart3 },
 ];
@@ -45,61 +47,32 @@ const benefits = [
   },
 ];
 
-const plans = [
+const customOptions = [
   {
-    name: "Featured Listing",
-    price: "$49",
-    period: "month",
-    icon: Star,
-    description:
-      "Your tool appears at the top of relevant category pages with a 'Sponsored' badge.",
-    features: [
-      "Featured badge on your listing",
-      "Priority placement in categories",
-      "Analytics dashboard access",
-    ],
-    cta: "Get Started",
-    highlighted: false,
-  },
-  {
-    name: "Premium Banner",
-    price: "$99",
-    period: "month",
     icon: Megaphone,
+    title: "Custom Advertising",
     description:
-      "A prominent banner ad displayed across all pages on our platform for maximum visibility.",
-    features: [
-      "All pages placement",
-      "Custom banner design",
-      "Click tracking analytics",
-      "Monthly performance report",
-    ],
-    cta: "Get Started",
-    highlighted: true,
+      "Site-wide banner ads, sponsored content, and custom placements tailored to your goals and budget.",
   },
   {
-    name: "Dedicated Review",
-    price: "$199",
-    period: "one-time",
-    icon: Sparkles,
+    icon: Package,
+    title: "Bulk Listings",
     description:
-      "A comprehensive, honest review of your AI tool with detailed feature breakdown, pros & cons, and comparison with competitors.",
-    features: [
-      "Full review article",
-      "Comparison table with competitors",
-      "Permanent placement",
-      "Social media promotion",
-    ],
-    cta: "Request a Review",
-    highlighted: false,
+      "Special rates for agencies and companies listing 5 or more AI tools on our directory.",
+  },
+  {
+    icon: Handshake,
+    title: "Partnership Opportunities",
+    description:
+      "Long-term collaborations, content sponsorships, and co-marketing arrangements.",
   },
 ];
 
 const faqs = [
   {
-    question: "How much traffic does TopAI Tools receive?",
+    question: "How much traffic does Top AI Tools receive?",
     answer:
-      "We receive over 1,000 monthly visitors with 90% organic traffic from Google searches and social media.",
+      "We receive growing monthly visitors with 90% organic traffic from Google searches and social media.",
   },
   {
     question: "What types of ads do you accept?",
@@ -109,7 +82,7 @@ const faqs = [
   {
     question: "Can I choose where my ad appears?",
     answer:
-      "Yes! Featured listings appear in specific categories. Banner ads appear across all pages.",
+      "Yes! Featured listings appear in specific categories. Banner ads appear across all pages. Custom placements are available upon request.",
   },
   {
     question: "How do I track results?",
@@ -195,6 +168,34 @@ export function AdvertiseContent() {
         ))}
       </div>
 
+      {/* Pricing page cross-link — prominent */}
+      <section className="mb-16">
+        <div className="rounded-xl border border-indigo-500/20 bg-indigo-500/5 p-6 sm:p-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center shrink-0">
+              <Sparkles className="w-6 h-6 text-indigo-500" />
+            </div>
+            <div className="flex-1">
+              <h2 className="text-xl font-semibold mb-1">
+                Looking to list your AI tool?
+              </h2>
+              <p className="text-sm text-muted-foreground">
+                Check out our pricing page for listing packages — from free
+                submissions to premium featured placements with reviews and
+                dedicated promotion.
+              </p>
+            </div>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-500 text-white font-medium text-sm hover:bg-indigo-600 transition-colors shadow-lg shadow-indigo-500/25 shrink-0"
+            >
+              View Pricing
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Why Advertise */}
       <section className="mb-16">
         <h2 className="text-2xl font-semibold text-center mb-8">
@@ -218,76 +219,39 @@ export function AdvertiseContent() {
         </div>
       </section>
 
-      {/* Pricing Tiers */}
+      {/* Custom Advertising Options */}
       <section className="mb-16">
         <h2 className="text-2xl font-semibold text-center mb-2">
-          Choose Your Plan
+          Custom Advertising Solutions
         </h2>
         <p className="text-muted-foreground text-center mb-8">
-          Flexible options to fit your budget and goals
+          Beyond standard listings, we offer tailored advertising options
         </p>
-        <div className="grid md:grid-cols-3 gap-6">
-          {plans.map((plan) => (
+        <div className="grid sm:grid-cols-3 gap-6">
+          {customOptions.map((option) => (
             <div
-              key={plan.name}
-              className={`relative rounded-xl border p-6 flex flex-col ${
-                plan.highlighted
-                  ? "border-indigo-500 bg-card shadow-lg shadow-indigo-500/10"
-                  : "border-border bg-card"
-              }`}
+              key={option.title}
+              className="rounded-xl border border-border bg-card p-6"
             >
-              {plan.highlighted && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-indigo-500 text-white text-xs font-medium">
-                  Most Popular
-                </span>
-              )}
               <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center mb-4">
-                <plan.icon className="w-5 h-5 text-indigo-500" />
+                <option.icon className="w-5 h-5 text-indigo-500" />
               </div>
-              <h3 className="font-semibold text-lg mb-1">{plan.name}</h3>
-              <div className="mb-3">
-                <span className="text-3xl font-bold">{plan.price}</span>
-                <span className="text-muted-foreground text-sm">
-                  /{plan.period}
-                </span>
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-                {plan.description}
+              <h3 className="font-semibold text-base mb-2">{option.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {option.description}
               </p>
-              <ul className="space-y-2 mb-6 flex-1">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 text-sm">
-                    <Check className="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={`mailto:advertising@topaitools.xyz?subject=${encodeURIComponent(`Interest in ${plan.name} — ${plan.name}`)}`}
-                className="inline-flex items-center justify-center gap-2 w-full px-5 py-2.5 rounded-xl font-medium text-sm transition-colors cursor-pointer"
-              >
-                {plan.highlighted ? (
-                  <span className="bg-indigo-500 text-white hover:bg-indigo-600 rounded-xl px-5 py-2.5 w-full text-center flex items-center justify-center gap-2">
-                    {plan.cta}
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                ) : (
-                  <span className="border border-border text-foreground hover:bg-muted rounded-xl px-5 py-2.5 w-full text-center flex items-center justify-center gap-2">
-                    {plan.cta}
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                )}
-              </a>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Contact CTA + Form */}
+      {/* Contact Form */}
       <section className="mb-16">
         <div className="rounded-xl border border-border bg-card p-8 sm:p-10">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-semibold mb-2">Ready to grow?</h2>
+            <h2 className="text-2xl font-semibold mb-2">
+              Get in Touch
+            </h2>
             <p className="text-muted-foreground">
               Contact us at{" "}
               <a
@@ -296,7 +260,7 @@ export function AdvertiseContent() {
               >
                 advertising@topaitools.xyz
               </a>{" "}
-              or fill out the form below.
+              or fill out the form below for custom advertising inquiries.
             </p>
           </div>
 
@@ -322,37 +286,23 @@ export function AdvertiseContent() {
               )}
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium mb-1.5"
-                  >
+                  <label htmlFor="name" className="block text-sm font-medium mb-1.5">
                     Name
                   </label>
                   <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
+                    id="name" name="name" type="text" required
+                    value={formData.name} onChange={handleChange}
                     placeholder="Your name"
                     className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-colors"
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium mb-1.5"
-                  >
+                  <label htmlFor="email" className="block text-sm font-medium mb-1.5">
                     Email
                   </label>
                   <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
+                    id="email" name="email" type="email" required
+                    value={formData.email} onChange={handleChange}
                     placeholder="you@company.com"
                     className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-colors"
                   />
@@ -360,82 +310,54 @@ export function AdvertiseContent() {
               </div>
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label
-                    htmlFor="company"
-                    className="block text-sm font-medium mb-1.5"
-                  >
+                  <label htmlFor="company" className="block text-sm font-medium mb-1.5">
                     Company Name
                   </label>
                   <input
-                    id="company"
-                    name="company"
-                    type="text"
-                    required
-                    value={formData.company}
-                    onChange={handleChange}
+                    id="company" name="company" type="text" required
+                    value={formData.company} onChange={handleChange}
                     placeholder="Your company"
                     className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-colors"
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="toolUrl"
-                    className="block text-sm font-medium mb-1.5"
-                  >
+                  <label htmlFor="toolUrl" className="block text-sm font-medium mb-1.5">
                     Tool URL
                   </label>
                   <input
-                    id="toolUrl"
-                    name="toolUrl"
-                    type="url"
-                    required
-                    value={formData.toolUrl}
-                    onChange={handleChange}
+                    id="toolUrl" name="toolUrl" type="url" required
+                    value={formData.toolUrl} onChange={handleChange}
                     placeholder="https://your-ai-tool.com"
                     className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-colors"
                   />
                 </div>
               </div>
               <div>
-                <label
-                  htmlFor="budget"
-                  className="block text-sm font-medium mb-1.5"
-                >
-                  Budget Range
+                <label htmlFor="budget" className="block text-sm font-medium mb-1.5">
+                  Inquiry Type
                 </label>
                 <select
-                  id="budget"
-                  name="budget"
-                  required
-                  value={formData.budget}
-                  onChange={handleChange}
+                  id="budget" name="budget" required
+                  value={formData.budget} onChange={handleChange}
                   className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-colors"
                 >
                   <option value="" disabled>
-                    Select your budget range
+                    Select your inquiry type
                   </option>
-                  <option value="under-100">Under $100/month</option>
-                  <option value="100-300">$100 - $300/month</option>
-                  <option value="300-500">$300 - $500/month</option>
-                  <option value="500-plus">$500+/month</option>
-                  <option value="one-time">One-time payment</option>
+                  <option value="custom-advertising">Custom advertising partnership</option>
+                  <option value="bulk-listings">Bulk listings (5+ tools)</option>
+                  <option value="sponsorship">Content sponsorship</option>
+                  <option value="other">Other</option>
                 </select>
               </div>
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-1.5"
-                >
+                <label htmlFor="message" className="block text-sm font-medium mb-1.5">
                   Message
                 </label>
                 <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  required
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Tell us about your AI tool and what you're looking for..."
+                  id="message" name="message" rows={4} required
+                  value={formData.message} onChange={handleChange}
+                  placeholder="Tell us about your AI tool and what advertising solution you're looking for..."
                   className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-colors resize-none"
                 />
               </div>
@@ -452,7 +374,7 @@ export function AdvertiseContent() {
                 ) : (
                   <>
                     <Mail className="w-4 h-4" />
-                    Send Message
+                    Send Inquiry
                   </>
                 )}
               </button>

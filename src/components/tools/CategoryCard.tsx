@@ -45,6 +45,7 @@ export function CategoryCard({ category, index = 0 }: CategoryCardProps) {
       <div className={cn("absolute top-0 right-0 w-24 h-24 rounded-full bg-gradient-to-br opacity-5 group-hover:opacity-10 transition-opacity -translate-y-1/2 translate-x-1/2", gradient)} />
 
       <div className="relative z-10">
+        <div className="text-2xl mb-2">{category.icon}</div>
         <h3 className="font-semibold text-base mb-1 group-hover:text-indigo-500 transition-colors">
           {category.name}
         </h3>

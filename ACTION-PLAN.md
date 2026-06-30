@@ -5,7 +5,7 @@
 ---
 
 ## الحالة الحالية (آخر تحديث: 17 يونيو 2026)
-- ✅ الموقع حي: https://topaitools.xyz (114 أداة، 9 فئات، 15 مقال مدونة)
+- ✅ الموقع حي: https://topaitools.xyz (134 أداة، 9 فئات، 15 مقال مدونة)
 - ✅ تحسينات تقنية: RSS feed, manifest, SEO, GA4, AdSense
 - ✅ الأداء ممتاز: TTFB 93ms, FCP 180ms, تحميل كامل 408ms
 - ✅ SEO شامل: JSON-LD (5 schemas), sitemap, robots, OG images, IndexNow
@@ -62,7 +62,7 @@
 
 انسخ والصق التريد الأول:
 ```
-🚀 I just launched Top AI Tools — a curated directory of 114+ AI tools with honest reviews, pros/cons, and side-by-side comparisons.
+🚀 I just launched Top AI Tools — a curated directory of 134+ AI tools with honest reviews, pros/cons, and side-by-side comparisons.
 
 No affiliate spam. No paywall. Just real info to help you pick the right AI tools.
 
@@ -165,7 +165,7 @@ Also learn Git/GitHub early - it's non-negotiable for every developer.
 
 **منشور Show HN الجاهز:**
 ```
-Show HN: Top AI Tools — Curated directory of 114 AI tools with honest reviews
+Show HN: Top AI Tools — Curated directory of 134 AI tools with honest reviews
 
 I built Top AI Tools (https://topaitools.xyz) because I was frustrated with AI tool review sites that are just collections of affiliate links.
 
@@ -197,7 +197,7 @@ What do you think could be improved?
 
 **بيانات التقديم الجاهزة:**
 - **الاسم:** Top AI Tools
-- **الوصف:** Curated directory of 114+ AI tools with honest reviews, side-by-side comparisons, and in-depth blog posts. Filter by price, category, or trending status.
+- **الوصف:** Curated directory of 134+ AI tools with honest reviews, side-by-side comparisons, and in-depth blog posts. Filter by price, category, or trending status.
 - **الرابط:** https://topaitools.xyz
 - **الفئة:** AI, Productivity, Directory
 - **السعر:** Free
@@ -214,7 +214,7 @@ What do you think could be improved?
 
 I built a curated AI tools directory (https://topaitools.xyz) because I was tired of "review" sites that are just affiliate link farms.
 
-📊 114 AI tools across 9 categories (Chatbots, Image, Video, Audio, Code, Writing, Productivity, Design, Research)
+📊 134 AI tools across 9 categories (Chatbots, Image, Video, Audio, Code, Writing, Productivity, Design, Research)
 
 ⚖️ Compare feature — pick any tools and compare them side by side
 

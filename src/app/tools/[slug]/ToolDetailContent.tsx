@@ -120,16 +120,28 @@ export function ToolDetailContent({ tool, alternatives, relatedTools }: ToolDeta
           {/* Ad Slot */}
           <AdBanner slot="inline" className="my-4" />
 
-          {/* Screenshot placeholder */}
+          {/* Visit Website Card */}
           <div>
             <h2 className="text-lg font-semibold mb-4">Preview</h2>
-            <div className="aspect-video rounded-xl border border-border bg-muted/30 flex items-center justify-center">
-              <div className="text-center text-muted-foreground">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 flex items-center justify-center mx-auto mb-3 overflow-hidden">
-                  <ToolIcon name={tool.name} imageUrl={tool.imageUrl} websiteUrl={tool.websiteUrl} size="xl" />
+            <div className="rounded-xl border border-border bg-gradient-to-br from-indigo-500/5 via-card to-violet-500/5 p-6">
+              <div className="flex items-center gap-4 mb-4">
+                <ToolIcon name={tool.name} imageUrl={tool.imageUrl} websiteUrl={tool.websiteUrl} size="xl" className="shadow-lg shadow-indigo-500/20" />
+                <div>
+                  <h3 className="font-semibold text-lg">{tool.name}</h3>
+                  <p className="text-sm text-muted-foreground capitalize">{tool.category.replace(/-/g, " ")}</p>
                 </div>
-                <p className="text-sm">{tool.name} screenshot coming soon</p>
               </div>
+              <p className="text-sm text-muted-foreground mb-4">{tool.longDescription}</p>
+              <a
+                href={getToolLink(tool)}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                onClick={() => track.toolVisit(tool.name, tool.slug)}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-500 text-white font-medium text-sm hover:bg-indigo-600 transition-colors shadow-lg shadow-indigo-500/25"
+              >
+                Visit {tool.name}
+                <ExternalLink className="w-4 h-4" />
+              </a>
             </div>
           </div>
 

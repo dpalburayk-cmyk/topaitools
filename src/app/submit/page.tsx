@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Send, Check, Loader2 } from "lucide-react";
+import { Send, Check, Loader2, Sparkles, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { categories } from "@/data/tools";
 
@@ -57,6 +58,30 @@ export default function SubmitPage() {
         <p className="text-muted-foreground">
           Know a great AI tool that should be listed? Submit it here and we'll review it within 48 hours.
         </p>
+      </div>
+
+      {/* Pricing upsell banner */}
+      <div className="rounded-xl border border-indigo-500/20 bg-indigo-500/5 p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-8">
+        <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center shrink-0">
+          <Sparkles className="w-5 h-5 text-indigo-500" />
+        </div>
+        <div className="flex-1">
+          <h3 className="font-semibold text-sm mb-1">Want more visibility?</h3>
+          <p className="text-sm text-muted-foreground">
+            Get featured placement, a dedicated review, and reach thousands more users with our{" "}
+            <Link href="/pricing" className="text-indigo-500 hover:underline font-medium">
+              pricing plans starting at $99
+            </Link>
+            .
+          </p>
+        </div>
+        <Link
+          href="/pricing"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-500 text-white font-medium text-sm hover:bg-indigo-600 transition-colors shrink-0"
+        >
+          See Plans
+          <ArrowRight className="w-4 h-4" />
+        </Link>
       </div>
 
       {submitted ? (

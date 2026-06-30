@@ -7,6 +7,7 @@ import { GoogleAnalytics } from "@/components/layout/GoogleAnalytics";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CompareBar } from "@/components/layout/CompareBar";
+import { BackToTop } from "@/components/ui/BackToTop";
 import { siteConfig } from "@/data/site-config";
 import { tools, categories } from "@/data/tools";
 import "./globals.css";
@@ -143,6 +144,7 @@ export default function RootLayout({
             <div className="flex-1 pb-16">{children}</div>
             <Footer />
             <CompareBar />
+            <BackToTop />
           </CompareProvider>
         </ThemeProvider>
         <GoogleAnalytics />

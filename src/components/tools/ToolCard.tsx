@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Star, ExternalLink } from "lucide-react";
+import { Star, ExternalLink, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Tool } from "@/types";
 import { FavoriteButton } from "@/components/ui/FavoriteButton";
@@ -47,6 +47,12 @@ export function ToolCard({ tool, index = 0 }: ToolCardProps) {
               <span className={cn("text-[10px] font-medium px-2 py-0.5 rounded-full capitalize", pricingColors[tool.pricingModel])}>
                 {pricingLabels[tool.pricingModel]}
               </span>
+              {tool.isSponsored && (
+                <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400">
+                  <Sparkles className="w-2.5 h-2.5" />
+                  Sponsored
+                </span>
+              )}
             </div>
           </div>
           <div className="flex items-center gap-1.5">
