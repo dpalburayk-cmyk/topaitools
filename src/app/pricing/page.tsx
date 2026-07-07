@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     "AI tool advertising", "AI tool marketing", "submit AI tool",
     "featured AI tool listing", "AI tool directory pricing",
   ],
+  robots: { index: false, follow: true },
 };
 
 export default function PricingPage() {

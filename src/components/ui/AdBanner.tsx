@@ -7,6 +7,8 @@ interface AdBannerProps {
   format?: "auto" | "horizontal" | "vertical" | "rectangle";
   adSlot?: string;
   className?: string;
+  /** If true, the ad slot is completely hidden (no placeholder rendered) */
+  disabled?: boolean;
 }
 
 // AdSense ad units — create these in your AdSense dashboard at https://www.google.com/adsense/
@@ -36,13 +38,14 @@ const AD_UNITS: Record<string, { style: React.CSSProperties; format: string; min
 
 const PUBLISHER_ID = "ca-pub-9813677683114838";
 
-export function AdBanner({ slot, format, adSlot: adSlotProp, className = "" }: AdBannerProps) {
+export function AdBanner({ slot, format, adSlot: adSlotProp, className = "", disabled = false }: AdBannerProps) {
   const ref = useRef<HTMLDivElement>(null);
   const adLoaded = useRef(false);
   const [visible, setVisible] = useState(false);
 
   // Lazy-load: only render ad when the container is in the viewport
   useEffect(() => {
+    if (disabled) return;
     const el = ref.current;
     if (!el || typeof IntersectionObserver === "undefined") {
       setVisible(true);
@@ -61,11 +64,11 @@ export function AdBanner({ slot, format, adSlot: adSlotProp, className = "" }: A
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [disabled]);
 
   // Create the ad unit once visible
   useEffect(() => {
-    if (!visible || !ref.current || adLoaded.current) return;
+    if (disabled || !visible || !ref.current || adLoaded.current) return;
     adLoaded.current = true;
 
     const config = AD_UNITS[slot];
@@ -97,7 +100,10 @@ export function AdBanner({ slot, format, adSlot: adSlotProp, className = "" }: A
     } catch {
       // AdSense not yet loaded or blocked
     }
-  }, [slot, format, adSlotProp, visible]);
+  }, [slot, format, adSlotProp, visible, disabled]);
+
+  // If disabled, don't render anything — not even a placeholder
+  if (disabled) return null;
 
   const config = AD_UNITS[slot];
 

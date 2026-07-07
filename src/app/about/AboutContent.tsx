@@ -1,6 +1,6 @@
 "use client";
 
-import { Heart, Users, Search, Shield, Zap, Globe } from "lucide-react";
+import { Heart, Users, Search, Shield, Zap, Globe, Star, BookOpen, GitCompare } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { siteConfig } from "@/data/site-config";
 
@@ -9,22 +9,32 @@ export function AboutContent() {
     {
       icon: Search,
       title: "Discover",
-      description: "We carefully curate and review every AI tool listed on our platform, making it easy to find the perfect solution for your needs.",
+      description: "We carefully curate and review every AI tool listed on our platform, evaluating features, pricing, and real-world usability to help you find the perfect solution for your needs.",
     },
     {
       icon: Shield,
       title: "Honest Reviews",
-      description: "Every review is based on real testing and honest assessments. We highlight both strengths and weaknesses so you can make informed decisions.",
+      description: "Every review is based on real testing and honest assessments. We highlight both strengths and weaknesses so you can make informed decisions without biased marketing influence.",
+    },
+    {
+      icon: GitCompare,
+      title: "Side-by-Side Comparison",
+      description: "Our unique comparison feature lets you select any AI tools and instantly see their features, pricing, ratings, and pros/cons side by side — no more switching between tabs.",
+    },
+    {
+      icon: BookOpen,
+      title: "In-Depth Guides",
+      description: "We publish detailed comparison articles and guides covering topics like Claude vs ChatGPT, best AI tools for students, and AI coding assistants — all based on hands-on testing.",
+    },
+    {
+      icon: Star,
+      title: "Editorial Ratings",
+      description: "Each tool receives an editorial rating based on quality, usability, value for money, and reliability. We never accept payment for higher rankings or positive reviews.",
     },
     {
       icon: Zap,
       title: "Stay Current",
-      description: "The AI landscape evolves rapidly. We update our directory weekly with new tools, updated reviews, and the latest industry insights.",
-    },
-    {
-      icon: Heart,
-      title: "Community",
-      description: "Built by AI enthusiasts, for AI enthusiasts. We value community feedback and continuously improve based on your suggestions.",
+      description: "The AI landscape evolves rapidly. We update our directory regularly with new tools, updated reviews, pricing changes, and the latest industry insights.",
     },
   ];
 
@@ -38,7 +48,7 @@ export function AboutContent() {
             About {siteConfig.name}
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            We believe finding the right AI tool shouldn't be overwhelming...
+            Finding the right AI tool shouldn&apos;t be overwhelming. We built {siteConfig.name} as an independent, honest directory that cuts through the noise of affiliate-driven review sites.
           </p>
         </div>
 
@@ -58,21 +68,46 @@ export function AboutContent() {
           <h2 className="text-xl font-semibold mb-4">Our Story</h2>
           <div className="prose prose-neutral dark:prose-invert max-w-none space-y-4">
             <p className="text-muted-foreground">
-              {siteConfig.name} was born from frustration...
+              {siteConfig.name} was born from a simple frustration: every time we searched for an AI tool, the results were dominated by review sites that were essentially collections of affiliate links. Honest comparisons were nearly impossible to find, and most &quot;best AI tools&quot; lists were clearly sponsored.
             </p>
             <p className="text-muted-foreground">
-              We created this to solve this problem...
+              We decided to build what we wished existed — a curated directory where every tool is evaluated on its actual merits. Our team tests tools hands-on, compares features and pricing transparently, and provides pros and cons that reflect real usage — not marketing copy.
             </p>
             <p className="text-muted-foreground">
-              Today, this platform helps thousands...
+              Today, {siteConfig.name} covers over 149 AI tools across 9 categories including chatbots, image generation, video production, audio and music, code assistance, writing, productivity, design, and research. Each tool listing includes detailed features, pricing information, honest ratings, and alternative suggestions to help you find the right fit.
             </p>
+            <p className="text-muted-foreground">
+              We also publish in-depth blog articles comparing popular tools like Claude vs ChatGPT vs Gemini, guides for students and small businesses, and roundups of the best tools in each category. All content is free to access — no paywall, no login required.
+            </p>
+          </div>
+        </div>
+
+        <div className="rounded-xl border border-border bg-card p-8">
+          <h2 className="text-xl font-semibold mb-4">What Makes Us Different</h2>
+          <div className="space-y-4">
+            <div className="flex items-start gap-3">
+              <span className="text-emerald-500 font-bold mt-0.5">✓</span>
+              <p className="text-sm text-muted-foreground"><strong className="text-foreground">No paid rankings.</strong> Tool positions are determined by editorial ratings, not sponsorship or affiliate agreements.</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-emerald-500 font-bold mt-0.5">✓</span>
+              <p className="text-sm text-muted-foreground"><strong className="text-foreground">Real pros and cons.</strong> Every review includes genuine strengths and weaknesses based on actual usage.</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-emerald-500 font-bold mt-0.5">✓</span>
+              <p className="text-sm text-muted-foreground"><strong className="text-foreground">Free forever.</strong> No paywall, no premium tier, no required sign-up to browse or compare tools.</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-emerald-500 font-bold mt-0.5">✓</span>
+              <p className="text-sm text-muted-foreground"><strong className="text-foreground">Community driven.</strong> User feedback shapes our reviews. We update listings based on real user experiences.</p>
+            </div>
           </div>
         </div>
 
         <div className="text-center">
           <h2 className="text-xl font-semibold mb-4">Get in Touch</h2>
           <p className="text-sm text-muted-foreground mb-6">
-            Have feedback, suggestions, or want to collaborate? We'd love to hear from you.
+            Have feedback, suggestions, or want to collaborate? We&apos;d love to hear from you. You can also submit a tool for review through our submission page.
           </p>
           <a
             href={`mailto:hello@topaitools.xyz`}

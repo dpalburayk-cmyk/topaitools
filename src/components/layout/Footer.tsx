@@ -75,7 +75,7 @@ export function Footer() {
                 { href: "/pricing", label: "Pricing" },
                 { href: "/about", label: "About" },
                 { href: "/advertise", label: "Advertise" },
-                { href: "/about", label: "Contact" },
+                { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">

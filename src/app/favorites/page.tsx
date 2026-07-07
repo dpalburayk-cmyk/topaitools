@@ -4,7 +4,6 @@ import { useFavorites } from "@/hooks/useFavorites";
 import { tools } from "@/data/tools";
 import { ToolCard } from "@/components/tools/ToolCard";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { AdBanner } from "@/components/ui/AdBanner";
 import { Heart, Search } from "lucide-react";
 import Link from "next/link";
 
@@ -52,9 +51,7 @@ export default function FavoritesPage() {
                 <ToolCard key={tool.id} tool={tool} index={i} />
               ))}
             </div>
-            <div className="mt-8">
-              <AdBanner slot="inline" />
-            </div>
+            <div className="mt-8" />
           </>
         ) : (
           <div className="text-center py-20">

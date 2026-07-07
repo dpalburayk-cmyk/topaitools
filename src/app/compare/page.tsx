@@ -15,7 +15,6 @@ import Link from "next/link";
 import { getToolLink } from "@/lib/tracking";
 import { cn } from "@/lib/utils";
 import { ToolIcon } from "@/components/tools/ToolIcon";
-import { AdBanner } from "@/components/ui/AdBanner";
 
 const pricingColors = {
   free: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
@@ -379,11 +378,6 @@ export default function ComparePage() {
                 )
             )}
           </div>
-        )}
-
-        {/* Ad Banner */}
-        {compareTools.length > 0 && (
-          <AdBanner slot="inline" />
         )}
       </div>
     </div>

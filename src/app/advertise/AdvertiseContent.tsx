@@ -21,7 +21,7 @@ import { siteConfig } from "@/data/site-config";
 
 const stats = [
   { label: "Growing monthly visitors", icon: Users },
-  { label: "134 AI tools listed", icon: Tag },
+  { label: "149 AI tools listed", icon: Tag },
   { label: "9 categories", icon: Sparkles },
   { label: "90% organic traffic", icon: BarChart3 },
 ];

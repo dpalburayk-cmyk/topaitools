@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     title: "Top AI Tools — The Ultimate AI Tools Directory",
     description: "110+ AI tools across 9 categories with honest reviews.",
   },
+  robots: { index: false, follow: true },
 };
 
 export default function LaunchPage() {
