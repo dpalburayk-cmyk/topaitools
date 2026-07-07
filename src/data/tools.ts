@@ -181,7 +181,7 @@ export const tools: Tool[] = [
     category: "video", pricingModel: "freemium", rating: 4.4, reviewCount: 5800,
     features: ["AI Avatars", "Multi-language", "Lip Sync", "Templates", "Custom Avatars"],
     pros: ["Realistic avatars", "Many languages", "Good templates"], cons: ["Expensive", "Custom avatars need plan"],
-    websiteUrl: "https://heygen.com", affiliateUrl: "https://heygen.com/?ref=topaitools", imageUrl: "https://icon.horse/icon/heygen.com", tags: ["video", "avatar", "marketing", "presentation"],
+    websiteUrl: "https://heygen.com", affiliateUrl: "https://heygen.com/?via=abdulrahman", imageUrl: "https://icon.horse/icon/heygen.com", tags: ["video", "avatar", "marketing", "presentation"],
     isFeatured: false, isTrending: true, alternatives: ["pika", "runway"],
     submittedAt: "2025-01-25", updatedAt: "2026-05-10",
   },
