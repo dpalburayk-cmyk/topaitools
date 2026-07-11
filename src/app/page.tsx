@@ -29,7 +29,7 @@ const faqJsonLd = {
       name: "How does Top AI Tools rank AI tools?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Tools are ranked by genuine editorial ratings based on quality, usability, features, and value for money. We do not accept payment for higher rankings — all reviews are independent and honest.",
+        text: "Free listings are ranked by genuine editorial ratings based on quality, usability, features, and value for money. Paid listings are clearly marked as Sponsored and appear in designated placement areas.",
       },
     },
     {

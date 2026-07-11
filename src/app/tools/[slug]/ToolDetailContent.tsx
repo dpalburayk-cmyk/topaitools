@@ -55,7 +55,7 @@ export function ToolDetailContent({ tool, alternatives, relatedTools }: ToolDeta
                     <Star className="w-4 h-4 fill-current" />
                     <span className="text-sm font-semibold">{tool.rating}</span>
                     <span className="text-xs text-muted-foreground">
-                      ({tool.reviewCount.toLocaleString()} reviews)
+                      ({tool.popularityScore.toLocaleString()} popularity)
                     </span>
                   </div>
                   <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full capitalize ${pricingColors[tool.pricingModel]}`}>
@@ -142,6 +142,7 @@ export function ToolDetailContent({ tool, alternatives, relatedTools }: ToolDeta
                 Visit {tool.name}
                 <ExternalLink className="w-4 h-4" />
               </a>
+              <p className="text-[11px] text-muted-foreground mt-2">We may earn a commission from tool links.</p>
             </div>
           </div>
 

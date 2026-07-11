@@ -29,7 +29,7 @@ export function AboutContent() {
     {
       icon: Star,
       title: "Editorial Ratings",
-      description: "Each tool receives an editorial rating based on quality, usability, value for money, and reliability. We never accept payment for higher rankings or positive reviews.",
+      description: "Each tool receives an editorial rating based on quality, usability, value for money, and reliability. Sponsored listings are clearly distinguished with a Sponsored badge.",
     },
     {
       icon: Zap,
@@ -71,6 +71,9 @@ export function AboutContent() {
               {siteConfig.name} was born from a simple frustration: every time we searched for an AI tool, the results were dominated by review sites that were essentially collections of affiliate links. Honest comparisons were nearly impossible to find, and most &quot;best AI tools&quot; lists were clearly sponsored.
             </p>
             <p className="text-muted-foreground">
+              Founded and operated by the <strong className="text-foreground">Top AI Tools Team</strong>. For inquiries, reach us at <a href="mailto:hello@topaitools.xyz" className="text-indigo-500 hover:underline">hello@topaitools.xyz</a> or <a href="mailto:advertising@topaitools.xyz" className="text-indigo-500 hover:underline">advertising@topaitools.xyz</a>.
+            </p>
+            <p className="text-muted-foreground">
               We decided to build what we wished existed — a curated directory where every tool is evaluated on its actual merits. Our team tests tools hands-on, compares features and pricing transparently, and provides pros and cons that reflect real usage — not marketing copy.
             </p>
             <p className="text-muted-foreground">
@@ -87,7 +90,7 @@ export function AboutContent() {
           <div className="space-y-4">
             <div className="flex items-start gap-3">
               <span className="text-emerald-500 font-bold mt-0.5">✓</span>
-              <p className="text-sm text-muted-foreground"><strong className="text-foreground">No paid rankings.</strong> Tool positions are determined by editorial ratings, not sponsorship or affiliate agreements.</p>
+              <p className="text-sm text-muted-foreground"><strong className="text-foreground">Editorial rankings are independent.</strong> Free tool positions are determined by editorial ratings. Sponsored listings are clearly labeled and appear in designated placement areas.</p>
             </div>
             <div className="flex items-start gap-3">
               <span className="text-emerald-500 font-bold mt-0.5">✓</span>

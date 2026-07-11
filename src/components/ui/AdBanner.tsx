@@ -36,7 +36,7 @@ const AD_UNITS: Record<string, { style: React.CSSProperties; format: string; min
   },
 };
 
-const PUBLISHER_ID = "ca-pub-9813677683114838";
+const PUBLISHER_ID = "ca-pub-1624976458211100";
 
 export function AdBanner({ slot, format, adSlot: adSlotProp, className = "", disabled = false }: AdBannerProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -115,7 +115,7 @@ export function AdBanner({ slot, format, adSlot: adSlotProp, className = "", dis
       aria-label="Advertisement"
     >
       {/* Fallback placeholder shown when no ad is loaded */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground text-xs opacity-0 pointer-events-none">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground text-xs opacity-50 pointer-events-none">
         <span>Advertisement</span>
       </div>
     </div>

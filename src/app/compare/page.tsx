@@ -72,7 +72,7 @@ export default function ComparePage() {
             <Star className="w-4 h-4 text-amber-500 fill-current" />
             <span className="font-semibold">{tool.rating}</span>
             <span className="text-xs text-muted-foreground">
-              ({tool.reviewCount.toLocaleString()})
+              ({tool.popularityScore.toLocaleString()} popularity)
             </span>
           </div>
         );

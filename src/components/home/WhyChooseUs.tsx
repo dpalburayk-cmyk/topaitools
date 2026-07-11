@@ -7,7 +7,7 @@ const features = [
     icon: Shield,
     title: "Honest Reviews",
     description:
-      "Every tool is personally tested and reviewed. No paid placements influence our ratings.",
+      "Every tool is personally tested and reviewed. Sponsored listings are clearly marked with a badge.",
   },
   {
     icon: RefreshCw,

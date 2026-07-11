@@ -9,7 +9,7 @@ export interface Tool {
   category: string;
   pricingModel: PricingModel;
   rating: number;
-  reviewCount: number;
+  popularityScore: number;
   features: string[];
   pros: string[];
   cons: string[];

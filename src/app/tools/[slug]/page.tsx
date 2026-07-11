@@ -61,7 +61,7 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: tool.rating,
-      reviewCount: tool.reviewCount,
+      ratingCount: tool.popularityScore,
       bestRating: 5,
       worstRating: 1,
     },
