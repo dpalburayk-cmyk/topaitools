@@ -6,6 +6,8 @@ import { ArrowLeft, Clock, User, Calendar, Tag } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { AdBanner } from "@/components/ui/AdBanner";
 import { BlogCoverImage } from "@/components/ui/BlogCoverImage";
+import { ShareButtons } from "@/components/ui/ShareButtons";
+import { siteConfig } from "@/data/site-config";
 import type { BlogPost } from "@/types";
 
 interface BlogPostContentProps {
@@ -74,6 +76,10 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
               ))}
             </div>
           </div>
+        </div>
+
+        <div className="pt-4">
+          <ShareButtons url={`${siteConfig.url}/blog/${post.slug}`} title={post.title} />
         </div>
 
         <Link

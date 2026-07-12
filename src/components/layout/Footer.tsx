@@ -1,11 +1,30 @@
 "use client";
 
 import Link from "next/link";
-import { Rss, ExternalLink, X } from "lucide-react";
+import { Rss, ExternalLink, X, Send, Loader2 } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { categories } from "@/data/tools";
+import { useState } from "react";
 
 export function Footer() {
+  const [email, setEmail] = useState("");
+  const [subStatus, setSubStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setSubStatus("sending");
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (res.ok) { setSubStatus("sent"); setEmail(""); }
+      else { setSubStatus("error"); }
+    } catch { setSubStatus("error"); }
+  };
+
   return (
     <footer className="border-t border-border bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -84,6 +103,33 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        {/* Newsletter */}
+        <div className="col-span-2 md:col-span-4 mt-8 pt-8 border-t border-border">
+          <div className="max-w-md mx-auto text-center">
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-2">Stay Updated</h3>
+            <p className="text-sm text-muted-foreground mb-4">Get weekly AI tool updates. No spam.</p>
+            <form onSubmit={handleSubscribe} className="flex gap-2">
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="your@email.com"
+                className="flex-1 rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-colors"
+              />
+              <button
+                type="submit"
+                disabled={subStatus === "sending"}
+                className="px-4 py-2 rounded-lg bg-indigo-500 text-white text-sm font-medium hover:bg-indigo-600 disabled:opacity-50 transition-colors"
+              >
+                {subStatus === "sending" ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
+              </button>
+            </form>
+            {subStatus === "sent" && <p className="text-xs text-emerald-500 mt-2">Subscribed!</p>}
+            {subStatus === "error" && <p className="text-xs text-red-500 mt-2">Failed. Try again.</p>}
           </div>
         </div>
 
