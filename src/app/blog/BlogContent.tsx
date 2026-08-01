@@ -59,9 +59,12 @@ export function BlogContent() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
       <Breadcrumbs items={[{ label: "Blog" }]} />
 
-      <div className="mb-10">
+      <div className="mb-10 max-w-3xl">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Blog</h1>
-        <p className="text-muted-foreground">AI news, reviews, and insights</p>
+        <p className="text-muted-foreground mb-3">AI news, reviews, and insights</p>
+        <p className="text-muted-foreground leading-relaxed text-sm">
+          Stay up to date with the latest developments in AI tools and technology. Our blog features in-depth reviews, head-to-head comparisons, practical how-to guides, and curated roundups written by the Top AI Tools editorial team. Every article is based on hands-on testing and thorough research, so you can trust our recommendations when choosing the right AI tools for your workflow.
+        </p>
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

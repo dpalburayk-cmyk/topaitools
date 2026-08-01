@@ -66,13 +66,17 @@ export function AdBanner({ slot, format, adSlot: adSlotProp, className = "", dis
     return () => observer.disconnect();
   }, [disabled]);
 
-  // Create the ad unit once visible
+  // Create the ad unit once visible — only if a real ad slot ID exists
   useEffect(() => {
     if (disabled || !visible || !ref.current || adLoaded.current) return;
-    adLoaded.current = true;
 
     const config = AD_UNITS[slot];
     const slotId = adSlotProp || config.adSlot;
+
+    // Don't render ad markup without a real slot ID — prevents "more ads than content" signals
+    if (!slotId) return;
+
+    adLoaded.current = true;
 
     // Create a wrapper for the ad inside the observed div
     const wrapper = document.createElement("div");
@@ -85,9 +89,7 @@ export function AdBanner({ slot, format, adSlot: adSlotProp, className = "", dis
     if (config.style.height) ins.style.height = String(config.style.height);
     if (config.style.minHeight) ins.style.minHeight = String(config.style.minHeight);
     ins.setAttribute("data-ad-client", PUBLISHER_ID);
-    if (slotId) {
-      ins.setAttribute("data-ad-slot", slotId);
-    }
+    ins.setAttribute("data-ad-slot", slotId);
     ins.setAttribute("data-ad-format", format || config.format);
     ins.setAttribute("data-full-width-responsive", "true");
 
@@ -105,7 +107,10 @@ export function AdBanner({ slot, format, adSlot: adSlotProp, className = "", dis
   // If disabled, don't render anything — not even a placeholder
   if (disabled) return null;
 
+  // If no real ad slot ID, don't render any ad markup at all
   const config = AD_UNITS[slot];
+  const slotId = adSlotProp || config.adSlot;
+  if (!slotId) return null;
 
   return (
     <div

@@ -182,8 +182,11 @@ function ToolsPageContent() {
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">
             AI Tools Directory
           </h1>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground mb-3">
             Browse {tools.length} AI tools across {categories.length} categories
+          </p>
+          <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl mx-auto">
+            Every tool in our directory has been personally tested and reviewed by our editorial team. Use the search bar and filters below to find the perfect AI tool for your needs — filter by pricing model, category, rating, and more. All reviews include honest pros and cons to help you make the right choice.
           </p>
         </div>
 

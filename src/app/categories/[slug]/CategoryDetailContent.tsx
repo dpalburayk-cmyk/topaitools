@@ -21,12 +21,20 @@ export function CategoryDetailContent({ category, categoryTools }: CategoryDetai
       />
 
       <div className="mb-10">
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">
-          {category.name} Tools
-        </h1>
-        <p className="text-muted-foreground">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="text-3xl">{category.icon}</span>
+          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
+            {category.name}
+          </h1>
+        </div>
+        <p className="text-lg text-muted-foreground mb-1">
           {categoryTools.length} tools in this category
         </p>
+        {category.longDescription && (
+          <p className="text-muted-foreground leading-relaxed max-w-3xl mt-3">
+            {category.longDescription}
+          </p>
+        )}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
