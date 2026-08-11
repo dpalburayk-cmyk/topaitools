@@ -10,11 +10,32 @@ import { ShareButtons } from "@/components/ui/ShareButtons";
 import { siteConfig } from "@/data/site-config";
 import type { BlogPost } from "@/types";
 
+/** Split markdown content at the 3rd H2 heading (or 40% if fewer headings) */
+function splitMarkdown(md: string): [string, string] {
+  const lines = md.split("\n");
+  let headingCount = 0;
+  let splitIndex = Math.floor(lines.length * 0.4);
+
+  for (let i = 0; i < lines.length; i++) {
+    if (lines[i].match(/^##\s/)) {
+      headingCount++;
+      if (headingCount === 3) {
+        splitIndex = i;
+        break;
+      }
+    }
+  }
+
+  return [lines.slice(0, splitIndex).join("\n"), lines.slice(splitIndex).join("\n")];
+}
+
 interface BlogPostContentProps {
   post: BlogPost;
 }
 
 export function BlogPostContent({ post }: BlogPostContentProps) {
+  const [contentFirstHalf, contentSecondHalf] = splitMarkdown(post.content);
+
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
       <Breadcrumbs
@@ -60,7 +81,13 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
         <AdBanner slot="inline" />
 
         <div className="prose prose-neutral dark:prose-invert max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-p:leading-relaxed prose-a:text-indigo-500 prose-a:no-underline hover:prose-a:underline prose-strong:text-foreground prose-li:text-muted-foreground prose-table:border prose-table:border-border prose-th:p-2 prose-th:border-b prose-th:border-border prose-td:p-2 prose-td:border-b prose-td:border-border">
-          <Markdown>{post.content}</Markdown>
+          <Markdown>{contentFirstHalf}</Markdown>
+        </div>
+
+        <AdBanner slot="inline" />
+
+        <div className="prose prose-neutral dark:prose-invert max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-p:leading-relaxed prose-a:text-indigo-500 prose-a:no-underline hover:prose-a:underline prose-strong:text-foreground prose-li:text-muted-foreground prose-table:border prose-table:border-border prose-th:p-2 prose-th:border-b prose-th:border-border prose-td:p-2 prose-td:border-b prose-td:border-border">
+          <Markdown>{contentSecondHalf}</Markdown>
         </div>
 
         <AdBanner slot="inline" />

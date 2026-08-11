@@ -4,6 +4,8 @@ import { siteConfig } from "@/data/site-config";
 import { BlogPostContent } from "./BlogPostContent";
 import type { Metadata } from "next";
 
+export const revalidate = 86400; // Revalidate every 24 hours
+
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }

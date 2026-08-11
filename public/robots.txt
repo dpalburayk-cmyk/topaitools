@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /api/
-Disallow: /favorites
-Disallow: /compare
-
-Sitemap: https://topaitools.xyz/sitemap.xml

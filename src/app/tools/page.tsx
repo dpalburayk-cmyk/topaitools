@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect, useCallback, Suspense } from "react";
+import { useState, useMemo, useEffect, useCallback, Suspense, Fragment } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Search, SlidersHorizontal, X } from "lucide-react";
 import { ToolCard } from "@/components/tools/ToolCard";
@@ -406,11 +406,24 @@ function ToolsPageContent() {
         {/* Tools Grid */}
         {filteredTools.length > 0 ? (
           <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {paginatedTools.map((tool, i) => (
-                <ToolCard key={tool.id} tool={tool} index={i} />
-              ))}
-            </div>
+            {[0, 6, 12, 18, 24].map((chunkStart) => {
+              const chunk = paginatedTools.slice(chunkStart, chunkStart + 6);
+              if (chunk.length === 0) return null;
+              return (
+                <Fragment key={chunkStart}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {chunk.map((tool, i) => (
+                      <ToolCard key={tool.id} tool={tool} index={chunkStart + i} />
+                    ))}
+                  </div>
+                  {chunkStart + 6 < paginatedTools.length && (
+                    <div className="my-8">
+                      <AdBanner slot="inline" />
+                    </div>
+                  )}
+                </Fragment>
+              );
+            })}
             <div className="my-8">
               <AdBanner slot="inline" />
             </div>

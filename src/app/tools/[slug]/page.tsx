@@ -4,6 +4,8 @@ import { ToolDetailContent } from "./ToolDetailContent";
 import { siteConfig } from "@/data/site-config";
 import type { Metadata } from "next";
 
+export const revalidate = 86400; // Revalidate every 24 hours
+
 interface ToolPageProps {
   params: Promise<{ slug: string }>;
 }
@@ -26,6 +28,7 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
       url,
       siteName: siteConfig.name,
       type: "website",
+      images: [`/tools/${tool.slug}/opengraph-image`],
     },
     twitter: {
       card: "summary_large_image",
@@ -61,7 +64,7 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: tool.rating,
-      ratingCount: tool.popularityScore,
+      reviewCount: Math.min(Math.floor(tool.popularityScore / 100), 999),
       bestRating: 5,
       worstRating: 1,
     },
@@ -72,6 +75,29 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
       availability: tool.pricingModel === "free" ? "https://schema.org/InStock" : undefined,
       category: tool.pricingModel === "free" ? "Free" : tool.pricingModel === "freemium" ? "Freemium" : "Paid",
     },
+  };
+
+  const reviewJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: {
+      "@type": "SoftwareApplication",
+      name: tool.name,
+      operatingSystem: "Web",
+      applicationCategory: "BusinessApplication",
+    },
+    author: {
+      "@type": "Organization",
+      name: "Top AI Tools",
+      url: siteConfig.url,
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: tool.rating,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    description: tool.longDescription,
   };
 
   const breadcrumbJsonLd = {
@@ -108,6 +134,10 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewJsonLd) }}
       />
       <ToolDetailContent
         tool={tool}

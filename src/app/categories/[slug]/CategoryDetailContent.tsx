@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import { ToolCard } from "@/components/tools/ToolCard";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { AdBanner } from "@/components/ui/AdBanner";
@@ -37,13 +38,26 @@ export function CategoryDetailContent({ category, categoryTools }: CategoryDetai
         )}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {categoryTools.map((tool, i) => (
-          <ToolCard key={tool.id} tool={tool} index={i} />
-        ))}
-      </div>
+      {[0, 6, 12, 18].map((chunkStart) => {
+        const chunk = categoryTools.slice(chunkStart, chunkStart + 6);
+        if (chunk.length === 0) return null;
+        return (
+          <Fragment key={chunkStart}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {chunk.map((tool, i) => (
+                <ToolCard key={tool.id} tool={tool} index={chunkStart + i} />
+              ))}
+            </div>
+            {chunkStart + 6 < categoryTools.length && (
+              <div className="mt-8">
+                <AdBanner slot="inline" />
+              </div>
+            )}
+          </Fragment>
+        );
+      })}
 
-      {categoryTools.length > 3 && (
+      {categoryTools.length > 0 && (
         <div className="mt-8">
           <AdBanner slot="inline" />
         </div>

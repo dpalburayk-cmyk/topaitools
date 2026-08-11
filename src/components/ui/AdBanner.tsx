@@ -14,7 +14,7 @@ interface AdBannerProps {
 // AdSense ad units — slot IDs from AdSense Dashboard
 const AD_UNITS: Record<string, { style: React.CSSProperties; format: string; minHeight: string; adSlot: string }> = {
   sidebar: {
-    style: { display: "block", width: "300px", height: "250px" },
+    style: { display: "block", minWidth: "250px", maxWidth: "300px", height: "250px" },
     format: "rectangle",
     minHeight: "250px",
     adSlot: process.env.NEXT_PUBLIC_ADSENSE_SIDEBAR_SLOT || "2645274354",
@@ -112,7 +112,7 @@ export function AdBanner({ slot, format, adSlot: adSlotProp, className = "", dis
   return (
     <div
       ref={ref}
-      className={`relative overflow-hidden rounded-lg border border-border bg-muted/20 my-6 ${className}`}
+      className={`relative overflow-hidden rounded-lg border border-border bg-muted/20 my-6 w-full max-w-[300px] mx-auto lg:mx-0 ${className}`}
       style={{ minHeight: config.minHeight }}
       aria-label="Advertisement"
     >
