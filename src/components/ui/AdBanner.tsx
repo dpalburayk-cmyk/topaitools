@@ -11,28 +11,25 @@ interface AdBannerProps {
   disabled?: boolean;
 }
 
-// AdSense ad units — create these in your AdSense dashboard at https://www.google.com/adsense/
-// Replace these placeholder values with real data-ad-slot IDs from your AdSense account
+// AdSense ad units — slot IDs from AdSense Dashboard
 const AD_UNITS: Record<string, { style: React.CSSProperties; format: string; minHeight: string; adSlot: string }> = {
   sidebar: {
     style: { display: "block", width: "300px", height: "250px" },
     format: "rectangle",
     minHeight: "250px",
-    // TODO: Replace with your real ad unit slot ID from AdSense → By ad unit → Get code
-    adSlot: process.env.NEXT_PUBLIC_ADSENSE_SIDEBAR_SLOT || "",
+    adSlot: process.env.NEXT_PUBLIC_ADSENSE_SIDEBAR_SLOT || "2645274354",
   },
   inline: {
     style: { display: "block", width: "100%" },
     format: "horizontal",
     minHeight: "90px",
-    // TODO: Replace with your real ad unit slot ID from AdSense → By ad unit → Get code
-    adSlot: process.env.NEXT_PUBLIC_ADSENSE_INLINE_SLOT || "",
+    adSlot: process.env.NEXT_PUBLIC_ADSENSE_INLINE_SLOT || "2836846048",
   },
   banner: {
     style: { display: "block", width: "100%" },
     format: "auto",
     minHeight: "60px",
-    adSlot: process.env.NEXT_PUBLIC_ADSENSE_BANNER_SLOT || "",
+    adSlot: process.env.NEXT_PUBLIC_ADSENSE_BANNER_SLOT || "4846514403",
   },
 };
 
