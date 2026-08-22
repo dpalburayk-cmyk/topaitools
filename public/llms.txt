@@ -1,0 +1,93 @@
+# Top AI Tools
+> Discover, compare, and choose the best AI tools for every task. Curated directory of 134+ AI tools across 9 categories with honest reviews and ratings.
+> https://topaitools.xyz
+
+## About
+Top AI Tools is a comprehensive AI tools directory that helps users discover, compare, and choose the best artificial intelligence tools. Each tool includes detailed reviews, pros and cons, feature comparisons, pricing information, and user ratings.
+
+## Categories
+- AI Chatbots: Intelligent conversational AI assistants for tasks, research, and creativity — https://topaitools.xyz/categories/chatbot
+- Image Generation: Create stunning images, art, and visuals from text descriptions — https://topaitools.xyz/categories/image
+- Video & Animation: Generate, edit, and enhance videos using artificial intelligence — https://topaitools.xyz/categories/video
+- Audio & Music: Generate realistic speech, music, and audio content with AI — https://topaitools.xyz/categories/audio
+- Code & Development: AI-powered coding assistants and development tools — https://topaitools.xyz/categories/code
+- Writing & Content: AI writing tools for content creation, editing, and copywriting — https://topaitools.xyz/categories/text
+- Productivity: Boost your workflow with AI-powered productivity tools — https://topaitools.xyz/categories/productivity
+- Design & UI: AI-assisted design tools for interfaces, graphics, and branding — https://topaitools.xyz/categories/design
+- Research & Search: AI-powered search engines and research tools for deep analysis — https://topaitools.xyz/categories/research
+
+## Popular Tools
+
+### ChatGPT
+- Advanced AI chatbot by OpenAI for conversations, writing, and problem-solving
+- Category: AI Chatbots | Pricing: Freemium | Rating: 4.8/5
+- Features: Conversational AI, Content Writing, Code Generation, Image Analysis, Plugin Ecosystem
+- https://topaitools.xyz/tools/chatgpt
+
+### Claude
+- Anthropic's AI assistant known for accuracy, deep analysis, and safety
+- Category: AI Chatbots | Pricing: Freemium | Rating: 4.9/5
+- Features: Deep Analysis, Long Context, Code Review, Safe AI, Document Understanding
+- https://topaitools.xyz/tools/claude
+
+### Gemini
+- Google's multimodal AI assistant for text, image, and code tasks
+- Category: AI Chatbots | Pricing: Freemium | Rating: 4.5/5
+- Features: Multimodal Understanding, Google Integration, Code Generation, Image Analysis, Fast Responses
+- https://topaitools.xyz/tools/gemini
+
+### Midjourney
+- AI image generator creating stunning artwork from text prompts
+- Category: Image Generation | Pricing: Paid | Rating: 4.7/5
+- Features: Artistic Quality, Style Customization, Fast Generation, Discord Integration, Vary/Zoom
+- https://topaitools.xyz/tools/midjourney
+
+### Runway
+- AI video generation and editing platform for creative professionals
+- Category: Video & Animation | Pricing: Freemium | Rating: 4.6/5
+- Features: Text-to-Video, Video Editing, Motion Brush, Green Screen, Style Transfer
+- https://topaitools.xyz/tools/runway
+
+### Cursor
+- AI-native code editor with intelligent autocomplete and codebase understanding
+- Category: Code & Development | Pricing: Freemium | Rating: 4.7/5
+- Features: AI Code Completion, Codebase Understanding, Multi-file Editing, Terminal Integration, Composer
+- https://topaitools.xyz/tools/cursor
+
+### ElevenLabs
+- AI voice generator producing natural-sounding speech and voice cloning
+- Category: Audio & Music | Pricing: Freemium | Rating: 4.6/5
+- Features: Voice Cloning, Text-to-Speech, Multi-language, Voice Library, API Access
+- https://topaitools.xyz/tools/elevenlabs
+
+### Canva AI
+- AI-powered design platform for creating graphics, presentations, and marketing materials
+- Category: Design & UI | Pricing: Freemium | Rating: 4.5/5
+- Features: Magic Design, AI Background Remover, Text to Image, Brand Kit, Collaboration
+- https://topaitools.xyz/tools/canva-ai
+
+### Perplexity
+- AI-powered search engine providing sourced answers and research assistance
+- Category: Research & Search | Pricing: Freemium | Rating: 4.7/5
+- Features: Source Citations, Follow-up Questions, File Upload, Pro Search, Collections
+- https://topaitools.xyz/tools/perplexity
+
+### Jasper
+- AI writing assistant for marketing content, blog posts, and copywriting
+- Category: Writing & Content | Pricing: Paid | Rating: 4.3/5
+- Features: Marketing Templates, Brand Voice, Content Repurposing, Team Collaboration, SEO Optimization
+- https://topaitools.xyz/tools/jasper
+
+## How to Use
+1. Browse categories at https://topaitools.xyz/categories
+2. Search for specific AI tools at https://topaitools.xyz/tools
+3. Compare tools side by side at https://topaitools.xyz/compare
+4. Read detailed reviews with pros, cons, and feature comparisons
+5. Find the best alternatives for any tool at https://topaitools.xyz/alternatives/[tool-name]
+
+## Key Pages
+- All Tools: https://topaitools.xyz/tools
+- Blog: https://topaitools.xyz/blog
+- Compare Tools: https://topaitools.xyz/compare
+- Submit a Tool: https://topaitools.xyz/submit
+- RSS Feed: https://topaitools.xyz/feed.xml

@@ -7,6 +7,7 @@ import { ToolCard } from "@/components/tools/ToolCard";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Pagination } from "@/components/ui/Pagination";
 import { AdBanner } from "@/components/ui/AdBanner";
+import { AdsterraBar } from "@/components/ui/AdsterraBar";
 import { tools, categories } from "@/data/tools";
 import { cn } from "@/lib/utils";
 import type { PricingModel } from "@/types";
@@ -416,11 +417,6 @@ function ToolsPageContent() {
                       <ToolCard key={tool.id} tool={tool} index={chunkStart + i} />
                     ))}
                   </div>
-                  {chunkStart + 6 < paginatedTools.length && (
-                    <div className="my-8">
-                      <AdBanner slot="inline" />
-                    </div>
-                  )}
                 </Fragment>
               );
             })}
@@ -451,6 +447,9 @@ function ToolsPageContent() {
             </button>
           </div>
         )}
+
+        {/* Adsterra Social Bar */}
+        <AdsterraBar />
       </div>
     </div>
   );

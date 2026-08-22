@@ -9,6 +9,7 @@ import { Newsletter } from "@/components/home/Newsletter";
 import { ToolCard } from "@/components/tools/ToolCard";
 import { CategoryCard } from "@/components/tools/CategoryCard";
 import { AdBanner } from "@/components/ui/AdBanner";
+import { AdsterraBar } from "@/components/ui/AdsterraBar";
 import { getFeaturedTools, getTrendingTools, categories, tools, blogPosts } from "@/data/tools";
 import { siteConfig } from "@/data/site-config";
 
@@ -142,11 +143,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Ad after Featured Tools */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AdBanner slot="inline" />
-      </div>
-
       {/* Latest from the Blog */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-border">
         <div className="flex items-center justify-between mb-8">
@@ -200,6 +196,9 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* Adsterra Social Bar */}
+      <AdsterraBar />
 
       {/* Newsletter */}
       <Newsletter />

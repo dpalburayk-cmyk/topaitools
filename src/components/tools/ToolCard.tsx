@@ -29,6 +29,7 @@ export function ToolCard({ tool, index = 0 }: ToolCardProps) {
   return (
     <Link
       href={`/tools/${tool.slug}`}
+      aria-label={`View details for ${tool.name}`}
       className={cn(
         "group relative flex flex-col rounded-xl border border-border bg-card p-5 transition-all duration-300",
         "hover:border-indigo-500/30 hover:shadow-lg hover:shadow-indigo-500/5 hover:-translate-y-0.5",
@@ -43,7 +44,7 @@ export function ToolCard({ tool, index = 0 }: ToolCardProps) {
           <div className="flex items-center gap-3">
             <ToolIcon name={tool.name} imageUrl={tool.imageUrl} websiteUrl={tool.websiteUrl} size="md" className="shadow-md shadow-indigo-500/20" />
             <div>
-              <h3 className="font-semibold text-sm group-hover:text-indigo-500 transition-colors">{tool.name}</h3>
+              <h2 className="font-semibold text-sm group-hover:text-indigo-500 transition-colors">{tool.name}</h2>
               <span className={cn("text-[10px] font-medium px-2 py-0.5 rounded-full capitalize", pricingColors[tool.pricingModel])}>
                 {pricingLabels[tool.pricingModel]}
               </span>
@@ -58,7 +59,7 @@ export function ToolCard({ tool, index = 0 }: ToolCardProps) {
           <div className="flex items-center gap-1.5">
             <FavoriteButton slug={tool.slug} />
             <CompareButton slug={tool.slug} />
-            <div className="flex items-center gap-1 text-amber-500">
+            <div className="flex items-center gap-1 text-amber-500" role="img" aria-label={`${tool.rating} out of 5 stars`}>
               <Star className="w-3.5 h-3.5 fill-current" />
               <span className="text-xs font-medium">{tool.rating}</span>
             </div>

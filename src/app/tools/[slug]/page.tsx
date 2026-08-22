@@ -50,7 +50,7 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
 
   const relatedTools = getToolsByCategory(tool.category)
     .filter((t) => t.slug !== tool.slug)
-    .slice(0, 3);
+    .slice(0, 6);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -138,6 +138,48 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: `What is ${tool.name}?`,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: tool.longDescription.slice(0, 200) + (tool.longDescription.length > 200 ? "..." : ""),
+                },
+              },
+              {
+                "@type": "Question",
+                name: `Is ${tool.name} free?`,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text:
+                    tool.pricingModel === "free"
+                      ? `Yes, ${tool.name} is completely free to use.`
+                      : tool.pricingModel === "freemium"
+                        ? `${tool.name} offers a free tier with basic features, as well as paid plans for advanced functionality.`
+                        : `No, ${tool.name} is a paid tool. It requires a subscription to access its features.`,
+                },
+              },
+              {
+                "@type": "Question",
+                name: `What are the best alternatives to ${tool.name}?`,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: alternatives.length > 0
+                    ? `The best alternatives to ${tool.name} include ${alternatives.map((a) => a!.name).join(", ")}. Each offers different strengths in terms of features, pricing, and user experience.`
+                    : `There are currently no listed alternatives to ${tool.name} in our directory.`,
+                },
+              },
+            ],
+          }),
+        }}
       />
       <ToolDetailContent
         tool={tool}

@@ -30,10 +30,13 @@ export async function POST(_request: NextRequest) {
     `${siteUrl}/blog`,
     `${siteUrl}/categories`,
     `${siteUrl}/compare`,
+    `${siteUrl}/best`,
     `${siteUrl}/about`,
     ...tools.map((tool) => `${siteUrl}/tools/${tool.slug}`),
     ...categories.map((cat) => `${siteUrl}/categories/${cat.slug}`),
     ...blogPosts.map((post) => `${siteUrl}/blog/${post.slug}`),
+    ...categories.map((cat) => `${siteUrl}/best/${cat.slug}`),
+    ...tools.filter((t) => t.alternatives.length > 0).map((t) => `${siteUrl}/alternatives/${t.slug}`),
   ];
 
   // Remove duplicates

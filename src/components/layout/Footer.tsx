@@ -76,7 +76,7 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider">Categories</h3>
             <ul className="space-y-2.5">
-              {categories.slice(0, 6).map((cat) => (
+              {categories.map((cat) => (
                 <li key={cat.slug}>
                   <Link href={`/categories/${cat.slug}`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     {cat.name}
@@ -91,7 +91,7 @@ export function Footer() {
             <ul className="space-y-2.5">
               {[
                 { href: "/blog", label: "Blog" },
-                { href: "/pricing", label: "Pricing" },
+                { href: "/compare", label: "Compare" },
                 { href: "/about", label: "About" },
                 { href: "/advertise", label: "Advertise" },
                 { href: "/contact", label: "Contact" },
@@ -145,6 +145,11 @@ export function Footer() {
               Terms of Service
             </Link>
           </div>
+        </div>
+
+        {/* Verified Badges */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <a href="https://www.stork.ai/" rel="nofollow" title="Stork Verified — stork.ai AI tools directory"><img src="https://www.stork.ai/badge/verified-dark.svg" alt="Stork Verified — stork.ai AI tools directory" width="216" height="44" /></a>
         </div>
       </div>
     </footer>

@@ -8,6 +8,7 @@ import { ToolIcon } from "@/components/tools/ToolIcon";
 import { tools, getToolsByCategory } from "@/data/tools";
 import { getToolLink, track } from "@/lib/tracking";
 import { AdBanner } from "@/components/ui/AdBanner";
+import { AdsterraBar } from "@/components/ui/AdsterraBar";
 import { ShareButtons } from "@/components/ui/ShareButtons";
 import { FavoriteButton } from "@/components/ui/FavoriteButton";
 import { CompareButton } from "@/components/ui/CompareButton";
@@ -231,6 +232,9 @@ export function ToolDetailContent({ tool, alternatives, relatedTools }: ToolDeta
           )}
         </div>
       </div>
+
+      {/* Adsterra Social Bar */}
+      <AdsterraBar />
     </div>
   );
 }

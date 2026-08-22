@@ -1,0 +1,12 @@
+/* TEAM */
+Name: Top AI Tools
+Site: https://topaitools.xyz
+Twitter: https://x.com/topaitoolsxyz
+GitHub: https://github.com/topaitools
+
+/* SITE */
+Last update: 2026/08/12
+Language: English
+Standards: HTML5, Next.js 16, TypeScript
+Components: React 19, Tailwind CSS 4
+Software: Vercel

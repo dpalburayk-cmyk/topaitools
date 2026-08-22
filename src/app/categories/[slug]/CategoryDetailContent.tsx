@@ -48,12 +48,7 @@ export function CategoryDetailContent({ category, categoryTools }: CategoryDetai
                 <ToolCard key={tool.id} tool={tool} index={chunkStart + i} />
               ))}
             </div>
-            {chunkStart + 6 < categoryTools.length && (
-              <div className="mt-8">
-                <AdBanner slot="inline" />
-              </div>
-            )}
-          </Fragment>
+                      </Fragment>
         );
       })}
 

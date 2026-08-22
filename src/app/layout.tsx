@@ -120,9 +120,13 @@ export default function RootLayout({
     >
       <head>
         <meta name="google-site-verification" content="5KGtELHXq1OBU3W9auOe9Sd3MqFGJr3AsijeDxf7zTo" />
+        <meta name="saashub-verification" content="gle2698n3los" />
         <meta name="google-adsense-account" content="ca-pub-9813677683114838" />
         <link rel="alternate" type="application/rss+xml" title={`${siteConfig.name} Blog RSS Feed`} href="/feed.xml" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="preconnect" href="https://icon.horse" />
+        <link rel="preconnect" href="https://www.google.com" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <meta name="theme-color" content="#3b82f6" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9813677683114838" crossOrigin="anonymous"></script>
         <script

@@ -24,78 +24,102 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const alternativesPages = tools
+    .filter((tool) => tool.alternatives.length > 0)
+    .map((tool) => ({
+      url: `${siteConfig.url}/alternatives/${tool.slug}`,
+      lastModified: new Date(tool.updatedAt),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    }));
+
+  const bestCategoryPages = categories.map((cat) => ({
+    url: `${siteConfig.url}/best/${cat.slug}`,
+    lastModified: new Date("2026-08-12"),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  const staticFixedDate = new Date("2026-08-12");
+
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: siteConfig.url,
-      lastModified: new Date(),
+      lastModified: staticFixedDate,
       changeFrequency: "daily",
       priority: 1,
     },
     {
       url: `${siteConfig.url}/tools`,
-      lastModified: new Date(),
+      lastModified: staticFixedDate,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${siteConfig.url}/categories`,
-      lastModified: new Date(),
+      lastModified: staticFixedDate,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${siteConfig.url}/blog`,
-      lastModified: new Date(),
+      lastModified: staticFixedDate,
       changeFrequency: "weekly",
       priority: 0.7,
     },
     {
       url: `${siteConfig.url}/compare`,
-      lastModified: new Date(),
+      lastModified: staticFixedDate,
       changeFrequency: "weekly",
       priority: 0.7,
     },
     {
       url: `${siteConfig.url}/about`,
-      lastModified: new Date(),
+      lastModified: staticFixedDate,
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
       url: `${siteConfig.url}/privacy`,
-      lastModified: new Date(),
+      lastModified: staticFixedDate,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${siteConfig.url}/terms`,
-      lastModified: new Date(),
+      lastModified: staticFixedDate,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${siteConfig.url}/submit`,
-      lastModified: new Date(),
+      lastModified: staticFixedDate,
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
       url: `${siteConfig.url}/pricing`,
-      lastModified: new Date(),
+      lastModified: staticFixedDate,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${siteConfig.url}/advertise`,
-      lastModified: new Date(),
+      lastModified: staticFixedDate,
       changeFrequency: "monthly",
       priority: 0.4,
     },
     {
       url: `${siteConfig.url}/favorites`,
-      lastModified: new Date(),
+      lastModified: staticFixedDate,
       changeFrequency: "monthly",
       priority: 0.4,
+    },
+    {
+      url: `${siteConfig.url}/best`,
+      lastModified: staticFixedDate,
+      changeFrequency: "weekly",
+      priority: 0.7,
     },
   ];
 
@@ -104,5 +128,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...toolPages,
     ...categoryPages,
     ...blogPages,
+    ...alternativesPages,
+    ...bestCategoryPages,
   ];
 }

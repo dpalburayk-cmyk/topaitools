@@ -84,13 +84,9 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
           <Markdown>{contentFirstHalf}</Markdown>
         </div>
 
-        <AdBanner slot="inline" />
-
         <div className="prose prose-neutral dark:prose-invert max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-p:leading-relaxed prose-a:text-indigo-500 prose-a:no-underline hover:prose-a:underline prose-strong:text-foreground prose-li:text-muted-foreground prose-table:border prose-table:border-border prose-th:p-2 prose-th:border-b prose-th:border-border prose-td:p-2 prose-td:border-b prose-td:border-border">
           <Markdown>{contentSecondHalf}</Markdown>
         </div>
-
-        <AdBanner slot="inline" />
 
         <div className="pt-6 border-t border-border">
           <div className="flex items-center gap-2">
