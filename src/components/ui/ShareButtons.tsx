@@ -1,6 +1,6 @@
 "use client";
 
-import { Share2, X, Link2, Check } from "lucide-react";
+import { Share2, X, Link2, Check, MessageCircle, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { track } from "@/lib/tracking";
@@ -32,6 +32,16 @@ export function ShareButtons({ url, title, className = "" }: ShareButtonsProps) 
     window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`, "_blank", "noopener,noreferrer");
   };
 
+  const handleReddit = () => {
+    track.share("reddit", url.replace("https://topaitools.xyz/tools/", ""));
+    window.open(`https://reddit.com/submit?url=${encodedUrl}&title=${encodedTitle}`, "_blank", "noopener,noreferrer");
+  };
+
+  const handleWhatsApp = () => {
+    track.share("whatsapp", url.replace("https://topaitools.xyz/tools/", ""));
+    window.open(`https://wa.me/?text=${encodedTitle}%20${encodedUrl}`, "_blank", "noopener,noreferrer");
+  };
+
   const handleNative = async () => {
     if (navigator.share) {
       track.share("native", url.replace("https://topaitools.xyz/tools/", ""));
@@ -48,8 +58,11 @@ export function ShareButtons({ url, title, className = "" }: ShareButtonsProps) 
       <button onClick={handleTwitter} className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors" title="Share on X">
         <X className="w-3.5 h-3.5" />
       </button>
-      <button onClick={handleLinkedIn} className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors" title="Share on LinkedIn">
-        <Link2 className="w-3.5 h-3.5" />
+      <button onClick={handleReddit} className="p-1.5 rounded-md text-muted-foreground hover:text-orange-500 hover:bg-orange-500/10 transition-colors" title="Share on Reddit">
+        <ExternalLink className="w-3.5 h-3.5" />
+      </button>
+      <button onClick={handleWhatsApp} className="p-1.5 rounded-md text-muted-foreground hover:text-emerald-500 hover:bg-emerald-500/10 transition-colors" title="Share on WhatsApp">
+        <MessageCircle className="w-3.5 h-3.5" />
       </button>
       <button onClick={handleCopy} className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors" title="Copy link">
         {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Link2 className="w-3.5 h-3.5" />}

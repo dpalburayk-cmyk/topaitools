@@ -274,7 +274,7 @@ export function PricingContent() {
                 { value: `${tools.length}+`, label: "Tools Listed" },
                 { value: `${categories.length}`, label: "Categories" },
                 { value: `${blogPosts.length}+`, label: "Blog Articles" },
-                { value: "90%+", label: "Organic Traffic" },
+                { value: "SEO-Focused", label: "Growth Strategy" },
               ].map((stat) => (
                 <div
                   key={stat.label}

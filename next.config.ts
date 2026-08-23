@@ -21,8 +21,12 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/(.*)",
+        source: "/:path*",
         headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=0, must-revalidate",
+          },
           {
             key: "X-Frame-Options",
             value: "DENY",
@@ -48,6 +52,11 @@ const nextConfig: NextConfig = {
       {
         source: "/home",
         destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/blog/claude-vs-chatgpt-vs-gemini",
+        destination: "/blog/chatgpt-vs-claude-vs-gemini",
         permanent: true,
       },
     ];

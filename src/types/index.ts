@@ -1,5 +1,10 @@
 export type PricingModel = "free" | "freemium" | "paid";
 
+export interface ToolFaq {
+  question: string;
+  answer: string;
+}
+
 export interface Tool {
   id: string;
   slug: string;
@@ -23,6 +28,11 @@ export interface Tool {
   alternatives: string[];
   submittedAt: string;
   updatedAt: string;
+  useCases?: string[];
+  bestFor?: string[];
+  pricingDetails?: string;
+  review?: string;
+  faqs?: ToolFaq[];
 }
 
 export interface Category {

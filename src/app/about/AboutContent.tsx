@@ -71,13 +71,16 @@ export function AboutContent() {
               {siteConfig.name} was born from a simple frustration: every time we searched for an AI tool, the results were dominated by review sites that were essentially collections of affiliate links. Honest comparisons were nearly impossible to find, and most &quot;best AI tools&quot; lists were clearly sponsored.
             </p>
             <p className="text-muted-foreground">
-              Founded and operated by the <strong className="text-foreground">Top AI Tools Team</strong>. For inquiries, reach us at <a href="mailto:hello@topaitools.xyz" className="text-indigo-500 hover:underline">hello@topaitools.xyz</a> or <a href="mailto:advertising@topaitools.xyz" className="text-indigo-500 hover:underline">advertising@topaitools.xyz</a>.
+              {siteConfig.name} is founded and operated by the <strong className="text-foreground">Top AI Tools Team</strong> — an independent group of AI enthusiasts, developers, and content creators dedicated to helping users discover the right AI tools. We are not affiliated with any AI company, and our editorial content is fully independent.
+            </p>
+            <p className="text-muted-foreground">
+              For inquiries, reach us at <a href="mailto:hello@topaitools.xyz" className="text-indigo-500 hover:underline">hello@topaitools.xyz</a> or <a href="mailto:advertising@topaitools.xyz" className="text-indigo-500 hover:underline">advertising@topaitools.xyz</a>.
             </p>
             <p className="text-muted-foreground">
               We decided to build what we wished existed — a curated directory where every tool is evaluated on its actual merits. Our team tests tools hands-on, compares features and pricing transparently, and provides pros and cons that reflect real usage — not marketing copy.
             </p>
             <p className="text-muted-foreground">
-              Today, {siteConfig.name} covers over 149 AI tools across 9 categories including chatbots, image generation, video production, audio and music, code assistance, writing, productivity, design, and research. Each tool listing includes detailed features, pricing information, honest ratings, and alternative suggestions to help you find the right fit.
+              Today, {siteConfig.name} covers 134+ AI tools across 9 categories including chatbots, image generation, video production, audio and music, code assistance, writing, productivity, design, and research. Each tool listing includes detailed features, pricing information, honest ratings, and alternative suggestions to help you find the right fit.
             </p>
             <p className="text-muted-foreground">
               We also publish in-depth blog articles comparing popular tools like Claude vs ChatGPT vs Gemini, guides for students and small businesses, and roundups of the best tools in each category. All content is free to access — no paywall, no login required.

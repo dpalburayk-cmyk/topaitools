@@ -9,7 +9,6 @@ import { Newsletter } from "@/components/home/Newsletter";
 import { ToolCard } from "@/components/tools/ToolCard";
 import { CategoryCard } from "@/components/tools/CategoryCard";
 import { AdBanner } from "@/components/ui/AdBanner";
-import { AdsterraBar } from "@/components/ui/AdsterraBar";
 import { getFeaturedTools, getTrendingTools, categories, tools, blogPosts } from "@/data/tools";
 import { siteConfig } from "@/data/site-config";
 
@@ -196,9 +195,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
-      {/* Adsterra Social Bar */}
-      <AdsterraBar />
 
       {/* Newsletter */}
       <Newsletter />

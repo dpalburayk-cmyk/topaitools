@@ -9,7 +9,7 @@ export function PrivacyContent() {
       <Breadcrumbs items={[{ label: "Privacy Policy" }]} />
       <h1 className="text-3xl font-bold tracking-tight mb-8">Privacy Policy</h1>
       <div className="prose prose-sm dark:prose-invert max-w-none space-y-6 text-muted-foreground">
-        <p><strong className="text-foreground">Last updated:</strong> June 5, 2026</p>
+        <p><strong className="text-foreground">Last updated:</strong> August 23, 2026</p>
 
         <section>
           <h2 className="text-xl font-semibold text-foreground mb-3">1. Introduction</h2>
@@ -36,12 +36,23 @@ export function PrivacyContent() {
           <h2 className="text-xl font-semibold text-foreground mb-3">3. Cookies and Tracking Technologies</h2>
           <p>We use cookies and similar technologies for the following purposes:</p>
           <ul className="list-disc pl-6 space-y-1">
-            <li><strong className="text-foreground">Essential cookies:</strong> Required for site functionality, including theme preference (light/dark mode). These cannot be disabled.</li>
-            <li><strong className="text-foreground">Analytics cookies:</strong> Vercel Analytics uses cookies to collect aggregated usage data. These are privacy-respecting and do not collect PII.</li>
-            <li><strong className="text-foreground">Advertising cookies:</strong> Google AdSense may use cookies to serve personalized advertisements based on your browsing history. These are third-party cookies managed by Google. You can opt out of personalized advertising through <a href="https://www.google.com/settings/ads" className="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.</li>
+            <li><strong className="text-foreground">Essential cookies:</strong> Required for site functionality, including theme preference (light/dark mode) and your cookie consent preference. These cannot be disabled.</li>
+            <li><strong className="text-foreground">Analytics cookies:</strong> Google Analytics and Vercel Analytics use cookies to collect aggregated usage data. These are only activated with your consent.</li>
+            <li><strong className="text-foreground">Advertising cookies:</strong> Google AdSense uses cookies to serve personalized advertisements based on your browsing history. These are third-party cookies managed by Google and are only activated with your consent.</li>
           </ul>
           <p>
-            You can control cookies through your browser settings. Disabling certain cookies may affect site functionality.
+            <strong className="text-foreground">Cookie Consent Banner (CMP).</strong> When you visit our Site for the first time, a cookie consent banner appears at the bottom of the page. You can choose to:
+          </p>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong className="text-foreground">Accept All:</strong> Enable analytics and advertising cookies.</li>
+            <li><strong className="text-foreground">Reject All:</strong> Disable all non-essential cookies (analytics and advertising).</li>
+            <li><strong className="text-foreground">Customize:</strong> Individually enable or disable analytics cookies and advertising cookies using the toggle switches.</li>
+          </ul>
+          <p>
+            Your choice is saved in your browser and will be remembered on subsequent visits. You can change your preference at any time by clearing your browser&apos;s local storage for this site, which will cause the consent banner to reappear. We implement Google Consent Mode v2 to ensure that Google services respect your consent choices before any cookies are set.
+          </p>
+          <p>
+            You can also control cookies through your browser settings and opt out of personalized advertising through <a href="https://www.google.com/settings/ads" className="text-indigo-500 hover:underline" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.
           </p>
         </section>
 
@@ -150,11 +161,17 @@ export function PrivacyContent() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold text-foreground mb-3">13. Contact Us</h2>
-          <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+          <h2 className="text-xl font-semibold text-foreground mb-3">13. Publisher Information</h2>
+          <p>
+            This website is operated by the <strong className="text-foreground">Top AI Tools Team</strong>.
+            For privacy-related inquiries, data subject requests, or to exercise any of your rights
+            under applicable data protection laws, please contact us using the details below.
+          </p>
           <ul className="list-disc pl-6 space-y-1">
-            <li>Email: <a href="mailto:privacy@topaitools.xyz" className="text-indigo-500 hover:underline">privacy@topaitools.xyz</a></li>
+            <li>Operator: Top AI Tools Team</li>
             <li>Website: <a href={siteConfig.url} className="text-indigo-500 hover:underline">{siteConfig.url}</a></li>
+            <li>Privacy Email: <a href="mailto:privacy@topaitools.xyz" className="text-indigo-500 hover:underline">privacy@topaitools.xyz</a></li>
+            <li>General Inquiries: <a href="mailto:hello@topaitools.xyz" className="text-indigo-500 hover:underline">hello@topaitools.xyz</a></li>
           </ul>
         </section>
       </div>

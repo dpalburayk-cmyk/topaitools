@@ -21,9 +21,9 @@ import { siteConfig } from "@/data/site-config";
 
 const stats = [
   { label: "Growing monthly visitors", icon: Users },
-  { label: "149 AI tools listed", icon: Tag },
+  { label: "134+ AI tools listed", icon: Tag },
   { label: "9 categories", icon: Sparkles },
-  { label: "90% organic traffic", icon: BarChart3 },
+  { label: "SEO-focused growth", icon: BarChart3 },
 ];
 
 const benefits = [
@@ -72,7 +72,7 @@ const faqs = [
   {
     question: "How much traffic does Top AI Tools receive?",
     answer:
-      "We receive growing monthly visitors with 90% organic traffic from Google searches and social media.",
+      "Our traffic grows primarily through organic search (Google) and social media discovery.",
   },
   {
     question: "What types of ads do you accept?",

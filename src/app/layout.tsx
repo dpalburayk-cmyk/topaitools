@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
@@ -8,6 +9,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CompareBar } from "@/components/layout/CompareBar";
 import { BackToTop } from "@/components/ui/BackToTop";
+import { CookieConsent } from "@/components/ui/CookieConsent";
 import { siteConfig } from "@/data/site-config";
 import { tools, categories } from "@/data/tools";
 import "./globals.css";
@@ -127,8 +129,16 @@ export default function RootLayout({
         <link rel="preconnect" href="https://icon.horse" />
         <link rel="preconnect" href="https://www.google.com" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
-        <meta name="theme-color" content="#3b82f6" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9813677683114838" crossOrigin="anonymous"></script>
+        <meta name="theme-color" content="#6366f1" />
+        {/* Google Consent Mode v2 — defaults to denied until user consents */}
+        <Script id="consent-defaults" strategy="beforeInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});`}
+        </Script>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9813677683114838"
+          crossOrigin="anonymous"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -154,6 +164,7 @@ export default function RootLayout({
         </ThemeProvider>
         <GoogleAnalytics />
         <Analytics />
+        <CookieConsent />
       </body>
     </html>
   );

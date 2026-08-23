@@ -7,7 +7,6 @@ import { ToolCard } from "@/components/tools/ToolCard";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Pagination } from "@/components/ui/Pagination";
 import { AdBanner } from "@/components/ui/AdBanner";
-import { AdsterraBar } from "@/components/ui/AdsterraBar";
 import { tools, categories } from "@/data/tools";
 import { cn } from "@/lib/utils";
 import type { PricingModel } from "@/types";
@@ -448,8 +447,6 @@ function ToolsPageContent() {
           </div>
         )}
 
-        {/* Adsterra Social Bar */}
-        <AdsterraBar />
       </div>
     </div>
   );
