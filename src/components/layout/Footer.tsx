@@ -59,7 +59,7 @@ export function Footer() {
             <ul className="space-y-2.5">
               {[
                 { href: "/tools", label: "All Tools" },
-                { href: "/tools?pricing=free", label: "Free Tools" },
+                { href: "/free-ai-tools", label: "Free Tools" },
                 { href: "/tools?pricing=paid", label: "Paid Tools" },
                 { href: "/submit", label: "Submit a Tool" },
                 { href: "/pricing", label: "Pricing" },

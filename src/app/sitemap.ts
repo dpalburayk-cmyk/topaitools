@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { tools, categories, blogPosts } from "@/data/tools";
+import { tools, categories, blogPosts, getToolBySlug } from "@/data/tools";
 import { siteConfig } from "@/data/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -32,6 +32,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.7,
     }));
+
+  // Generate compare pages from alternative pairs (deduplicated)
+  const compareSeen = new Set<string>();
+  const comparePages: MetadataRoute.Sitemap = [];
+  for (const tool of tools) {
+    for (const altSlug of tool.alternatives) {
+      const alt = getToolBySlug(altSlug);
+      if (!alt) continue;
+      const [a, b] = tool.slug < altSlug ? [tool.slug, altSlug] : [altSlug, tool.slug];
+      const key = `${a}-${b}`;
+      if (!compareSeen.has(key)) {
+        compareSeen.add(key);
+        comparePages.push({
+          url: `${siteConfig.url}/compare/${a}-vs-${b}`,
+          lastModified: new Date("2026-08-24"),
+          changeFrequency: "monthly" as const,
+          priority: 0.6,
+        });
+      }
+    }
+  }
 
   const bestCategoryPages = categories.map((cat) => ({
     url: `${siteConfig.url}/best/${cat.slug}`,
@@ -121,6 +142,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.7,
     },
+    {
+      url: `${siteConfig.url}/free-ai-tools`,
+      lastModified: staticFixedDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
   ];
 
   return [
@@ -130,5 +157,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogPages,
     ...alternativesPages,
     ...bestCategoryPages,
+    ...comparePages,
   ];
 }

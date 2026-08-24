@@ -269,6 +269,31 @@ export function ToolDetailContent({ tool, alternatives, relatedTools }: ToolDeta
             </div>
           </div>
 
+          {/* Compare With */}
+          {alternatives.length > 0 && (
+            <div className="rounded-xl border border-border bg-card p-6">
+              <h2 className="text-lg font-semibold mb-1">Compare {tool.name}</h2>
+              <p className="text-sm text-muted-foreground mb-4">
+                See how {tool.name} stacks up against its top alternatives.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {alternatives.slice(0, 4).map((alt) => {
+                  if (!alt) return null;
+                  const [a, b] = tool.slug < alt.slug ? [tool.slug, alt.slug] : [alt.slug, tool.slug];
+                  return (
+                    <Link
+                      key={alt.id}
+                      href={`/compare/${a}-vs-${b}`}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border text-sm hover:border-indigo-500/50 hover:text-indigo-500 transition-colors"
+                    >
+                      {tool.name} vs {alt.name}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           {/* Alternatives */}
           {alternatives.length > 0 && (
             <div>

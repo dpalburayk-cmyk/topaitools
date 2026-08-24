@@ -29,3 +29,8 @@ jobs:
         run: vercel deploy --prod --yes
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Ping Search Engines (IndexNow)
+        run: |
+          sleep 30
+          curl -sS "https://topaitools.xyz/api/ping-search-engines" || true
