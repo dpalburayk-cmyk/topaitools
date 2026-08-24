@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { tools, categories } from "@/data/tools";
+import { tools, categories, getToolBySlug } from "@/data/tools";
 import { blogPosts } from "@/data/tools";
 
 // IndexNow key — must match the key file at /public/topaitools2026.txt
@@ -13,6 +13,24 @@ const INDEXNOW_ENDPOINTS = [
   "https://search.yahoo.com/indexnow",
   "https://search.yahoo.co.jp/indexnow",
 ];
+
+function generateCompareUrls(siteUrl: string): string[] {
+  const seen = new Set<string>();
+  const urls: string[] = [];
+  for (const tool of tools) {
+    for (const altSlug of tool.alternatives) {
+      const alt = getToolBySlug(altSlug);
+      if (!alt) continue;
+      const [a, b] = tool.slug < altSlug ? [tool.slug, altSlug] : [altSlug, tool.slug];
+      const key = `${a}-vs-${b}`;
+      if (!seen.has(key)) {
+        seen.add(key);
+        urls.push(`${siteUrl}/compare/${key}`);
+      }
+    }
+  }
+  return urls;
+}
 
 interface IndexNowPayload {
   host: string;
@@ -37,6 +55,8 @@ export async function POST(_request: NextRequest) {
     ...blogPosts.map((post) => `${siteUrl}/blog/${post.slug}`),
     ...categories.map((cat) => `${siteUrl}/best/${cat.slug}`),
     ...tools.filter((t) => t.alternatives.length > 0).map((t) => `${siteUrl}/alternatives/${t.slug}`),
+    `${siteUrl}/free-ai-tools`,
+    ...generateCompareUrls(siteUrl),
   ];
 
   // Remove duplicates
