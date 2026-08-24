@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import Markdown from "react-markdown";
 import { ArrowLeft, Clock, User, Calendar, Tag } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -72,7 +73,7 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
         {/* Cover image */}
         {post.coverImage ? (
           <div className="aspect-[2/1] rounded-xl border border-border overflow-hidden">
-            <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover" />
+            <Image src={post.coverImage} alt={post.title} width={900} height={450} className="w-full h-full object-cover" />
           </div>
         ) : (
           <BlogCoverImage title={post.title} category={post.category} size="lg" className="rounded-xl border border-border" />

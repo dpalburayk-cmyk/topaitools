@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Rss, ExternalLink, X, Send, Loader2 } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { categories } from "@/data/tools";
@@ -149,7 +150,7 @@ export function Footer() {
 
         {/* Verified Badges */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <a href="https://www.stork.ai/" rel="nofollow" title="Stork Verified — stork.ai AI tools directory"><img src="https://www.stork.ai/badge/verified-dark.svg" alt="Stork Verified — stork.ai AI tools directory" width="216" height="44" /></a>
+          <a href="https://www.stork.ai/" rel="nofollow" title="Stork Verified — stork.ai AI tools directory"><Image src="https://www.stork.ai/badge/verified-dark.svg" alt="Stork Verified — stork.ai AI tools directory" width={216} height={44} unoptimized /></a>
         </div>
       </div>
     </footer>

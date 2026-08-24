@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 interface ToolIconProps {
   name: string;
@@ -17,30 +18,38 @@ const sizeClasses = {
   xl: "w-16 h-16 rounded-2xl text-2xl",
 };
 
+const sizePixels = {
+  sm: 32,
+  md: 40,
+  lg: 56,
+  xl: 64,
+};
+
 /**
  * Tool icon with reliable image loading and graceful fallback.
- * Uses Google's favicon service (more reliable) with icon.horse as fallback,
+ * Tries primary source (icon.horse), falls back to Google favicon,
  * then shows the first letter of the tool name if both fail.
  */
 export function ToolIcon({ name, imageUrl, websiteUrl, size = "md", className }: ToolIconProps) {
-  const [failed, setFailed] = useState(false);
+  const [srcIndex, setSrcIndex] = useState(0);
 
   // Derive domain from websiteUrl for Google favicon service
   const domain = websiteUrl
     ? websiteUrl.replace(/^https?:\/\//, "").replace(/\/.*$/, "").replace(/^www\./, "")
     : null;
 
-  // Build the Google favicon URL as a more reliable primary source
+  // Build the Google favicon URL as fallback
   const googleFaviconUrl = domain
     ? `https://www.google.com/s2/favicons?domain=${domain}&sz=64`
     : null;
 
-  // Use icon.horse as primary, Google as fallback
-  const primarySrc = imageUrl || googleFaviconUrl;
-  const fallbackSrc = primarySrc === imageUrl && googleFaviconUrl ? googleFaviconUrl : null;
+  // Build ordered list of sources to try
+  const sources: string[] = [];
+  if (imageUrl) sources.push(imageUrl);
+  if (googleFaviconUrl) sources.push(googleFaviconUrl);
 
-  // If both sources failed or no image URL, show letter
-  if (failed || !primarySrc) {
+  // No sources available — show letter immediately
+  if (sources.length === 0) {
     return (
       <div
         className={`${sizeClasses[size]} bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold shrink-0 ${className || ""}`}
@@ -50,25 +59,33 @@ export function ToolIcon({ name, imageUrl, websiteUrl, size = "md", className }:
     );
   }
 
+  // All sources failed — show letter
+  if (srcIndex >= sources.length) {
+    return (
+      <div
+        className={`${sizeClasses[size]} bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold shrink-0 ${className || ""}`}
+      >
+        {name.charAt(0).toUpperCase()}
+      </div>
+    );
+  }
+
+  const currentSrc = sources[srcIndex];
+  const px = sizePixels[size];
+
   return (
     <div
       className={`${sizeClasses[size]} bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center text-white font-bold shrink-0 overflow-hidden ${className || ""}`}
     >
-      <img
-        src={primarySrc}
+      <Image
+        src={currentSrc}
         alt={name}
+        width={px}
+        height={px}
         className="w-full h-full object-cover"
         loading="lazy"
-        onError={(e) => {
-          const img = e.currentTarget;
-          if (fallbackSrc && img.src !== fallbackSrc) {
-            // Try fallback source
-            img.src = fallbackSrc;
-          } else {
-            // Both failed — show letter
-            setFailed(true);
-          }
-        }}
+        unoptimized={currentSrc.startsWith("https://www.google.com/s2/favicons")}
+        onError={() => setSrcIndex((i) => i + 1)}
       />
     </div>
   );

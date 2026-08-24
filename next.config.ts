@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "topaitools.xyz",
       },
+      {
+        protocol: "https",
+        hostname: "www.stork.ai",
+      },
     ],
   },
   async headers() {

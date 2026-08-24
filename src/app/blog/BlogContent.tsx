@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Clock, User } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { AdBanner } from "@/components/ui/AdBanner";
@@ -16,9 +17,11 @@ function BlogCard({ post }: { post: (typeof blogPosts)[0] }) {
     >
       {post.coverImage ? (
         <div className="aspect-[2/1] overflow-hidden">
-          <img
+          <Image
             src={post.coverImage}
             alt={post.title}
+            width={600}
+            height={300}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
