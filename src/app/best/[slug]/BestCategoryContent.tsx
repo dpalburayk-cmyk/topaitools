@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Star, ChevronDown } from "lucide-react";
-import { useState } from "react";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ToolCard } from "@/components/tools/ToolCard";
 import { ToolIcon } from "@/components/tools/ToolIcon";
@@ -33,7 +32,6 @@ interface FAQItem {
 }
 
 export function BestCategoryContent({ category, tools }: BestCategoryContentProps) {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const itemName = category.name.toLowerCase();
   const freeTools = tools.filter((t) => t.pricingModel === "free");
@@ -187,28 +185,18 @@ export function BestCategoryContent({ category, tools }: BestCategoryContentProp
         </h2>
         <div className="space-y-3">
           {faqs.map((faq, i) => (
-            <div
+            <details
               key={i}
-              className="rounded-xl border border-border bg-card overflow-hidden"
+              className="group rounded-xl border border-border bg-card overflow-hidden"
             >
-              <button
-                onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                className="flex items-center justify-between w-full p-4 text-left font-medium text-sm hover:bg-muted/20 transition-colors"
-                aria-expanded={openFaq === i}
-              >
+              <summary className="flex items-center justify-between w-full p-4 text-left font-medium text-sm hover:bg-muted/20 transition-colors cursor-pointer list-none marker:[content:''] [&::-webkit-details-marker]:hidden">
                 {faq.question}
-                <ChevronDown
-                  className={`w-4 h-4 text-muted-foreground transition-transform ${
-                    openFaq === i ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {openFaq === i && (
-                <div className="px-4 pb-4 text-sm text-muted-foreground leading-relaxed border-t border-border pt-3">
-                  {faq.answer}
-                </div>
-              )}
-            </div>
+                <ChevronDown className="w-4 h-4 text-muted-foreground transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="px-4 pb-4 text-sm text-muted-foreground leading-relaxed border-t border-border pt-3">
+                {faq.answer}
+              </div>
+            </details>
           ))}
         </div>
       </div>

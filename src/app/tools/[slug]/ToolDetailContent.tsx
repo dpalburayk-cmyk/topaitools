@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import {
   Star, ExternalLink, Check, X, ThumbsUp, ThumbsDown,
@@ -37,7 +36,6 @@ const pricingLabels = {
 };
 
 export function ToolDetailContent({ tool, alternatives, relatedTools }: ToolDetailContentProps) {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
@@ -215,29 +213,20 @@ export function ToolDetailContent({ tool, alternatives, relatedTools }: ToolDeta
               </h2>
               <div className="space-y-3">
                 {tool.faqs.map((faq, index) => (
-                  <div
+                  <details
                     key={index}
-                    className="rounded-xl border border-border bg-card overflow-hidden"
+                    className="group rounded-xl border border-border bg-card overflow-hidden"
                   >
-                    <button
-                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                      className="w-full flex items-center justify-between px-6 py-4 text-left cursor-pointer"
-                    >
+                    <summary className="w-full flex items-center justify-between px-6 py-4 text-left cursor-pointer list-none marker:[content:''] [&::-webkit-details-marker]:hidden">
                       <span className="font-medium text-sm pr-4">{faq.question}</span>
-                      <ChevronDown
-                        className={`w-4 h-4 text-muted-foreground shrink-0 transition-transform duration-200 ${
-                          openFaq === index ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-                    {openFaq === index && (
-                      <div className="px-6 pb-4">
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    )}
-                  </div>
+                      <ChevronDown className="w-4 h-4 text-muted-foreground shrink-0 transition-transform duration-200 group-open:rotate-180" />
+                    </summary>
+                    <div className="px-6 pb-4">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </details>
                 ))}
               </div>
             </div>

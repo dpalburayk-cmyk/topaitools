@@ -103,7 +103,6 @@ export function AdvertiseContent() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [formError, setFormError] = useState("");
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   function handleChange(
     e: React.ChangeEvent<
@@ -390,29 +389,20 @@ export function AdvertiseContent() {
         </h2>
         <div className="space-y-3 max-w-3xl mx-auto">
           {faqs.map((faq, index) => (
-            <div
+            <details
               key={index}
-              className="rounded-xl border border-border bg-card overflow-hidden"
+              className="group rounded-xl border border-border bg-card overflow-hidden"
             >
-              <button
-                onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                className="w-full flex items-center justify-between px-6 py-4 text-left cursor-pointer"
-              >
+              <summary className="w-full flex items-center justify-between px-6 py-4 text-left cursor-pointer list-none marker:[content:''] [&::-webkit-details-marker]:hidden">
                 <span className="font-medium text-sm pr-4">{faq.question}</span>
-                <ArrowRight
-                  className={`w-4 h-4 text-muted-foreground shrink-0 transition-transform duration-200 ${
-                    openFaq === index ? "rotate-90" : ""
-                  }`}
-                />
-              </button>
-              {openFaq === index && (
-                <div className="px-6 pb-4">
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              )}
-            </div>
+                <ArrowRight className="w-4 h-4 text-muted-foreground shrink-0 transition-transform duration-200 group-open:rotate-90" />
+              </summary>
+              <div className="px-6 pb-4">
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {faq.answer}
+                </p>
+              </div>
+            </details>
           ))}
         </div>
       </section>
