@@ -4,7 +4,7 @@ import { ToolDetailContent } from "./ToolDetailContent";
 import { siteConfig } from "@/data/site-config";
 import type { Metadata } from "next";
 
-export const dynamic = 'force-dynamic'; // Bypass all caching during content update phase
+export const revalidate = 0; // Bypass cache during content updates
 
 // generateStaticParams temporarily commented out - restore after
 // export async function generateStaticParams() {
