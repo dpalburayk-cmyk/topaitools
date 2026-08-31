@@ -4,14 +4,13 @@ import { ToolDetailContent } from "./ToolDetailContent";
 import { siteConfig } from "@/data/site-config";
 import type { Metadata } from "next";
 
-export const revalidate = 0; // Temporarily disabled for content updates - restore to 86400 after
+// generateStaticParams temporarily commented out for content updates - restore after
+// export async function generateStaticParams() {
+//   return tools.map((tool) => ({ slug: tool.slug }));
+// }
 
 interface ToolPageProps {
   params: Promise<{ slug: string }>;
-}
-
-export async function generateStaticParams() {
-  return tools.map((tool) => ({ slug: tool.slug }));
 }
 
 export async function generateMetadata({ params }: ToolPageProps): Promise<Metadata> {
