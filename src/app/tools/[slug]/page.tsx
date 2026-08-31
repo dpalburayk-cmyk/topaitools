@@ -4,7 +4,9 @@ import { ToolDetailContent } from "./ToolDetailContent";
 import { siteConfig } from "@/data/site-config";
 import type { Metadata } from "next";
 
-// generateStaticParams temporarily commented out for content updates - restore after
+export const dynamic = 'force-dynamic'; // Bypass all caching during content update phase
+
+// generateStaticParams temporarily commented out - restore after
 // export async function generateStaticParams() {
 //   return tools.map((tool) => ({ slug: tool.slug }));
 // }
