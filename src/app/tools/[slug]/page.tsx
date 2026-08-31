@@ -4,12 +4,11 @@ import { ToolDetailContent } from "./ToolDetailContent";
 import { siteConfig } from "@/data/site-config";
 import type { Metadata } from "next";
 
-export const revalidate = 0; // Bypass cache during content updates
+export const revalidate = 86400; // Revalidate every 24 hours
 
-// generateStaticParams temporarily commented out - restore after
-// export async function generateStaticParams() {
-//   return tools.map((tool) => ({ slug: tool.slug }));
-// }
+export async function generateStaticParams() {
+  return tools.map((tool) => ({ slug: tool.slug }));
+}
 
 interface ToolPageProps {
   params: Promise<{ slug: string }>;
