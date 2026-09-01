@@ -1114,7 +1114,7 @@ export const tools: Tool[] = [
   },
 
   {
-    id: "42", slug: "codex-cli", name: "Claude Code",
+    id: "42", slug: "claude-code", name: "Claude Code",
     description: "Anthropic's AI coding agent that lives in your terminal for rapid software development",
     longDescription: "Claude Code is Anthropic's agentic coding tool that operates directly in your terminal. It can read and edit files, run commands, understand entire codebases, and implement features autonomously — making it the most powerful AI coding agent for developers.",
     category: "code", pricingModel: "freemium", rating: 4.7, popularityScore: 3800,
