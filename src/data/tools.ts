@@ -1848,7 +1848,7 @@ export const tools: Tool[] = [
     category: "chatbot", pricingModel: "freemium", rating: 4.3, popularityScore: 4800,
     features: ["Character Creation", "Persona Library", "Long-Term Memory", "Group Chats", "Voice Chat"],
     pros: ["Characters maintain consistent personality across long conversations", "Large library of user-created characters across many genres", "Genuinely useful for creative writing collaboration and roleplay"], cons: ["Not reliable for factual research or technical accuracy", "Content moderation is more restrictive than general-purpose chatbots", "Free tier has response speed and usage limitations"],
-    websiteUrl: "https://character.ai", imageUrl: "https://icon.horse/icon/character.ai",
+    websiteUrl: "https://character.ai", affiliateUrl: "https://character.ai/?ref=topaitools", imageUrl: "https://icon.horse/icon/character.ai",
     tags: ["chatbot", "roleplay", "characters", "creative-writing", "entertainment"],
     isFeatured: false, isTrending: false, alternatives: ["chatgpt", "pi-ai"],
     submittedAt: "2026-08-31", updatedAt: "2026-08-31",
