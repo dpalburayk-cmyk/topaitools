@@ -151,6 +151,7 @@ export function Footer() {
         {/* Verified Badges */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <a href="https://www.stork.ai/" rel="nofollow" title="Stork Verified — stork.ai AI tools directory"><Image src="https://www.stork.ai/badge/verified-dark.svg" alt="Stork Verified — stork.ai AI tools directory" width={216} height={44} unoptimized /></a>
+          <a href="https://startupbase.io/submissions/top-ai-tools" title="Launched on StartupBase — AI tools directory"><Image src="https://statics.startupbase.io/site/badges/launched-on-sb.svg" alt="Launched on StartupBase" width={150} height={40} unoptimized /></a>
         </div>
       </div>
     </footer>
