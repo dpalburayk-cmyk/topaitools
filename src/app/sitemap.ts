@@ -121,12 +121,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${siteConfig.url}/pricing`,
-      lastModified: staticFixedDate,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
       url: `${siteConfig.url}/advertise`,
       lastModified: staticFixedDate,
       changeFrequency: "monthly",
