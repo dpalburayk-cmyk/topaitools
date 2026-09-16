@@ -27,6 +27,8 @@ export async function generateStaticParams() {
     for (const altSlug of tool.alternatives) {
       const alt = getToolBySlug(altSlug);
       if (!alt) continue;
+      // Skip self-compares
+      if (tool.slug === altSlug) continue;
       // Normalize: alphabetically first slug first
       const [a, b] =
         tool.slug < altSlug
@@ -84,6 +86,8 @@ export default async function CompareDynamicPage({
   const { slugs } = await params;
   const parsed = parseCompareSlugs(slugs);
   if (!parsed) notFound();
+  // Reject self-compares — thin duplicate pages with no search value
+  if (parsed.slug1 === parsed.slug2) notFound();
 
   const tool1 = getToolBySlug(parsed.slug1);
   const tool2 = getToolBySlug(parsed.slug2);

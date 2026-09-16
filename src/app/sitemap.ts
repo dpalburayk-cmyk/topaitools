@@ -40,6 +40,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const altSlug of tool.alternatives) {
       const alt = getToolBySlug(altSlug);
       if (!alt) continue;
+      // Skip self-compares (e.g. zapier-vs-zapier) — thin duplicate pages
+      if (tool.slug === altSlug) continue;
       const [a, b] = tool.slug < altSlug ? [tool.slug, altSlug] : [altSlug, tool.slug];
       const key = `${a}-${b}`;
       if (!compareSeen.has(key)) {
@@ -126,12 +128,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${siteConfig.url}/advertise`,
-      lastModified: staticFixedDate,
-      changeFrequency: "monthly",
-      priority: 0.4,
-    },
-    {
-      url: `${siteConfig.url}/favorites`,
       lastModified: staticFixedDate,
       changeFrequency: "monthly",
       priority: 0.4,
