@@ -5,6 +5,8 @@ import { siteConfig } from "@/data/site-config";
 import type { Metadata } from "next";
 
 export const revalidate = 86400;
+// Unknown slugs not in generateStaticParams return a real 404 (no soft-404 shell)
+export const dynamicParams = false;
 
 interface ComparePageProps {
   params: Promise<{ slugs: string[] }>;
