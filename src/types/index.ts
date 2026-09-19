@@ -41,6 +41,7 @@ export interface Category {
   name: string;
   description: string;
   longDescription?: string;
+  howWeChoose?: string;
   icon: string;
   toolCount: number;
 }

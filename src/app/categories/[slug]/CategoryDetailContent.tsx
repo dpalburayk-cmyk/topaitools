@@ -36,6 +36,16 @@ export function CategoryDetailContent({ category, categoryTools }: CategoryDetai
             {category.longDescription}
           </p>
         )}
+        {category.howWeChoose && (
+          <div className="mt-5 max-w-3xl rounded-lg border bg-muted/40 p-4">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-2">
+              How We Choose These Tools
+            </h2>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {category.howWeChoose}
+            </p>
+          </div>
+        )}
       </div>
 
       {[0, 6, 12, 18].map((chunkStart) => {
