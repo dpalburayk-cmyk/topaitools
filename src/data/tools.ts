@@ -3354,7 +3354,7 @@ export const tools: Tool[] = [
     websiteUrl: "https://lovable.dev", imageUrl: "https://icon.horse/icon/lovable.dev",
       affiliateUrl: "https://lovable.dev?ref=topaitools",
     tags: ["coding", "full-stack", "no-code", "ai-builder", "web-app"],
-    isFeatured: true, isTrending: true, alternatives: ["bolt-new", "v0", "replit-ai"],
+    isFeatured: true, isTrending: true, alternatives: ["bolt", "v0", "replit"],
     submittedAt: "2026-06-10", updatedAt: "2026-06-17",
     useCases: [
       "Debugging and troubleshooting code with Lovable",
@@ -3716,7 +3716,7 @@ export const tools: Tool[] = [
     pros: ["Open source", "Self-hosted free", "Massive integration library"], cons: ["Can be complex for simple tasks", "Learning curve", "Cloud pricing can add up"],
     websiteUrl: "https://n8n.io", imageUrl: "https://icon.horse/icon/n8n.io",
     tags: ["productivity", "automation", "workflow", "open-source", "integration"],
-    isFeatured: false, isTrending: true, alternatives: ["zapier-ai", "make"],
+    isFeatured: false, isTrending: true, alternatives: ["zapier-ai", "n8n"],
     submittedAt: "2026-06-10", updatedAt: "2026-06-17",
     useCases: [
       "Automating project management workflows with n8n",
