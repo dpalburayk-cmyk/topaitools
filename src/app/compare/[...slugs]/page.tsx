@@ -65,6 +65,10 @@ export async function generateMetadata({
   return {
     title,
     description,
+    // Noindex: these template-driven comparison pages are too thin for AdSense
+    // review standards. Re-enable indexing only after each page gets real
+    // editorial depth. Page stays crawlable so "follow" preserves link equity.
+    robots: { index: false, follow: true },
     openGraph: {
       title,
       description,
