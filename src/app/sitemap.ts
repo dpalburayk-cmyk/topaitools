@@ -35,6 +35,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Compare pages are noindexed (thin template content) — excluded from the
   // sitemap. The /compare hub page remains listed in staticPages below.
+  // Exception: the editorial Bolt/v0/Lovable trio comparison is deep,
+  // unique content — indexed and listed.
+  const trioComparison: MetadataRoute.Sitemap = [
+    {
+      url: `${siteConfig.url}/compare/bolt-vs-v0-vs-lovable`,
+      lastModified: new Date("2026-09-26"),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+  ];
+
 
   const bestCategoryPages = categories.map((cat) => ({
     url: `${siteConfig.url}/best/${cat.slug}`,
@@ -127,5 +138,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogPages,
     ...alternativesPages,
     ...bestCategoryPages,
+    ...trioComparison,
   ];
 }
