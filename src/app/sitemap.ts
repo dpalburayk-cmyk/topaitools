@@ -44,6 +44,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
+    {
+      url: `${siteConfig.url}/compare/cursor-vs-claude-code-vs-cline`,
+      lastModified: new Date("2026-10-02"),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${siteConfig.url}/compare/midjourney-vs-dalle-3-vs-ideogram`,
+      lastModified: new Date("2026-10-02"),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
   ];
 
 

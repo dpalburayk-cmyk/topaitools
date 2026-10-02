@@ -37,6 +37,13 @@ function BlogCard({ post }: { post: (typeof blogPosts)[0] }) {
             <Clock className="w-3 h-3" />
             {post.readTime} min read
           </span>
+          <span className="text-xs text-muted-foreground">
+            {new Date(post.publishedAt + "T00:00:00").toLocaleDateString("en-US", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            })}
+          </span>
         </div>
         <h2 className="font-semibold text-base mb-2 group-hover:text-indigo-500 transition-colors line-clamp-2">
           {post.title}
