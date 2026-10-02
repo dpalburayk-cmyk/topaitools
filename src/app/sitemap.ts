@@ -56,6 +56,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
+    {
+      url: `${siteConfig.url}/compare/zapier-ai-vs-n8n-vs-lindy`,
+      lastModified: new Date("2026-10-02"),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${siteConfig.url}/compare/elevenlabs-vs-playht-vs-murf-ai`,
+      lastModified: new Date("2026-10-02"),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${siteConfig.url}/compare/runway-vs-sora-vs-luma-dream-machine`,
+      lastModified: new Date("2026-10-02"),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
   ];
 
 
